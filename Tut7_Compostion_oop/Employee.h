@@ -1,22 +1,23 @@
 /*
  * Employee.h
  *
- *  Created on: Jun 18, 2016
+ *  Created on: Sep 22, 2016
  *      Author: modys
  */
 
 #ifndef EMPLOYEE_H_
 #define EMPLOYEE_H_
+#include <string>
 #include "Date.h"
-#include<string>
+
 using namespace std;
 
-class Employee {
+class Employee
+{
 public:
-	Employee(const string &, const string &,
-			   const Date &, const Date &);
-	void print() const;
-	~Employee();
+	Employee(const string & , const string & , const Date & , const Date &);
+	virtual ~Employee();
+	void print () const;
 
 private:
 	string firstName;

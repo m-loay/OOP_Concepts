@@ -1,23 +1,25 @@
 /*
  * Date.h
  *
- *  Created on: Jun 18, 2016
+ *  Created on: Sep 22, 2016
  *      Author: modys
  */
 
 #ifndef DATE_H_
 #define DATE_H_
 
-
 class Date {
 public:
-	static const int monthsPerYear=12;
-	Date(int=1, int=1, int=1900);
-	void print()const;
-	~Date();
+	static const int monthPerYear = 12;
+	Date(int =1, int = 1, int = 1900 ,int =1);
+	virtual ~Date();
+	void print () const;
 
 private:
-	int month,day,year;
+	int month;
+	int year;
+	int day;
+	int ID;
 };
 
 #endif /* DATE_H_ */

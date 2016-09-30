@@ -1,40 +1,34 @@
 /*
  * Employee.cpp
  *
- *  Created on: Jun 18, 2016
+ *  Created on: Sep 22, 2016
  *      Author: modys
  */
 
 #include "Employee.h"
-#include "Date.h"
 #include <iostream>
 using namespace std;
-
-Employee::Employee(const string &first, const string &last,
-		   const Date &dateOfBirth, const Date &dateOfHire)
-: birthDate(dateOfBirth), hireDate(dateOfHire)
+Employee::Employee(const string &first , const string &last , const Date &db , const Date &hb)
+:firstName(first),
+ lastName(last),
+ birthDate(db),
+hireDate(hb)
 {
 	// TODO Auto-generated constructor stub
-	firstName=first;
-	lastName=last;
-
-	cout << "Employee object constructor: "
-	<< firstName << ' '<< lastName << endl;
+	cout<<"Employee OBJ constructor "<<firstName<<" "<<lastName<<"called"<<endl;
 }
 
 Employee::~Employee()
 {
-	cout << "Employee object Destructor: ";
+	// TODO Auto-generated destructor stub
+	cout<<"Employee OBJ destructor "<<firstName<<" "<<lastName<<"called"<<endl;
 }
 
 void Employee::print()const
 {
-	cout << lastName <<", "<< firstName << " Hired: ";
+	cout<<"Employee "<<firstName<<" "<<lastName<<"called"<<endl;
 	hireDate.print();
-	cout << " Birthday: ";
+	cout <<"and hired in ";
 	birthDate.print();
-	cout<<endl;
 }
-
-
 

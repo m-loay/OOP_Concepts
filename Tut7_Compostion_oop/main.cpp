@@ -6,22 +6,18 @@
  */
 
 #include<iostream>
-#include"Date.h"
+#include "Date.h"
 #include "Employee.h"
-
 using namespace std;
+
 
 int main()
 {
-	Date birth_manager(7,24,1980);
-	Date hire_manager (3,12,2000);
+	Date birth(7,1,1990,1);
+	Date hire (10,1,2016,2);
 
-	Employee manager("mody", "Ali", birth_manager, hire_manager);
-
-	cout<<endl;
-	manager.print();
-
-	cout<<"Two additional Destructor because Date is a member object in Employee"
-			<<"\n So object date copy it self by Default copy Constructor "<<endl;
+	Employee swe ("mohamed","loay",birth,hire);
+	swe.print();
 
 }
+

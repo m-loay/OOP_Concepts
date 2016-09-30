@@ -42,5 +42,6 @@ void BasePlus:: print()const
 {
 
 	CommissionEmployee::print();
-	cout<<"\nBase Salary: "<<baseSalary<<endl;
+	cout<<"\nBase Salary: "<<getBaseSalary()<<endl;
+	cout <<"Earning After adding base salary = "<<earnings()<<endl;
 }

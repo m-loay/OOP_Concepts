@@ -11,64 +11,36 @@
 #include "employee.h"
 #include "CommissionEmployee.h"
 #include "BasePlus.h"
-#include "SalariedEmployee.h"
-#include "HourlyEmployee.h"
 using namespace std;
 
-
-void virtualPointer (const employee* const);
-void virtualRef(const employee &);
 int main ()
 {
-	SalariedEmployee salEmp("Mody", "Ali","11-111",5000);
-	HourlyEmployee hlEmp("Maha", "Imam","22-222", 16.5, 40);
-	CommissionEmployee comEmp("Nouran", "osama","33-333",10000,0.06);
-	BasePlus baseEmp ("Rof", "karam", "444-444",5000,0.04,300);
 
-	cout<<"Priniting data using objects"<<endl;
-	salEmp.print();
-	cout<<"earned: "<<salEmp.earnings();
+	/*Create two objects from different clases*/
+	CommissionEmployee cemp("Mody","Loay","123",100.0,0.1);
+	BasePlus bemp ("Loay","Ali","1234",1000,0.1,100);
 
-	hlEmp.print();
-	cout<<"earned: "<<hlEmp.earnings();
+	/*create pointers from base objects to derived objects*/
+	CommissionEmployee *ptr_cemp=&cemp;
+	BasePlus *ptr_bemp=&bemp;
 
-	comEmp.print();
-	cout<<"earned: "<<comEmp.earnings();
+	/*Use static binding to print data for both objects*/
+	cout<<"Static binding"<<endl;
+	cemp.print();
+	bemp.print();
 
-	baseEmp.print();
-	cout<<"earned: "<<baseEmp.earnings();
+	/*use pointers to print
+	 * base pointer to base object
+	 * derived pointer to derived object*/
 
-	vector <employee *> employee(4);
+	cout<<"Pointer printing"<<endl;
+	ptr_cemp ->print();
+	ptr_bemp ->print();
 
-	employee[0]=&salEmp;
-	employee[1]=&hlEmp;
-	employee[2]=&comEmp;
-	employee[3]=&baseEmp;
-
-	cout << "Employees processed polymorphically via dynamic binding:\n\n";
-	cout << "Virtual function calls made off base-class pointers:\n\n";
-
-	for (size_t i=0; i<employee.size(); i++)
-	{
-		virtualPointer(employee[i]);
-	}
-
-	for (size_t i=0; i<employee.size(); i++)
-	{
-		virtualRef(*employee[i]);
-	}
+	/*Print base pointer to derived object invokes base functionality in derived object*/
+	cout<<"Using a base pointer to derived object"<<endl;
+	ptr_cemp = &bemp;
+	ptr_cemp ->print();
 
 
-}
-
-void virtualPointer (const employee* const baseCalssPtr)
-{
-	baseCalssPtr->print();
-	cout<<"\nearned: "<<baseCalssPtr->earnings();
-}
-
-void virtualRef (const employee &baseClassRef)
-{
-	baseClassRef.print();
-	cout<<"\nearned: "<<baseClassRef.earnings();
 }

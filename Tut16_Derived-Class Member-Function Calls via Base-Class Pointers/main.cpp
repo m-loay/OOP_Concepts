@@ -21,7 +21,7 @@ int main ()
 	//Assign a base class pointer to derived object
 	comEmp_ptr=&baseEmp;
 
-	cout<<"First Name: "<<comEmp_ptr->getFirstName()<<' '<<"LAst Name"<<comEmp_ptr->getLastName()<<endl;
+	cout<<comEmp_ptr->getFirstName()<<' '<<comEmp_ptr->getLastName()<<endl;
 
 
 	//This will generate an error to call member calss not inherited from base class

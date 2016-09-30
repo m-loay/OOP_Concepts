@@ -83,8 +83,8 @@ double CommissionEmployee::earnings()const
 
 void CommissionEmployee::print()const
 {
-	cout<<"Commision Employee: "<<firstName<<' '<<lastName
-		<<"\nSocial Security Number:"<<SocialNumber
-		<<"\nGross Sales: "<<grossSales
-		<<"\nComsssion Rate: "<<commsssionRate<<endl;
+	cout<<"Commision Employee: "<<getFirstName()<<' '<<getLastName()
+		<<"\nSocial Security Number:"<<getSocialNumber()
+		<<"\nGross Sales: "<<getGrossSales()
+		<<"\nEarning: "<<earnings()<<endl;
 }

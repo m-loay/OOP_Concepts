@@ -47,8 +47,8 @@ int main()
 	cout<<"The init standard time is";
 	t.printStandard();
 
-	h_ref=15;
-	cout<<"h_ref=15"<<endl;
+	h_ref=35;
+	cout<<"h_ref=35"<<endl;
 	cout<<"The init universal Time is";
 	t.printUniversal();
 
