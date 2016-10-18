@@ -57,8 +57,6 @@ int main ()
 	{
 		virtualRef(*employee[i]);
 	}
-
-
 }
 
 void virtualPointer (const employee* const baseCalssPtr)

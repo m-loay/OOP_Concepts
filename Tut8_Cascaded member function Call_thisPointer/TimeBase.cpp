@@ -31,21 +31,21 @@ Time_Base &Time_Base:: setTime (int h, int m, int s)
 	return *this;
 }
 
-Time_Base &Time_Base:: setHour (int h)
+ Time_Base &Time_Base:: setHour (int h)
 
 {
 	hour=(h>=0 && h<24)? h:0;
 	return *this;
 }
 
-Time_Base &Time_Base:: setMin (int m)
+ Time_Base &Time_Base:: setMin (int m)
 
 {
 	minute= (m>=0 && m<60)? m:0;
 	return *this;
 }
 
-Time_Base &Time_Base:: setSec (int s)
+ Time_Base &Time_Base:: setSec (int s)
 
 {
 	second= (s>=0 && s<60) ? s:0;

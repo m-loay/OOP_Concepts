@@ -17,7 +17,7 @@ public:
 	Time_Base();
 	~Time_Base();
 	void setTime (int h, int m, int s);
-	int &badSetHour(int hh);
+	 int &badSetHour(int hh);
 	void printUniversal();
 	void printStandard ();
 

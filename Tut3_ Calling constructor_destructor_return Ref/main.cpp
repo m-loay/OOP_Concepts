@@ -22,6 +22,8 @@ int main()
 	cout << "\n Assign invalid value to hour t1"<< endl;
 	t1_ref=50;
 	cout << "\n  invalid value to hour t1= "<<t1.getHour()<< endl;
+	cout<<sizeof(t1)<<endl;
+	cout<<sizeof(int)<<endl;
 
 	Time_Base t2 (2,2,2,2);
 	static Time_Base t3(3,3,3,3);

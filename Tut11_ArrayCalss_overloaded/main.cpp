@@ -28,7 +28,7 @@ int main ()
 		 << integers2;
 
 	cout << "\nEnter 17 integers:"<< endl;
-	cin >> integers1 >> integers2;
+	//cin >> integers1 >> integers2;
 
 	cout << "\nAfter input, the Arrays contain:\n"
 	<< "integers1:\n"
@@ -70,8 +70,19 @@ int main ()
 	cout << "integers1:\n"	<< integers1;
 
 	// attempt to use out-of-range subscript
-	cout << "\nAttempt to assign 1000 to integers1[15]"<< endl;
-	integers1[ 15 ] = 1000; // ERROR: out of range
+	//cout << "\nAttempt to assign 1000 to integers1[15]"<< endl;
+	//integers1[ 15 ] = 1000; // ERROR: out of range
 
+	//postfix and prefix
+	cout<<"integers 1 increment"<<endl;
+	++integers1;
+	integers2 = integers1++;
+	integers3 = integers1 + integers2;
+	cout<<"counter intgers 1 = "<<integers1.getCounter()<<endl;
+	cout<<"counter intgers 2 = "<<integers2.getCounter()<<endl;
+	cout<<"counter intgers 2 = "<<integers3.getCounter()<<endl;
+	cout << "integers1:\n"	<< integers1;
+	cout << "integers2:\n"	<< integers2;
+	cout << "integers3:\n"	<< integers3;
 
 }

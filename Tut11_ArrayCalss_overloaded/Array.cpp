@@ -16,6 +16,7 @@ Array::Array(int arraySize)
 	// TODO Auto-generated constructor stub
 	size=(arraySize>0 ?arraySize:10);
 	ptr=new int [size];
+	counter=0;
 
 	for (int var = 0; var < size; var++)
 	{
@@ -29,13 +30,13 @@ Array::Array(const Array &arrayTocopy)
 {
 	size=arrayTocopy.size;
 	ptr=new int [size];
+	counter = arrayTocopy.counter;
 	for (int var = 0; var < size; var++)
 	{
 		ptr[var]=arrayTocopy.ptr[var];
 	}
 	cout<<"Copy Constructor is Called"<<endl;
 }
-
 
 Array::~Array()
 {
@@ -44,9 +45,30 @@ Array::~Array()
 	cout<<"Destructor is Called"<<endl;
 }
 
-int Array::getSize()const
+bool Array:: operator==(const Array &right)const
 {
-	return size;
+	if(size!=right.size)
+		return false;
+
+	for (int var = 0; var < size; var++)
+	{
+		if(ptr[var]!=right.ptr[var])
+			return false;
+	}
+	return true;
+}
+
+const Array& Array::operator ++()
+{
+	++counter;
+	return *this;
+}
+
+const Array& Array::operator ++(int)
+{
+	static Array& temp = *this;
+	++counter;
+	return temp;
 }
 
 const  Array &Array:: operator =(const Array &right)
@@ -61,6 +83,7 @@ const  Array &Array:: operator =(const Array &right)
 			size = right.size; // resize this object
 		}
 		ptr = new int[ size ]; // create space for array copy
+		counter = right.counter;
 
 		for( int i = 0; i < size; i++ )
 			ptr[ i ] = right.ptr[ i ]; // copy array into object
@@ -69,18 +92,21 @@ const  Array &Array:: operator =(const Array &right)
 	return *this; // enables x = y = z, for example
 }// end function operator=
 
-bool Array:: operator==(const Array &right)const
-						{
-	if(size!=right.size)
-		return false;
+const Array& Array::operator +(const Array& left)
+{
+	counter = left.counter;
+	return *this;
+}
 
-	for (int var = 0; var < size; var++)
-	{
-		if(ptr[var]!=right.ptr[var])
-			return false;
-	}
-	return true;
-						}
+int Array::getSize()const
+{
+	return size;
+}
+
+int Array::getCounter()const
+{
+	return counter;
+}
 
 int &Array::operator[](int sub)
 {

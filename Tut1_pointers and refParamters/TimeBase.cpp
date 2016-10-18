@@ -30,7 +30,7 @@ void Time_Base:: setTime (int h, int m, int s)
 	second= (s>=0 && s<60) ? s:0;
 }
 
-int  &Time_Base:: badSetHour(int hh)
+ int  &Time_Base:: badSetHour(int hh)
 {
 	hour = ( hh >= 0&& hh < 24) ? hh : 0;
 	return hour; // DANGEROUS reference return
