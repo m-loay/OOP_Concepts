@@ -8,9 +8,11 @@
 #ifndef COMMAND_H_
 #define COMMAND_H_
 #include <iostream>
+#include "Light.h"
 using namespace std;
 
-class command {
+class command
+{
 public:
 	command()
 	{
@@ -23,28 +25,6 @@ public:
 	virtual void execute() = 0;
 };
 
-// Receiver Class
-class Light
-{
-public:
-	Light()
-	{
-		cout<<"Light is called"<<endl;
-	}
-	virtual ~Light()
-	{
-		cout<<"~Light is called"<<endl;
-	}
-
-	void on()
-	{
-		cout << "The light is on\n";
-	}
-	void off()
-	{
-		cout << "The light is off\n";
-	}
-};
 
 // Command for turning on the light
 class LightOnCommand : public command

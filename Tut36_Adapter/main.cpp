@@ -5,12 +5,17 @@
  *      Author: modys
  */
 
-#include "RectangleAdapter.h"
+#include "AudioPlayer.h"
 int main()
 {
-	RectangleAdapter *r = new RectangleAdapter(120,200,60,40);
-	r->draw();
-	delete r;
+	AudioPlayer device;
+	cout<<endl;
+	device.play("mp4"," Hello");
+	cout<<endl;
+	device.play("mp3"," Hello");
+	cout<<endl;
+	device.play("vlc"," Hello");
+	cout<<endl;
 }
 
 

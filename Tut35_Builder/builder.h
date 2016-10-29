@@ -9,11 +9,6 @@
 #define BUILDER_H_
 #include<iostream>
 using namespace std;
-class builder {
-public:
-	builder();
-	virtual ~builder();
-};
 
 
 /***** Car parts *****/
@@ -72,13 +67,28 @@ public:
 	:engine(0),body(0)
 	{
 		cout<<"Car Constructor Called"<<endl;
+		wheelsFrontLeft = new Wheel;
+		wheelsRearLeft = new Wheel;
+		wheelsFrontRight = new Wheel;
+		wheelsRearRight = new Wheel;
+		engine = new Engine;
+		body = new Body;
 	}
 
 	~Car()
 	{
 		cout<<"Car Destructor Called"<<endl;
+		delete wheelsFrontLeft;
+		delete wheelsRearLeft;
+		delete wheelsFrontRight;
+		delete wheelsRearRight;
+		delete engine;
+		delete body;
 	}
-	Wheel*   wheels[4];
+	Wheel*   wheelsFrontLeft;
+	Wheel*   wheelsRearLeft;
+	Wheel*   wheelsFrontRight;
+	Wheel*   wheelsRearRight;
 	Engine*  engine;
 	Body* body;
 
@@ -86,135 +96,60 @@ public:
 	{
 		cout << "body:" << body->shape << std::endl;
 		cout << "engine horsepower:" << engine->horsepower << std::endl;
-		cout << "tire size:" << wheels[0]->size << "'" << std::endl;
+		cout << "tire size:" << wheelsFrontLeft->size << "'" << std::endl;
 	}
 };
 
 /***** Builder is responsible for constructing the smaller parts *******/
-class Builder
-{
-public:
-	Builder()
-	{
-		cout<<"Builder Constructor Called"<<endl;
-	}
 
-	virtual ~Builder()
-	{
-		cout<<"Builder Destructor Called"<<endl;
-	}
-	virtual Wheel* getWheel() = 0;
-	virtual Engine* getEngine() = 0;
-	virtual Body* getBody() = 0;
-};
-
-/*********** Director is responsible for the whole process **************/
-class Director
+class CarBuilder
 {
-	Builder* builder;
 
 public:
-	Director()
-	:builder(0)
+	CarBuilder()
 	{
-		cout<<"Director Constructor Called"<<endl;
+		cout<<"CarBuilder Constructor Called"<<endl;
 	}
 
-	~Director()
+	~CarBuilder()
 	{
-		cout<<"Director Destructor Called"<<endl;
-	}
-	void setBuilder(Builder* newBuilder)
-	{
-		builder = newBuilder;
+		cout<<"CarBuilder Destructor Called"<<endl;
 	}
 
-	Car* getCar()
+	static Car* getNissanCar()
 	{
 		Car* car = new Car();
 
-		car->body = builder->getBody();
+		car->body->shape="hatch back";
 
-		car->engine = builder->getEngine();
+		car->engine->horsepower = 85;
 
-		car->wheels[0] = builder->getWheel();
-		car->wheels[1] = builder->getWheel();
-		car->wheels[2] = builder->getWheel();
-		car->wheels[3] = builder->getWheel();
+		car->wheelsFrontLeft->size = 16;
+		car->wheelsRearLeft->size = 16;
+		car->wheelsFrontRight->size = 16;
+		car->wheelsRearRight->size = 16;
+
+		return car;
+	}
+
+	static Car* getJeepCar()
+	{
+		Car* car = new Car();
+
+		car->body->shape = "SUV";
+
+		car->engine->horsepower = 400;
+
+		car->wheelsFrontLeft->size = 22;
+		car->wheelsRearLeft->size = 22;
+		car->wheelsFrontRight->size = 22;
+		car->wheelsRearRight->size = 22;
 
 		return car;
 	}
 };
 
 
-/* Concrete Builder for Jeep SUV cars */
-class JeepBuilder : public Builder
-{
-public:
-	JeepBuilder()
-	{
-		cout<<"JeepBuilder Constructor Called"<<endl;
-	}
 
-	~JeepBuilder()
-	{
-		cout<<"JeepBuilder Destructor Called"<<endl;
-	}
-	Wheel* getWheel()
-	{
-		Wheel* wheel = new Wheel();
-		wheel->size = 22;
-		return wheel;
-	}
-
-	Engine* getEngine()
-	{
-		Engine* engine = new Engine();
-		engine->horsepower = 400;
-		return engine;
-	}
-
-	Body* getBody()
-	{
-		Body* body = new Body();
-		body->shape = "SUV";
-		return body;
-	}
-};
-
-/* Concrete builder for Nissan family cars */
-class NissanBuilder : public Builder
-{
-public:
-	NissanBuilder()
-	{
-		cout<<"NissanBuilder Constructor Called"<<endl;
-	}
-
-	~NissanBuilder()
-	{
-		cout<<"NissanBuilder Destructor Called"<<endl;
-	}
-	Wheel* getWheel()
-	{
-		Wheel* wheel = new Wheel();
-		wheel->size = 16;
-		return wheel;
-	}
-
-	Engine* getEngine()
-	{
-		Engine* engine = new Engine();
-		engine->horsepower = 85;
-		return engine;
-	}
-
-	Body* getBody()
-	{
-		Body* body = new Body();
-		body->shape = "hatchback";
-		return body;
-	}
-};
 
 #endif /* BUILDER_H_ */

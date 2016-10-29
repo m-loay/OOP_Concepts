@@ -4,18 +4,22 @@
  *  Created on: Oct 17, 2016
  *      Author: modys
  */
-
-#include"Decorator.h"
+#include "ShapeDecorator.h"
 
 int main ()
 {
-	AbstractNPC *goblin1= new Elite(new Shaman(new NPC(1,2)));
-	//AbstractNPC *orc1= new Elite(new Captain(new NPC(3,4)));
-	goblin1->draw(); cout << endl;
-//	orc1->draw(); cout << endl;
+	Shape *circle = new Circle;
 
-	delete goblin1;
-	//delete orc1;
+	RedShapeDecorator *redCircle = new RedShapeDecorator(new Circle);
+
+	cout<<"Basic Functionality"<<endl;
+	circle->draw();
+
+	cout<<"Decorator Functionality"<<endl;
+	redCircle->draw();
+
+	delete redCircle;
+	delete circle;
 }
 
 

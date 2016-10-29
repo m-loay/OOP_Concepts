@@ -12,29 +12,26 @@ using namespace std;
 
 int main()
 {
-    Car* car; // Final product
+    Car* nissanCar; // Final product
+    Car* jeepCar; // Final product
 
-    /* A director who controls the process */
-    Director director;
-
-    /* Concrete builders */
-    JeepBuilder jeepBuilder;
-    NissanBuilder nissanBuilder;
+    /* A builder who controls the process */
+    CarBuilder carbuilder;
 
     /* Build a Jeep */
-    std::cout << "Jeep" << std::endl;
-    director.setBuilder(&jeepBuilder); // using JeepBuilder instance
-    car = director.getCar();
-    car->specifications();
+    cout << "Jeep" << std::endl;
+    jeepCar = carbuilder.getJeepCar(); // using JeepBuilder instance
+    jeepCar->specifications();
 
     std::cout << std::endl;
 
     /* Build a Nissan */
-    std::cout << "Nissan" << std::endl;
-    director.setBuilder(&nissanBuilder); // using NissanBuilder instance
-    car = director.getCar();
-    car->specifications();
-    delete car;
+    cout << "Nissan" << std::endl;
+    nissanCar = carbuilder.getNissanCar(); // using JeepBuilder instance
+    nissanCar->specifications();
+
+    delete nissanCar;
+    delete jeepCar;
 
     return 0;
 }

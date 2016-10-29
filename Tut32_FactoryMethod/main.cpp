@@ -14,6 +14,7 @@ int main()
 {
 
 	vector<Widget*>roles;
+	widgetFactory *wfact = new widgetFactory;
 	int choice;
 	while(true)
 	{
@@ -21,7 +22,8 @@ int main()
 		cin >> choice;
 		if (choice == 0)
 			break;
-		roles.push_back(Widget::make_Widget(choice));
+		roles.push_back(wfact->make_Widget(choice));
+
 	}
 
 	for (unsigned int i = 0; i < roles.size(); i++)
@@ -29,6 +31,7 @@ int main()
 
 	for (unsigned int i = 0; i < roles.size(); i++)
 		delete roles[i];
+	delete wfact;
 
 }
 

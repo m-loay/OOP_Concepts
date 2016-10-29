@@ -5,23 +5,18 @@
  *      Author: modys
  */
 
-#include"ChainBase.h"
-#include<ctime>
+#include "ChainPattern.h"
 
 int main()
 {
-	srand(time(0));
-	Handler1 root;
-	Handler2 two;
-	Handler3 thr;
-	root.add(&two);
-	root.add(&thr);
-	thr.setNext(&root);
-	for (int i = 1; i < 10; i++)
-	{
-		root.handle(i);
-		cout << '\n';
-	}
+	Logger* chainLogger = ChainPattern::getChainofLogger();
+	chainLogger->logMessage(Logger::CONSOLE,"this is a console msg");
+	chainLogger->logMessage(Logger::FILE,"this is a file msg");
+	chainLogger->logMessage(Logger::ERROR,"this is an error msg");
+
+	delete chainLogger;
+
+	return(0);
 }
 
 

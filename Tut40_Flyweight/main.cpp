@@ -5,23 +5,56 @@
  *      Author: modys
  */
 
-#include"FlyweightFactory.h"
+#include "ShapeFactory.h"
 
- int main()
+string colours[5] = {"Red", "Green", "Blue", "White", "Black"};
+
+int main()
 {
-  DialogBox *dialogs[2];
-  dialogs[0] = new FileSelection(FlyweightFactory::getIcon("go"),
-    FlyweightFactory::getIcon("stop"), FlyweightFactory::getIcon("select"));
+	Circle *circleR1 = ShapeFactory::getCircle(colours[0]);
+	circleR1 ->setX(10);
+	circleR1->setY(10);
+	circleR1->setRadius(5);
+	circleR1->draw();
 
-  dialogs[1] = new CommitTransaction(FlyweightFactory::getIcon("select"),
-    FlyweightFactory::getIcon("stop"), FlyweightFactory::getIcon("undo"));
+	Circle *circleR2 = ShapeFactory::getCircle(colours[0]);
+	circleR2 ->setX(20);
+	circleR2->setY(20);
+	circleR2->setRadius(10);
+	circleR2->draw();
 
-  for (int i = 0; i < 2; i++)
-    dialogs[i]->draw();
+	Circle *circleR3 = ShapeFactory::getCircle(colours[0]);
+	circleR3 ->setX(30);
+	circleR3->setY(30);
+	circleR3->setRadius(20);
+	circleR3->draw();
 
-  FlyweightFactory::reportTheIcons();
+	Circle *circleG1 = ShapeFactory::getCircle(colours[1]);
+	circleG1 ->setX(10);
+	circleG1->setY(10);
+	circleG1->setRadius(5);
+	circleG1->draw();
 
-  for (int i = 0; i < 2; i++)
-    delete dialogs[i];
+	Circle *circleG2 = ShapeFactory::getCircle(colours[1]);
+	circleG2 ->setX(20);
+	circleG2->setY(20);
+	circleG2->setRadius(10);
+	circleG2->draw();
+
+	Circle *circleG3 = ShapeFactory::getCircle(colours[1]);
+	circleG3 ->setX(30);
+	circleG3->setY(30);
+	circleG3->setRadius(20);
+	circleG3->draw();
+
+	Circle *circleR4 = ShapeFactory::getCircle(colours[0]);
+	circleR4 ->setX(40);
+	circleR4->setY(40);
+	circleR4->setRadius(30);
+	circleR4->draw();
+
+
+
+
 }
 

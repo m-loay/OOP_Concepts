@@ -10,7 +10,7 @@
 int main()
 {
 	IAppliance *tv = new TV("myBedRoom");
-	Switch *s= new BridgeSwitch(tv);
+	Switch *s= new RemoteControl(tv);
 
 	s->turnOn();
 	s->turnOff();

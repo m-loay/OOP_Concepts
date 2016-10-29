@@ -8,7 +8,9 @@
 #ifndef BRIDGESWITCH_H_
 #define BRIDGESWITCH_H_
 #include <iostream>
+#include "IAppliance.h"
 using namespace std;
+
 class Switch
 {
 public:
@@ -24,78 +26,11 @@ public:
 	virtual void turnOff()=0;
 };
 
-class IAppliance
-{
-public:
-	IAppliance()
-	{
-		cout<<"IAppliance constructor called"<<endl;
-	}
-	virtual ~IAppliance()
-	{
-		cout<<"IAppliance destructor called"<<endl;
-	}
-       virtual void run()=0;
-       virtual void off()=0;
-};
-
-class TV : public IAppliance
-{
-private:
-        std::string name;
-public:
-        TV(std::string _name)
-        {
-            name = _name;
-            cout<<"TV constructor called"<<endl;
-        }
-
-       ~ TV()
-        {
-            cout<<"TV destructor called"<<endl;
-        }
-
-        void run()
-        {
-            std::cout << name <<" is Switch-On" << std::endl;
-        }
-        void off()
-        {
-            std::cout << name <<" is Switch-Off" << std::endl;
-        }
-     };
-
-class AC : public IAppliance
-    {
-private:
-        std::string name;
-
-public:
-        AC(std::string _name)
-        {
-            name = _name;
-            cout<<"AC constructor called"<<endl;
-        }
-
-        ~AC()
-        {
-        	  cout<<"AC destructor called"<<endl;
-        }
-        void run()
-        {
-            std::cout << name <<" is Switch-On" << std::endl;
-        }
-        void off()
-        {
-            std::cout << name <<" is Switch-Off" << std::endl;
-        }
-    };
-
 
 class BridgeSwitch : public Switch
 {
 
-protected:
+private:
     IAppliance* iAppliance;
 
 public:
@@ -112,23 +47,26 @@ public:
 
     void turnOn()
     {
-        std::cout << "Bridge on ";
+        cout << "Bridge on ";
         iAppliance->run();
     }
     void turnOff()
     {
-        std::cout << "Using Bridge";
+        cout << "Using Bridge";
         iAppliance->off();
     }
 };
 
-class RemoteControl : public BridgeSwitch
+class RemoteControl : public Switch
 {
+private:
+    IAppliance* iAppliance;
 
 public:
-        RemoteControl(IAppliance* i):BridgeSwitch(i)
+        RemoteControl(IAppliance* i)
         {
-        	 cout<<"RemoteControl constructor called"<<endl;
+        	iAppliance = i;
+        	cout<<"RemoteControl constructor called"<<endl;
         }
 
         ~RemoteControl()
@@ -138,31 +76,40 @@ public:
 
         void turnOn()
         {
-            std::cout << "Using Remote ";
+            cout << "Using Remote ";
             iAppliance->run();
         }
         void turnOff()
         {
-            std::cout << "Using Remote ";
+            cout << "Using Remote ";
             iAppliance->off();
         }
 };
 
-class Normal : public BridgeSwitch
+class Normal : public Switch
 {
+private:
+    IAppliance* iAppliance;
 public:
-        Normal(IAppliance* i):BridgeSwitch(i)
-        {
-        }
+		Normal(IAppliance* i)
+		{
+			iAppliance = i;
+			cout<<"Normal constructor called"<<endl;
+		}
+
+		~Normal()
+		{
+			cout<<"Normal destructor called"<<endl;
+		}
 
         void turnOn()
         {
-            std::cout << "Using Normal  ";
+            cout << "Using Normal  ";
             iAppliance->run();
         }
         void turnOff()
         {
-            std::cout << "Using Normal  ";
+            cout << "Using Normal  ";
             iAppliance->off();
         }
 };

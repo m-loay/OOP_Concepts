@@ -9,7 +9,9 @@
 #define WIDGET_H_
 #include <iostream>
 using namespace std;
-class Widget 
+
+
+class Widget
 {
 public:
 	Widget()
@@ -22,25 +24,8 @@ public:
 	}
 	virtual void draw()=0;
 	virtual Widget * clone()=0;
-	static Widget *make_Widget(int choice);
 };
 
-class Factory
-{
-public:
-	Factory()
-	{
-		cout<<"Factory constructor called"<<endl;
-	}
-	virtual ~Factory()
-	{
-		cout<<"Factory destructor called"<<endl;
-	}
-	static Widget *make_Widget(int choice);
-
-private:
-	 static Widget* s_prototypes[4];
-};
 
 /**
  * Concrete product family 1.
@@ -125,6 +110,23 @@ public:
 	}
 };
 
+
+class Factory
+{
+public:
+	Factory()
+	{
+		cout<<"Factory constructor called"<<endl;
+	}
+	virtual ~Factory()
+	{
+		cout<<"Factory destructor called"<<endl;
+	}
+	static Widget *make_Widget(int choice);
+
+private:
+	 static Widget* s_prototypes[4];
+};
 
 Widget *Factory::make_Widget(int choice)
 {

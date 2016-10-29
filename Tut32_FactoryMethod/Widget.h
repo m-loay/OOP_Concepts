@@ -9,6 +9,7 @@
 #define WIDGET_H_
 #include <iostream>
 using namespace std;
+
 class Widget 
 {
 public:
@@ -90,8 +91,25 @@ public:
 	void draw() { cout << "WindowsMenu\n"; }
 };
 
+class widgetFactory
+{
+public:
+	widgetFactory()
+	{
+		cout<<"widgetFactory constructor called"<<endl;
+	}
 
-Widget *Widget::make_Widget(int choice)
+	~widgetFactory()
+	{
+		cout<<"widgetFactory destructor called"<<endl;
+	}
+
+	static Widget *make_Widget(int choice);
+
+
+};
+
+Widget *widgetFactory::make_Widget(int choice)
 {
 	switch (choice)
 	{
