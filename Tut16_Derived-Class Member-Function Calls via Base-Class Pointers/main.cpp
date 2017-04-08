@@ -16,7 +16,7 @@ int main ()
 	CommissionEmployee *comEmp_ptr=0;
 
 	//create object from derived class
-	BasePlus baseEmp("Bob","Lewis","22-22",5000,0.04,300);
+	BasePlus baseEmp("Samer","Saber","22-22",5000,0.04,300);
 
 	//Assign a base class pointer to derived object
 	comEmp_ptr=&baseEmp;

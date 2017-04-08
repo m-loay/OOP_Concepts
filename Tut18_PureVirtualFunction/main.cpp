@@ -20,10 +20,10 @@ void virtualPointer (const employee* const);
 void virtualRef(const employee &);
 int main ()
 {
-	SalariedEmployee salEmp("Mody", "Ali","11-111",5000);
-	HourlyEmployee hlEmp("Manar", "Ali","22-222", 16.5, 40);
-	CommissionEmployee comEmp("Mayar", "Ali","33-333",10000,0.06);
-	BasePlus baseEmp ("Loay", "Ali", "444-444",5000,0.04,300);
+	SalariedEmployee salEmp("Ahmed", "Darwish","11-111",5000);
+	HourlyEmployee hlEmp("Alaa", "Mahdy","22-222", 16.5, 40);
+	CommissionEmployee comEmp("Kareem", "Elessawy","33-333",10000,0.06);
+	BasePlus baseEmp ("Mona", "Salem", "444-444",5000,0.04,300);
 
 	cout<<"Priniting data using objects"<<endl;
 	salEmp.print();

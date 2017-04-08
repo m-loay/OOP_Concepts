@@ -17,8 +17,8 @@ int main ()
 {
 
 	/*Create two objects from different clases*/
-	CommissionEmployee cemp("Mody","Loay","123",100.0,0.1);
-	BasePlus bemp ("Loay","Ali","1234",1000,0.1,100);
+	CommissionEmployee cemp("Mostafa","Elbaz","123",100.0,0.1);
+	BasePlus bemp ("Amr","Sabry","1234",1000,0.1,100);
 
 	/*create pointers from base objects to derived objects*/
 	CommissionEmployee *ptr_cemp=&cemp;

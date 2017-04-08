@@ -12,7 +12,7 @@ using namespace std;
 
 int main ()
 {
-	BasePlus emp("mody", "Ali", "777", 5000, 0.04, 300);
+	BasePlus emp("Haytham", "Ramdan", "777", 5000, 0.04, 300);
 	emp.print();
 
 

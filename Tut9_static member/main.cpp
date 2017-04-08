@@ -16,8 +16,8 @@ int main()
 
 	{
 
-		Employee e1("mody", "ali");
-		Employee e2("Maha", "imam");
+		Employee e1("Ahmed", "Eissa");
+		Employee e2("Samer", "Amgad");
 
 		cout<<"Number of objects "<<Employee::getCount()<<endl;
 

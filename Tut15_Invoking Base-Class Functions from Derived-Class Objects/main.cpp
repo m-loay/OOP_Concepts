@@ -13,10 +13,10 @@ using namespace std;
 int main ()
 {
 	/*Create instance of Base class and derived Class with a pointer of each*/
-	CommissionEmployee comEmp("Sue","Jones","33-3",1000,0.06);
+	CommissionEmployee comEmp("Mohamed","Fahmy","33-3",1000,0.06);
 	CommissionEmployee *comEmp_ptr=0;
 
-	BasePlus baseEmp("Bob","Lewis","22-22",5000,0.04,300);
+	BasePlus baseEmp("Gabreeal","Saber","22-22",5000,0.04,300);
 	BasePlus *baseEmp_ptr=0;
 
 	/*Print the data in all objects*/
