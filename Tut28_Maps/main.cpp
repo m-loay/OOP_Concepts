@@ -15,13 +15,13 @@ typedef map<string, string> MapString;
 int main ()
 {
 	MapString family;
-	family.insert(MapString::value_type("Father","Loay"));
-	family.insert(MapString::value_type("Mother","Bella"));
+	family.insert(MapString::value_type("Father","x"));
+	family.insert(MapString::value_type("Mother","y"));
 	family.insert(MapString::value_type("Son","Mody"));
-	family.insert(MapString::value_type("F.Daughter","Manar"));
-	family.insert(MapString::value_type("S.Daughter","Mayar"));
-	family.insert(MapString::value_type("S.Daughter","Mayar"));
-	family.insert(MapString::value_type("S.Daughter","Mayar"));
+	family.insert(MapString::value_type("F.Daughter","z"));
+	family.insert(MapString::value_type("S.Daughter","s"));
+	family.insert(MapString::value_type("S.Daughter","s"));
+	family.insert(MapString::value_type("S.Daughter","s"));
 
 	for(MapString::const_iterator it = family.begin(); it != family.end(); ++it)
 	{
