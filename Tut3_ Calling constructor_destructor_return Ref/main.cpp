@@ -2,6 +2,10 @@
  * main.cpp
  *
  *  Created on: Jun 14, 2016
+ *  The purpose of the tutorial
+ *  1)To understand how to calculate the size of object
+ *  2)To understand how constructors and destructors are called ,
+ *  a
 */
 
 #include<iostream>
@@ -17,13 +21,9 @@ int main()
 
 	cout << "\nMAIN FUNCTION: EXECUTION BEGINS"<< endl;
 
-	cout << "\nReturn ref from t1"<< endl;
-	int &t1_ref=t1.badSetHour(11);
-	cout << "\n Assign invalid value to hour t1"<< endl;
-	t1_ref=50;
-	cout << "\n  invalid value to hour t1= "<<t1.getHour()<< endl;
-	cout<<sizeof(t1)<<endl;
-	cout<<sizeof(int)<<endl;
+	cout << "\n Object size depends on data members which are 4 int"<< endl;
+	cout<<"The size of one int is -->"<<sizeof(int)<<endl;
+	cout<<"The size of object is -->"<<sizeof(t1)<<endl;
 
 	Time_Base t2 (2,2,2,2);
 	static Time_Base t3(3,3,3,3);

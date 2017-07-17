@@ -34,7 +34,7 @@ public:
 	const Array &operator++();
 
 	// postfix operator overload
-	const Array &operator++(int);
+	const Array operator++(int);
 
 	//Assignment operator
 	const Array &operator=(const Array&); // assignment operator

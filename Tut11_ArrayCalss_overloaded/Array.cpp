@@ -64,9 +64,9 @@ const Array& Array::operator ++()
 	return *this;
 }
 
-const Array& Array::operator ++(int)
+const Array Array::operator ++(int)
 {
-	static Array& temp = *this;
+	Array temp = *this;
 	++counter;
 	return temp;
 }

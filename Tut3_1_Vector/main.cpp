@@ -59,11 +59,6 @@ int main ()
 	cout<<"Integers 3 size"<<integers3.size()<<endl;
 	outputVector(integers3);
 
-	cout<<"output vector 3"<<endl;
-	cout<<"Integers 3 size"<<integers3.size()<<endl;
-	outputVector(integers3);
-
-
 
 }
 
