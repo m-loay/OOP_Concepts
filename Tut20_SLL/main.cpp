@@ -16,9 +16,6 @@ int main ()
 	numList.insert(1);
 	numList.insert(5);
 	numList.insert(6);
-	numList.insert(7);
-	numList.insert(8);
-	numList.insert(2);
 
 	numList.print();
 	numList.remove(3);
