@@ -9,12 +9,15 @@
 #include "Menu.h"
 #include "singleLinkedList.h"
 #define DEBUG 0
+
 using namespace std;
 
 int main()
 {
 	string data[ROW]={"Insert","Print","Find", "Delete","Get Count","Free List","Exit"};
+
 	singleLinkedList singleLinked;
+
 	Menu sll_menu(data, singleLinked, ROW, COL, 20,8);
 
 
