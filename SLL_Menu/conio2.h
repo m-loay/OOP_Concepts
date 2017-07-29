@@ -96,12 +96,15 @@ typedef enum
  */
 struct text_info {
     unsigned char curx;          /**< cursor coordinate x */
+
     unsigned char cury;          /**< cursor coordinate y */
+
     unsigned short attribute;    /**< current text attribute */
+
     unsigned short normattr;     /**< original value of text attribute after
                                       start of the application. If you don't
                                       called the <TT>inittextinfo</TT> on the
-                                      beginning of the application, this always
+                             s         beginning of the application, this always
                                       will be black background and light gray
                                       foreground */
     unsigned char screenwidth;   /**< screen width */
