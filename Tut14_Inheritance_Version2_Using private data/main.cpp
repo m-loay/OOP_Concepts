@@ -12,7 +12,6 @@ using namespace std;
 
 int main ()
 {
-
 	BasePlus emp("Islam","Abdelmenaim","123",100,0.1,100);
 	emp.print();
 }
