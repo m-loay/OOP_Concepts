@@ -3,12 +3,6 @@
  *
  *  Created on: Jun 18, 2016
  *      Author: modys
- *
- *      The purpose of the tutorial to understand
- *      1)using member initializer to initialze the member objects,
- *       eliminates the over-head of “doubly initializing” member objects.
- *
- *       2)constructing large objects from samll ones.
  */
 
 #include<iostream>
