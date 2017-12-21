@@ -1,7 +1,7 @@
 #Tut22_Qeue
 Object Oriented Programming 
 
-The purpose of the tutorial to implement a sstack template.
+The purpose of the tutorial to implement a queue template.
 
 1. mkdir Debug
 2. cd Debug
