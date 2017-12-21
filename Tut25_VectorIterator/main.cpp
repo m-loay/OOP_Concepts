@@ -23,12 +23,15 @@ void printVectorReverse (const vector<T>&vec);
 
 int main ()
 {
+	/*Create object intgers from vector template*/
 	vector<int>integers;
 
+	/*Use ostream_iterator */
 	ostream_iterator< int >output( cout, " " );
 	cout<<"Intgers size = "<<integers.size()<<endl;
 	cout<<"Intgers Capacity = "<<integers.capacity()<<endl;
 
+	/*Entering data to vector and print it */
 	cout<<"Entering data to vector"<<endl;
 	integers.push_back(1);
 	integers.push_back(2);
@@ -46,9 +49,11 @@ int main ()
 	integers.push_back(5);
 	printVectorReverse(integers);
 
+	/*Use copy */
 	cout<<"use Copy"<<endl;
 	copy(integers.begin(),integers.end(),output);
 
+	/*Add Data to certain index */
 	integers[0]=10;
 	cout<<"integers[0]=10"<<endl;
 	printVector(integers);
@@ -60,8 +65,6 @@ int main ()
 	integers.erase(integers.begin());
 	cout<<"integers.erase(integers.begin())"<<endl;
 	printVector(integers);
-
-
 }
 
 template <typename T>
