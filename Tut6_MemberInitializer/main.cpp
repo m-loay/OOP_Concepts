@@ -6,12 +6,13 @@
  */
 
 #include<iostream>
-#include "Increment.h"// include definition of class Increment
+#include "Increment.h"
 using namespace std;
 
 
 int main ()
 {
+	/*Create object and initialize it*/
 	Increment value(10,5);
 
 	cout<<"before Increment"<<endl;
@@ -22,6 +23,5 @@ int main ()
 		value.addIncrement();
 		cout<<"After Increment j= "<<var<<endl;
 		value.print();
-
 	}
 }

@@ -15,7 +15,8 @@ Increment::Increment(int c , int i )
 
 }
 
-Increment::~Increment() {
+Increment::~Increment() 
+{
 	// TODO Auto-generated destructor stub
 }
 
