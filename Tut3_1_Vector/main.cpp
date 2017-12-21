@@ -23,7 +23,10 @@ int main ()
 	cout<<"Integers 1 size"<<integers1.size()<<endl;
 	cout<<"Integers 2 size"<<integers2.size()<<endl;
 
+	cout<<"outputs of Integers 1 "<<endl;
 	outputVector(integers1);
+
+	cout<<"outputs of Integers 2"<<endl;
 	outputVector(integers2);
 
 	//insert data
