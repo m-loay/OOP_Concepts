@@ -86,7 +86,7 @@ void Stack<T>::print()const
 	{
 		for(int i=0; i<top ; i++)
 		{
-			cout<<"element"<<i<<"/"<<size-1<<"="<<stackPtr[i]<<endl;
+			cout<<"element"<<(i+1)<<"/"<<top<<"="<<stackPtr[i]<<endl;
 		}
 	}
 	else
