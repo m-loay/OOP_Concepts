@@ -14,6 +14,4 @@ int main ()
 {
 	BasePlus emp("Haytham", "Ramdan", "777", 5000, 0.04, 300);
 	emp.print();
-
-
 }
