@@ -9,12 +9,14 @@
 using namespace std;
 int main ()
 {
+	/*Taking input*/
 	cout<<"Enter two integers"<<endl;
 	istream_iterator<int> inputInt(cin);
 	int number1 = *inputInt;
 	inputInt++;
 	int number2 = *inputInt;
 
+	/*Taking output*/
 	ostream_iterator<int>outoutInt(cout);
 	cout<<"The sum is ";
 	outoutInt = number1+number2;
