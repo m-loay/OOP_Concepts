@@ -3,13 +3,6 @@
  *
  *  Created on: Jun 23, 2016
  *      Author: modys
- *      The purpose of the tutorial
- *      1)when using base pointer to derived object , it called the base functionality
- *        in the object only.
- *
- *       2)Using virtual functions and base pointer to derived object , the compiler
- *        construct a v-table(According to inheritance hierarchy) and call the member function
- *        associated with the object being pointed not the type of the pointer.
  */
 
 #include <iostream>
