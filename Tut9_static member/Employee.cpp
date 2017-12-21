@@ -23,7 +23,8 @@ Employee::Employee(const string &first, const string &last)
 	<< firstName << ' '<< lastName << endl;
 }
 
-Employee::~Employee() {
+Employee::~Employee() 
+{
 	// TODO Auto-generated destructor stub
 	--count;
 	cout << "Employee object destructor: "
