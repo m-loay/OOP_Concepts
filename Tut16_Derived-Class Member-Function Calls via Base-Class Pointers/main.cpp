@@ -4,14 +4,6 @@
  *  Created on: Jun 23, 2016
  *      Author: modys
  *      The purpose of the tutorial
- *      1)The base class object pointer can be assigned to derived object,
- *        but can only invoke base class functionality in the derived object.
- *
- *      2)In inheritance , the derived class can overridden a definition of
- *       a member function of base class
- *
- *      3)A member function of base class can be called in derived class
- *        baseClassName::function name , as it appears in earning member function.
  *
  */
 

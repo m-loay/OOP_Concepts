@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(Tut14_Inheritance_UsingPrivateData)
+project(Tut16_Derived_ClassMemberFunctionCallsViaBaseClassPointers-Class)
  
 #Bring the headers, such as Student.h into the project
 #include_directories()
