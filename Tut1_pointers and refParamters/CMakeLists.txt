@@ -14,6 +14,5 @@ project(Tut1_pointersandrefParamters)
 set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_BUILD_TYPE Debug)
-SET( CMAKE_CXX_COMPILER "C:/MinGW/bin/g++" )
 
 add_executable(test main.cpp TimeBase.cpp)
