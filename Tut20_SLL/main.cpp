@@ -22,9 +22,6 @@ int main ()
 
 	numList.print();
 	cout<<"number of Elements"<<numList.getCount()<<endl;
-
-
-
 }
 
 
