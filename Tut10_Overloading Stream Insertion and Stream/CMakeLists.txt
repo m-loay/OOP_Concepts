@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(Tut9_static_member)
+project(Tut10_Overloading_Stream_Insertion_and_Stream)
  
 #Bring the headers, such as Student.h into the project
 #include_directories()
@@ -14,4 +14,4 @@ project(Tut9_static_member)
 set(CMAKE_BUILD_TYPE Debug)
 
 
-add_executable(test main.cpp Employee.cpp)
+add_executable(test main.cpp PhoneNumber.cpp)

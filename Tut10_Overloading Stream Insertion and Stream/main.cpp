@@ -13,11 +13,14 @@ int main ()
 {
 	PhoneNumber phone;
 
-	cout<<"Enter your first and last Name";
+	
+	cout<<"Enter your first and last Name"<<endl;
+	
 	/*operator>>( cin, phone );*/
 	cin>>phone;
 
-	cout<<"your entered ";
+	cout<<"your entered "<<endl;
+
 	/*operator<<( cout, phone );*/
 	cout<<phone;
 }

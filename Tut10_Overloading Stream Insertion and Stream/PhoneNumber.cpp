@@ -8,6 +8,7 @@
 using namespace std;
 #include "PhoneNumber.h"
 #include<iomanip>
+
 PhoneNumber::PhoneNumber()
 {
 	// TODO Auto-generated constructor stub
@@ -23,15 +24,15 @@ PhoneNumber::~PhoneNumber()
 
 ostream &operator<< (ostream &output, const PhoneNumber &number)
 {
-	output << number.firstName<<" "<<number.lastName;
+	output << number.firstName<<" "<<number.lastName<<"\n";
 	return output;
 }
 
 istream &operator>>( istream &input, PhoneNumber &number )
 {
 
-	input >> setw( 5) >> number.firstName; // input area code
-	input >> setw( 4) >> number.lastName;// input exchange
+	input >> setw( 10) >> number.firstName; // input area code
+	input >> setw( 10) >> number.lastName;// input exchange
 
 	return input; // enables cin >> a >> b >> c;
 }
