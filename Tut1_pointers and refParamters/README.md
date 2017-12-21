@@ -14,6 +14,7 @@ In this Tutorial to understand the difference between the pointer and the refere
 
 ## Other Important Dependencies
 * cmake >= 3.5
+
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
   * Linux: make is installed by default on most Linux distros
