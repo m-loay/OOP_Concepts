@@ -14,10 +14,14 @@ using namespace std;
  * dangof returning a reference*/
 int main()
 {
+	/*Creating object from time base*/
 	Time_Base t;
+
+	/*Creating pointer and ref to the time base object*/
 	Time_Base *t_ptr=&t;
 	Time_Base &t_ref=t;
 
+	/*printing time using the object and use sitters*/
 	cout<<"The init universal Time is";
 	t.printUniversal();
 
@@ -38,6 +42,7 @@ int main()
 	cout<<"The init standard time is";
 	t_ref.printStandard();
 
+	/*Using bad setting through function that return ref*/
 	cout<<"Using bad setting through function that return ref"<<endl;
 
 	int &h_ref=t.badSetHour(10);
@@ -47,6 +52,7 @@ int main()
 	cout<<"The init standard time is";
 	t.printStandard();
 
+	/*change time using the reference [not using sitters]*/
 	h_ref=35;
 	cout<<"h_ref=35"<<endl;
 	cout<<"The init universal Time is";
