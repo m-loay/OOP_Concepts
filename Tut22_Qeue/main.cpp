@@ -28,7 +28,5 @@ int main ()
 
 	numQ.deqeue();
 	numQ.print();
-
-
 }
 
