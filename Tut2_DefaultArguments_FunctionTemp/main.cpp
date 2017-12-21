@@ -18,22 +18,30 @@ int main ()
 	volume_box.print_volume();
 
 	/*Default Arguments*/
+
+	/*Default Arguments, set without using any input arguments*/
 	volume_box.setDim();
 	volume_box.print_volume();
 
+	/*Default Arguments, set the first arguments only*/
 	volume_box.setDim(10);
 	volume_box.print_volume();
 
+	/*Default Arguments , set the first and second arguments*/
 	volume_box.setDim(10,5);
 	volume_box.print_volume();
 
+	/*Default Arguments ,  set all arguments*/
 	volume_box.setDim(10,5,2);
 	volume_box.print_volume();
 
 	/*Function Template*/
+
+	/*given to function integers arguments*/
 	volume_box.max_valueInt(10,5,2);
 	cout << "dBiggest int: "<<volume_box.getBiggestInt() <<endl;// prompt user for data
 
+	/*given to function floats arguments*/
 	volume_box.max_valueDouble(10.5,5.3,2.1);
 	cout << "dBiggest double: "<<volume_box.getBiggestDouble() <<endl;// prompt user for data
 
