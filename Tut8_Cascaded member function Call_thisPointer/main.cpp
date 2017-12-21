@@ -12,8 +12,10 @@ using namespace std;
 
 int main ()
 {
+	/*Create object from class Time_base*/
 	Time_Base t;
 
+	/*Perform the cascaded member function call*/
 	t.setHour(18).setMin(20).setSec(22);
 	cout<<"Universal Time";
 	t.printStandard();
