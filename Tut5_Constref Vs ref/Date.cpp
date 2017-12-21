@@ -17,14 +17,14 @@ Date::Date(int mn ,int dy, int yr,int id)
 	day = (dy> 0 && dy<=30)?dy:1;
 	ID =id;
 
-	cout <<"constructor Date of id "<<ID<<"has been called"<<endl;
+	cout <<"constructor Date of id "<<ID<<" has been called"<<endl;
 }
 
 
 Date::~Date()
 {
   // TODO Auto-generated destructor stub
-  cout <<"destructor Date of id "<<ID<<"has been called"<<endl;
+  cout <<"destructor Date of id "<<ID<<" has been called"<<endl;
 }
 
 void Date::setDay(int dy)

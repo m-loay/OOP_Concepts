@@ -3,11 +3,6 @@
  *
  *  Created on: Jun 18, 2016
  *      Author: modys
- *      1)To understand passing object to function mechanisms.
- *      2)Send object by value requires calling the default copy constructor.
- *      3)Send object by reference will not require calling the copy constructor
- *       and it allows modifying the object.
- *      4)Send the object by constant reference , will disallow modifying the object.
  */
 
 #include<iostream>
@@ -20,18 +15,22 @@ void passObjectByConstRef (const Date &x);
 
 int main()
 {
+  /*Create an object and print it*/
   Date d1(7,1,1990,1);
 
   d1.print();
 
+  /*Send object by value requires calling the default copy constructor.*/
   passObjectByValue(d1);
   cout<<"Printing the object after modification  "<<endl;
   d1.print();
 
+  /*Send object by reference will not require calling the copy constructor  and it allows modifying the object.*/
   passObjectByRef(d1);
   cout<<"Printing the object after modification  "<<endl;
   d1.print();
 
+  /*Send the object by constant reference , will disallow modifying the object.*/
   passObjectByConstRef(d1);
   d1.print();
 
