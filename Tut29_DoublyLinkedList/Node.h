@@ -8,11 +8,11 @@
 #ifndef NODE_H_
 #define NODE_H_
 
-template <typename NODETYPE> class Slist;
+template <typename NODETYPE> class Dlist;
 template <typename NODETYPE>
 class Node
 {
-	friend class Slist<NODETYPE>;
+	friend class Dlist<NODETYPE>;
 public:
 	Node(const NODETYPE &);
 	NODETYPE getData()const;

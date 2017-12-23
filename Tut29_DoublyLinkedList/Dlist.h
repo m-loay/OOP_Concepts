@@ -1,22 +1,22 @@
 /*
- * Slist.h
+ * Dlist.h
  *
  *  Created on: Sep 25, 2016
  *      Author: modys
  */
 
-#ifndef SLIST_H_
-#define SLIST_H_
+#ifndef Dlist_H_
+#define Dlist_H_
 #include <iostream>
 #include "Node.h"
 using namespace std;
 
 template <typename NODETYPE>
-class Slist
+class Dlist
 {
 public:
-	Slist();
-	~Slist();
+	Dlist();
+	~Dlist();
 	bool insertFront(const NODETYPE &);
 	bool insertBack(const NODETYPE &);
 	bool removeFront();
@@ -36,14 +36,14 @@ private :
 };
 
 template <typename NODETYPE>
-Slist<NODETYPE>::Slist()
+Dlist<NODETYPE>::Dlist()
 :start(0),end(0)
  {
 
  }
 
 template <typename NODETYPE>
-Slist<NODETYPE>::~Slist()
+Dlist<NODETYPE>::~Dlist()
 {
 	if(!isEmpty())
 	{
@@ -60,7 +60,7 @@ Slist<NODETYPE>::~Slist()
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::insertFront(const NODETYPE &val)
+bool Dlist<NODETYPE>::insertFront(const NODETYPE &val)
 {
 
 	Node <NODETYPE>*newNode = getNewNode(val);
@@ -82,7 +82,7 @@ bool Slist<NODETYPE>::insertFront(const NODETYPE &val)
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::insertBack(const NODETYPE &val)
+bool Dlist<NODETYPE>::insertBack(const NODETYPE &val)
 {
 
 	Node <NODETYPE>*newNode = getNewNode(val);
@@ -104,7 +104,7 @@ bool Slist<NODETYPE>::insertBack(const NODETYPE &val)
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::removeFront()
+bool Dlist<NODETYPE>::removeFront()
 {
 	if(isEmpty()) return false;
 	Node <NODETYPE>*current = start;
@@ -120,7 +120,7 @@ bool Slist<NODETYPE>::removeFront()
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::removeBack()
+bool Dlist<NODETYPE>::removeBack()
 {
 	if(isEmpty()) return false;
 	Node <NODETYPE>*current = end;
@@ -136,7 +136,7 @@ bool Slist<NODETYPE>::removeBack()
 }
 
 template <typename NODETYPE>
-int Slist<NODETYPE>::getCount()const
+int Dlist<NODETYPE>::getCount()const
 {
 	if(isEmpty()) return 0;
 	int counter=0;
@@ -150,7 +150,7 @@ int Slist<NODETYPE>::getCount()const
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::find(Node <NODETYPE> *search,const NODETYPE& keyValue)const
+bool Dlist<NODETYPE>::find(Node <NODETYPE> *search,const NODETYPE& keyValue)const
 {
 
 	if(search->data == keyValue) return true;
@@ -159,7 +159,7 @@ bool Slist<NODETYPE>::find(Node <NODETYPE> *search,const NODETYPE& keyValue)cons
 }
 
 template <typename NODETYPE>
-void Slist<NODETYPE>::print()const
+void Dlist<NODETYPE>::print()const
 {
 	if(isEmpty())
 	{
@@ -178,15 +178,15 @@ void Slist<NODETYPE>::print()const
 }
 
 template <typename NODETYPE>
-Node <NODETYPE> * Slist<NODETYPE>::getNewNode(const NODETYPE &value)
+Node <NODETYPE> * Dlist<NODETYPE>::getNewNode(const NODETYPE &value)
 {
 	return new Node<NODETYPE>(value);
 }
 
 template <typename NODETYPE>
-bool Slist<NODETYPE>::isEmpty()const
+bool Dlist<NODETYPE>::isEmpty()const
 {
 	return start == 0;
 }
 
-#endif /* SLIST_H_ */
+#endif /* Dlist_H_ */

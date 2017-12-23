@@ -6,13 +6,13 @@
  */
 
 #include<iostream>
-#include "Slist.h"
+#include "Dlist.h"
 #include "Node.h"
 using namespace std;
 
 int main ()
 {
-	Slist<int>numList;
+	Dlist<int>numList;
 	numList.insertFront(8);
 	numList.insertFront(7);
 	numList.insertFront(6);
