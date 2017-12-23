@@ -12,28 +12,42 @@ using namespace std;
 
 class Singleton
 {
-	int m_value;
-	static Singleton *s_instance;
-	Singleton(int v = 0)
-	{
-		m_value = v;
-	}
-public:
-	int getValue()
-	{
-		return m_value;
-	}
-	void setValue(int v)
-	{
-		m_value = v;
-	}
-	static Singleton *instance()
+	public:
+	static Singleton *getinstance()
 	{
 		if (!s_instance)
 			s_instance = new Singleton;
 		return s_instance;
 	}
 
+	~Singleton()
+	{
+		cout<<"SingleTon destructor called"<<endl;
+	}
+
+	int getValue()
+	{
+		return m_value;
+	}
+
+	void setValue(int v)
+	{
+		m_value = v;
+	}
+
+	void printSingleTon(void)
+	{
+		cout<<"objectValue="<<m_value<<endl;
+	}
+
+	private:
+	int m_value;
+	static Singleton *s_instance;
+	Singleton(int v = 0)
+	{
+		cout<<"SingleTon constructor called"<<endl;
+		m_value = v;
+	}
 };
 
 
