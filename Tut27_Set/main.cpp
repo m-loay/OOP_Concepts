@@ -17,6 +17,7 @@ void printSet (const set<T>&Set);
 
 int main ()
 {
+	/*Initializations of set and array and printing*/
 	const int size = 6;
 	bool dups =0;
 	double a[size]={1.1,2.2,3.3,4.4,5.5,3.3};
@@ -26,21 +27,25 @@ int main ()
 	cout<<"Fnum data"<<endl;
 	printSet(fnum);
 
-	cout << "insert element \"6.6\"" << endl;
+	/*insert element 6.6 to set and check if its inserted successfully */
+	cout << "insert element \"6.6\" " << endl;
 	p = fnum.insert(6.6);
 	cout<<"element "<<*(p.first)<<(p.second?" was ":" was not ")<<"inserted"<<endl;
 	printSet(fnum);
 
+	/*insert element 6.6 again (duplicate) to set and check if its inserted successfully */
 	cout << "insert element \"6.6 as duplicate\"" << endl;
 	p = fnum.insert(6.6);
 	cout<<"element "<<*(p.first)<<(p.second?" was ":" was not ")<<"inserted"<<endl;
 	printSet(fnum);
 
+	/*Search on set*/
 	cout << "Search 4.4" << endl;
 	doubleSet::const_iterator it = fnum.find(4.4);
 	cout<<"element"<<(it != fnum.end()?" was":" was not")<<" found"<<endl;
 	printSet(fnum);
 
+	/*Using inserting to set to check an array if it has a dupicate element*/
 	cout<<"Find duplicate element in an array"<<endl;
 	doubleSet fnumber;
 	for(int i=0; i<size; i++)
@@ -53,7 +58,6 @@ int main ()
 		}
 	}
 	cout<<"Array "<<(dups?" has ":" has not ")<<"Duplicates elements"<<endl;
-
 }
 
 template <typename T>
@@ -66,5 +70,3 @@ void printSet (const set<T>&Set)
 	}
 	cout<<endl;
 }
-
-
