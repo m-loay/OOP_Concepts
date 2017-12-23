@@ -20,11 +20,13 @@ int main()
 	intTree.insertNode(33);
 	intTree.insertNode(48);
 
+	cout<<"inOrderTraversal"<<endl;
 	intTree.inOrderTraversal();
+
+	cout<<"\npreOrderTraversal"<<endl;
 	intTree.preOrderTraversal();
+
+	cout<<"\npostOrderTraversal"<<endl;
 	intTree.postOrderTraversal();
 
 }
-
-
-

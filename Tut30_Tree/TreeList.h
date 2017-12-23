@@ -72,7 +72,7 @@ void TreeList<NODETYPE>::preOrderTraversalHelper(TreeNode<NODETYPE>*p)const
 {
 	if(p!=0)
 	{
-		cout<<p->data<<" "<<endl;
+		cout<<p->data<<" ";
 		preOrderTraversalHelper(p->left);
 		preOrderTraversalHelper(p->right);
 	}
@@ -90,7 +90,7 @@ void TreeList<NODETYPE>::inOrderTraversalHelper(TreeNode<NODETYPE>*p)const
 	if(p!=0)
 	{
 		inOrderTraversalHelper(p->left);
-		cout<<p->data<<" "<<endl;
+		cout<<p->data<<" ";
 		inOrderTraversalHelper(p->right);
 	}
 }
@@ -108,7 +108,7 @@ void TreeList<NODETYPE>::postOrderTraversalHelper(TreeNode<NODETYPE>*p)const
 	{
 		postOrderTraversalHelper(p->left);
 		postOrderTraversalHelper(p->right);
-		cout<<p->data<<" "<<endl;
+		cout<<p->data<<" ";
 	}
 }
 
