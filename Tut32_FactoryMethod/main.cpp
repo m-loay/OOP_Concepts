@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include "Widget.h"
+#include "Shape.h"
 using namespace std;
 
 int main()
