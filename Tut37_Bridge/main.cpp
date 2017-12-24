@@ -9,7 +9,7 @@
 
 int main()
 {
-	IAppliance *tv = new TV("myBedRoom");
+	IAppliance *tv = new SonyTV("myBedRoom");
 	Switch *s= new RemoteControl(tv);
 
 	s->turnOn();

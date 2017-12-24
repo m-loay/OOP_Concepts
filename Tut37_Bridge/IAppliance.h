@@ -21,59 +21,59 @@ public:
 	{
 		cout<<"IAppliance destructor called"<<endl;
 	}
-       virtual void run()=0;
+       virtual void on()=0;
        virtual void off()=0;
 };
 
-class TV : public IAppliance
+class SonyTV : public IAppliance
 {
 private:
         std::string name;
 public:
-        TV(std::string _name)
+        SonyTV(std::string _name)
         {
             name = _name;
-            cout<<"TV constructor called"<<endl;
+            cout<<"SonyTV constructor called"<<endl;
         }
 
-       ~ TV()
+       ~ SonyTV()
         {
-            cout<<"TV destructor called"<<endl;
+            cout<<"SonyTV destructor called"<<endl;
         }
 
-        void run()
+        void on()
         {
-            std::cout << name <<" is Switch-On" << std::endl;
+            std::cout << name <<"SonyTV is Switched-On" << std::endl;
         }
         void off()
         {
-            std::cout << name <<" is Switch-Off" << std::endl;
+            std::cout << name <<"SonyTV is Switched-Off" << std::endl;
         }
      };
 
-class AC : public IAppliance
+class SamsungTV : public IAppliance
     {
 private:
         std::string name;
 
 public:
-        AC(std::string _name)
+        SamsungTV(std::string _name)
         {
             name = _name;
-            cout<<"AC constructor called"<<endl;
+            cout<<"SamsungTV constructor called"<<endl;
         }
 
-        ~AC()
+        ~SamsungTV()
         {
-        	  cout<<"AC destructor called"<<endl;
+        	  cout<<"SamsungTV destructor called"<<endl;
         }
-        void run()
+        void on()
         {
-            std::cout << name <<" is Switch-On" << std::endl;
+            std::cout << name <<"SamsungTV is Switched-On" << std::endl;
         }
         void off()
         {
-            std::cout << name <<" is Switch-Off" << std::endl;
+            std::cout << name <<"SamsungTV is Switched-Off" << std::endl;
         }
     };
 

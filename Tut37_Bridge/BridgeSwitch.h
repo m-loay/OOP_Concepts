@@ -47,8 +47,8 @@ public:
 
     void turnOn()
     {
-        cout << "Bridge on ";
-        iAppliance->run();
+        cout << "Using Bridge";
+        iAppliance->on();
     }
     void turnOff()
     {
@@ -77,7 +77,7 @@ public:
         void turnOn()
         {
             cout << "Using Remote ";
-            iAppliance->run();
+            iAppliance->on();
         }
         void turnOff()
         {
@@ -105,7 +105,7 @@ public:
         void turnOn()
         {
             cout << "Using Normal  ";
-            iAppliance->run();
+            iAppliance->on();
         }
         void turnOff()
         {
