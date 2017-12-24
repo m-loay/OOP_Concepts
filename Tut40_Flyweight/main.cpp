@@ -11,6 +11,7 @@ string colours[5] = {"Red", "Green", "Blue", "White", "Black"};
 
 int main()
 {
+	/*Create many objects and check the objects with same coulour wont be created again*/
 	Circle *circleR1 = ShapeFactory::getCircle(colours[0]);
 	circleR1 ->setX(10);
 	circleR1->setY(10);
@@ -52,9 +53,6 @@ int main()
 	circleR4->setY(40);
 	circleR4->setRadius(30);
 	circleR4->draw();
-
-
-
 
 }
 
