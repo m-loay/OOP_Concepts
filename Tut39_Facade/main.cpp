@@ -13,8 +13,10 @@ using namespace std;
 
 int main()
 {
+	/*Create object of gacade*/
 	Facade shapeMaker;
 
+	/*Use this object to control the other object functionalties*/
 	shapeMaker.drawCircle();
 	shapeMaker.drawRectangle();
 	shapeMaker.drawSquare();
