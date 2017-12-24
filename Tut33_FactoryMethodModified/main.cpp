@@ -7,23 +7,55 @@
 
 #include <iostream>
 #include <vector>
-#include "Widget.h"
-#include "OsFactory.h"
+#include "Colour.h"
+#include "Shape.h"
+#include "AbstractFactory.h"
 
 using namespace std;
 
 int main()
 {
+	/*Create vector of pointers to class shape*/
+	vector<Shape*>shapes;
+	vector<Colour*>colours;
 
-	Factory *windows = OsFactory::getOsComponents(2);
+	/*Create a pointer from avstract factory*/
+	AbstractFactory *shapeColurType = NULL;
 
-	windows ->create_button();
-	windows->create_menu();
+	/*Selection paramters*/
+	int shapeType;
+	int colourType; 
 
-	//delete osfactory;
-	delete windows;
+		/*Create a loop to save a base pointers(shape) to desired derived objects*/
+	while(true)
+	{
+		/*Creating object from Factory according to user desire*/
+		cout << "Circle(1) Square(2) Rectangle(3) Go(0): "<<endl;
+		cin >> shapeType;
 
-	cout<<endl;
+		cout << "Red(1) Green(2) Blue(3) Go(0): "<<endl;
+		cin >> colourType;
+		if (shapeType == 0 || colourType==0)
+			break;
+		shapeColurType = FactoryProducer::getFactory(1);
+		shapes.push_back(shapeColurType->getShape(shapeType));
 
+		shapeColurType = FactoryProducer::getFactory(2);
+		colours.push_back(shapeColurType->getColour(colourType));
+	}
+
+	for(unsigned int i = 0; i<shapes.size();i++)
+	{
+		/*Printing Data of each object*/
+		shapes[i]->draw();
+		colours[i]->fill();
+	}
+
+	/*Free all allocation*/
+	for (unsigned int i = 0; i < shapes.size(); i++)
+	{
+		delete shapes[i];
+		delete colours[i];	
+	}
+	delete shapeColurType;
 }
-
