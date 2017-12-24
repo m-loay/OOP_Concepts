@@ -13,25 +13,30 @@ using namespace std;
 int main()
 {
 
-	vector<Widget*>roles;
-	widgetFactory *wfact = new widgetFactory;
+	/*Create vector of pointers to class shape*/
+	vector<Shape*>shapes;
+
+	/*Create a pointer to class ShapeFactory*/
+	ShapeFactory *sfact = new ShapeFactory;
 	int choice;
+
+	/*Create a loop to save a base pointers(shape) to desired derived objects*/
 	while(true)
 	{
-		cout << "LinuxButton(1) LinuxMenu(2) WindowsButton(3) WindowsMenu(4) Go(0): "<<endl;
+		cout << "Circle(1) Square(2) Rectangle(3) Go(0): "<<endl;
 		cin >> choice;
 		if (choice == 0)
 			break;
-		roles.push_back(wfact->make_Widget(choice));
-
+		shapes.push_back(sfact->getShape(choice));
 	}
 
-	for (unsigned int i = 0; i < roles.size(); i++)
-		roles[i]->draw();
+	/*Draw the deisred derived objects*/
+	for (unsigned int i = 0; i < shapes.size(); i++)
+		shapes[i]->draw();
 
-	for (unsigned int i = 0; i < roles.size(); i++)
-		delete roles[i];
-	delete wfact;
-
+	/*Free all allocation*/
+	for (unsigned int i = 0; i < shapes.size(); i++)
+		delete shapes[i];
+	delete sfact;
 }
 

@@ -19,11 +19,6 @@ class GlobalClassS
 		cout<<"constructor of object"<<id<<"is called"<<endl;
 	}
 
-	~GlobalClassS()
-	{
-		cout<<"destructor of object"<<id<<"is called"<<endl;
-	}
-
 	int getValue()const
 	{
 		return m_value;
