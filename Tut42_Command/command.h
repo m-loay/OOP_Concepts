@@ -38,10 +38,10 @@ public:
 		{
         	cout<<"~LightOnCommand is called"<<endl;
         }
-	void execute()
-	{
-		mLight->on();
-	}
+		void execute()
+		{
+			mLight->on();
+		}
 private:
 	Light *mLight;
 };
@@ -79,11 +79,13 @@ public:
 	{
 		cout<<"~RemoteControl is called"<<endl;
 	}
-	void setCommand(command *cmd) {
+	void setCommand(command *cmd) 
+	{
 		mCmd = cmd;
 	}
 
-	void buttonPressed() {
+	void buttonPressed() 
+	{
 		mCmd->execute();
 	}
 private:

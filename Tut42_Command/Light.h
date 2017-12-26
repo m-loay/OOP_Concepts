@@ -32,7 +32,4 @@ public:
 		cout << "The light is off\n";
 	}
 };
-
-
-
 #endif /* LIGHT_H_ */
