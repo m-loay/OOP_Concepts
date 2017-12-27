@@ -37,9 +37,6 @@ public:
 		// validate vectorSize
 		size = (vectorSize > 0 ? vectorSize : 10);
 
-		// seed random number generator using current time
-		//srand(time(0));
-
 		// fill vector with random ints in range 10 to 99
 		for (int i = 0; i < size; i++)
 		{
@@ -59,17 +56,6 @@ public:
 		displayElements();
 	}
 
-	// display vector elements
-	void displayElements() const
-	{
-		for(int i = 0; i < size; i++)
-		{
-			cout << " " << data[i];
-		}
-		cout<<endl;
-	}
-
-
 private:
 	//vector size
 	int size;
@@ -77,6 +63,7 @@ private:
 	// vecotr of ints
 	vector<int> data;
 
+	//Selection sort logic implementation
 	void selectionSort()
 	{
 		int count,count2,imin;
@@ -91,6 +78,17 @@ private:
 		}
 	}
 
+	// display vector elements
+	void displayElements() const
+	{
+		cout<<"SelectionSort"<<endl;
+		for(int i = 0; i < size; i++)
+		{
+			cout << " " << data[i];
+		}
+		cout<<endl;
+	}
+
 };
 
 class InsertionSort: public SortBehavior
@@ -103,9 +101,6 @@ public:
 		cout<<"selection_sort  Called"<<endl;
 		// validate vectorSize
 		size = (vectorSize > 0 ? vectorSize : 10);
-
-		// seed random number generator using current time
-		//srand(time(0));
 
 		// fill vector with random ints in range 10 to 99
 		for (int i = 0; i < size; i++)
@@ -126,17 +121,6 @@ public:
 		displayElements();
 	}
 
-	// display vector elements
-	void displayElements() const
-	{
-		for(int i = 0; i < size; i++)
-		{
-			cout << " " << data[i];
-		}
-		cout<<endl;
-	}
-
-
 private:
 	//vector size
 	int size;
@@ -144,6 +128,7 @@ private:
 	// vecotr of ints
 	vector<int> data;
 
+	//Insertion sort logic implementation
 	void insertionSort()
 	{
 		int count,hole,value;
@@ -161,6 +146,16 @@ private:
 		}
 	}
 
+	// display vector elements
+	void displayElements() const
+	{
+		cout<<"insertionSort"<<endl;
+		for(int i = 0; i < size; i++)
+		{
+			cout << " " << data[i];
+		}
+		cout<<endl;
+	}
 };
 
 
@@ -174,9 +169,6 @@ public:
 		cout<<"BubbleSort  Called"<<endl;
 		// validate vectorSize
 		size = (vectorSize > 0 ? vectorSize : 10);
-
-		// seed random number generator using current time
-		//srand(time(0));
 
 		// fill vector with random ints in range 10 to 99
 		for (int i = 0; i < size; i++)
@@ -197,17 +189,6 @@ public:
 		displayElements();
 	}
 
-	// display vector elements
-	void displayElements() const
-	{
-		for(int i = 0; i < size; i++)
-		{
-			cout << " " << data[i];
-		}
-		cout<<endl;
-	}
-
-
 private:
 	//vector size
 	int size;
@@ -215,6 +196,7 @@ private:
 	// vecotr of ints
 	vector<int> data;
 
+	//bubble Sort logic implementation
 	void bubbleSort ()
 	{
 		int count,count2;
@@ -228,6 +210,17 @@ private:
 			}
 		}
 	}
+
+	// display vector elements
+	void displayElements() const
+	{
+		cout<<"bubbleSort"<<endl;
+		for(int i = 0; i < size; i++)
+		{
+			cout << " " << data[i];
+		}
+		cout<<endl;
+	}
 };
 
 
@@ -237,20 +230,18 @@ class Merge: public SortBehavior
 public:
 	// constructor, inits vector
 	Merge(int vectorSize,int *p)
-{
+	{
 		cout<<"Merge  Called"<<endl;
+
 		// validate vectorSize
 		size = (vectorSize > 0 ? vectorSize : 10);
-
-		// seed random number generator using current time
-		//srand(time(0));
 
 		// fill vector with random ints in range 10 to 99
 		for (int i = 0; i < size; i++)
 		{
 			data.push_back(p[i]);
 		}
-}
+	}
 
 	~Merge()
 	{
@@ -264,18 +255,6 @@ public:
 		displayElements();
 	}
 
-	// display vector elements
-	void displayElements() const
-	{
-		for(int i = 0; i < size; i++)
-		{
-			cout << " " << data[i];
-		}
-		cout<<endl;
-
-	}
-
-
 private:
 	//vector size
 	int size;
@@ -283,6 +262,8 @@ private:
 	// vecotr of ints
 	vector<int> data;
 
+	//Merge Sort logic implementation
+	
 	// sort subvector
 	void sortSubVector(int low, int high)
 	{
@@ -349,7 +330,17 @@ private:
 		{
 			data[i] = combined[i];
 		}
+	}
 
+	// display vector elements
+	void displayElements() const
+	{
+		cout<<"merge sort"<<endl;
+		for(int i = 0; i < size; i++)
+		{
+			cout << " " << data[i];
+		}
+		cout<<endl;
 	}
 
 };
@@ -364,9 +355,6 @@ public:
 		cout<<"Qsort  Called"<<endl;
 		// validate vectorSize
 		size = (vectorSize > 0 ? vectorSize : 10);
-
-		// seed random number generator using current time
-		//srand(time(0));
 
 		// fill vector with random ints in range 10 to 99
 		for (int i = 0; i < size; i++)
@@ -387,17 +375,6 @@ public:
 		displayElements();
 	}
 
-	// display vector elements
-	void displayElements() const
-	{
-		for(int i = 0; i < size; i++)
-		{
-			cout << " " << data[i];
-		}
-		cout<<endl;
-	}
-
-
 private:
 	//vector size
 	int size;
@@ -405,6 +382,8 @@ private:
 	// vecotr of ints
 	vector<int> data;
 
+	//Quick Sort Logic Implementation
+	
 	// sort subvector
 	int partition(int start , int end)
 	{
@@ -434,6 +413,16 @@ private:
 		}
 	}
 
+		// display vector elements
+	void displayElements() const
+	{
+		cout<<"quick sort"<<endl;
+		for(int i = 0; i < size; i++)
+		{
+			cout << " " << data[i];
+		}
+		cout<<endl;
+	}
 };
 
 class Strategy
@@ -443,13 +432,15 @@ private:
 
 public:
 	Strategy():m_sort(0)
-{
+	{
 		cout<<"Strategy Called"<<endl;
-}
+	}
+
 	~Strategy()
 	{
 		cout<<"~Strategy Called"<<endl;
 	}
+
 	void set_sort(SortBehavior* s){
 		m_sort = s;
 	}
