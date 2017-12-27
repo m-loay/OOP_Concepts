@@ -8,7 +8,6 @@ The purpose of the tutorial to implement a Flyweight design pattern
    or cmake ..  (Linuex OS)
 4. make
 
-
 ## Other Important Dependencies
 * cmake >= 3.5
 
