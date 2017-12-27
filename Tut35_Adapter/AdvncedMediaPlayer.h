@@ -27,7 +27,6 @@ public:
 
 	virtual void playVlc(string fileName)=0;
 	virtual void playMp4(string fileName)=0;
-
 };
 
 class VlcPlayer :public AdvancedMediaPlayer
@@ -37,6 +36,7 @@ public:
 	{
 		cout<<"VlcPlayer Constructor Called"<<endl;
 	}
+
 	~VlcPlayer()
 	{
 		cout<<"VlcPlayer Destructor Called"<<endl;
@@ -46,20 +46,20 @@ public:
 	{
 		cout<<"playing vlc file name"<<fileName<<endl;
 	}
+
 	void playMp4(string fileName)
 	{
 
 	}
-
 };
 
 class Mp4Player :public AdvancedMediaPlayer
 {
 public:
 	Mp4Player()
-{
+	{
 		cout<<"Mp4Player Constructor Called"<<endl;
-}
+	}
 	~Mp4Player()
 	{
 		cout<<"Mp4Player Destructor Called"<<endl;
@@ -69,11 +69,11 @@ public:
 	{
 
 	}
+
 	void playMp4(string fileName)
 	{
 		cout<<"playing Mp4 file name"<<fileName<<endl;
 	}
-
 };
 
 

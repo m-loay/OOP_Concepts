@@ -18,9 +18,10 @@ class MediaPlayer
 {
 public:
 	MediaPlayer()
-{
+	{
 		cout<<"MediaPlayer Constructor Called"<<endl;
-}
+	}
+
 	virtual ~MediaPlayer()
 	{
 		cout<<"MediaPlayer Destructor Called"<<endl;
@@ -33,7 +34,8 @@ public:
 class MediaAdapter :public MediaPlayer
 {
 public:
-	 AdvancedMediaPlayer *advancedMusicPlayer;
+	AdvancedMediaPlayer *advancedMusicPlayer;
+
 	MediaAdapter(string audioType):advancedMusicPlayer(0)
 	{
 		if(audioType == "vlc")
@@ -52,11 +54,10 @@ public:
 
 	void play(string audioType, string fileName)
 	{
-
-			if(audioType == "mp4")
-				advancedMusicPlayer->playMp4(fileName);
-			else if(audioType == "vlc")
-				advancedMusicPlayer->playVlc(fileName);
+		if(audioType == "mp4")
+			advancedMusicPlayer->playMp4(fileName);
+		else if(audioType == "vlc")
+			advancedMusicPlayer->playVlc(fileName);
 	}
 };
 
@@ -67,6 +68,7 @@ public:
 	{
 		cout<<"AudioPlayer Constructor Called"<<endl;
 	}
+
 	~AudioPlayer()
 	{
 		cout<<"AudioPlayer Destructor Called"<<endl;
@@ -74,6 +76,7 @@ public:
 	}
 
 	MediaAdapter *playAdapter;
+	
 	void play(string audioType, string fileName)
 	{
 		if(audioType == "mp3")
