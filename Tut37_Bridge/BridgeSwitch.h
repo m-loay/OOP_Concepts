@@ -7,6 +7,7 @@
 
 #ifndef BRIDGESWITCH_H_
 #define BRIDGESWITCH_H_
+
 #include <iostream>
 #include "IAppliance.h"
 using namespace std;
@@ -30,9 +31,6 @@ public:
 class BridgeSwitch : public Switch
 {
 
-private:
-    IAppliance* iAppliance;
-
 public:
     BridgeSwitch(IAppliance* backend)
     {
@@ -50,17 +48,19 @@ public:
         cout << "Using Bridge";
         iAppliance->on();
     }
+    
     void turnOff()
     {
         cout << "Using Bridge";
         iAppliance->off();
     }
+
+private:
+    IAppliance* iAppliance;
 };
 
 class RemoteControl : public Switch
 {
-private:
-    IAppliance* iAppliance;
 
 public:
         RemoteControl(IAppliance* i)
@@ -79,17 +79,18 @@ public:
             cout << "Using Remote ";
             iAppliance->on();
         }
+
         void turnOff()
         {
             cout << "Using Remote ";
             iAppliance->off();
         }
+private:
+    IAppliance* iAppliance;
 };
 
 class Normal : public Switch
 {
-private:
-    IAppliance* iAppliance;
 public:
 		Normal(IAppliance* i)
 		{
@@ -107,11 +108,16 @@ public:
             cout << "Using Normal  ";
             iAppliance->on();
         }
+
         void turnOff()
         {
             cout << "Using Normal  ";
             iAppliance->off();
         }
+
+private:
+    IAppliance* iAppliance;
+
 };
 
 #endif /* BRIDGESWITCH_H_ */

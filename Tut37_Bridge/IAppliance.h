@@ -20,15 +20,15 @@ public:
 	virtual ~IAppliance()
 	{
 		cout<<"IAppliance destructor called"<<endl;
-	}
+    }
+    
        virtual void on()=0;
        virtual void off()=0;
 };
 
 class SonyTV : public IAppliance
 {
-private:
-        std::string name;
+
 public:
         SonyTV(std::string _name)
         {
@@ -45,16 +45,18 @@ public:
         {
             std::cout << name <<"SonyTV is Switched-On" << std::endl;
         }
+
         void off()
         {
             std::cout << name <<"SonyTV is Switched-Off" << std::endl;
         }
+
+private:
+        std::string name;
      };
 
 class SamsungTV : public IAppliance
     {
-private:
-        std::string name;
 
 public:
         SamsungTV(std::string _name)
@@ -75,6 +77,9 @@ public:
         {
             std::cout << name <<"SamsungTV is Switched-Off" << std::endl;
         }
+
+private:
+        std::string name;
     };
 
 #endif /* IAPPLIANCE_H_ */
