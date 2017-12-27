@@ -61,7 +61,6 @@ public:
 		observers.push_back(ob);
 	}
 
-
 private:
 	vector<Observer*>observers;
 	int state;
@@ -143,10 +142,4 @@ public:
 	}
 
 };
-
-
-
-
-
-
 #endif /* OBSERVER_H_ */

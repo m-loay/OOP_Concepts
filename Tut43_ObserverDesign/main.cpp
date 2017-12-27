@@ -24,7 +24,6 @@ int main()
 	delete two;
 	delete one;
 	delete object;
-
 }
 
 
