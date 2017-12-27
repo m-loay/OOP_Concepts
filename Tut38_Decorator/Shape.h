@@ -45,7 +45,6 @@ public:
 	{
 		cout<<"Draw a circle"<<endl;
 	}
-
 };
 
 class Circle :public Shape
@@ -65,9 +64,6 @@ public:
 	{
 		cout<<"Draw a Circle"<<endl;
 	}
-
 };
-
-
 
 #endif /* SHAPE_H_ */

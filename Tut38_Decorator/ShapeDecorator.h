@@ -54,6 +54,4 @@ private:
 	}
 };
 
-
-
 #endif /* SHAPEDECORATOR_H_ */
