@@ -35,4 +35,3 @@ int main()
 	for (unsigned int i = 0; i < roles.size(); i++)
 		delete roles[i];
 }
-

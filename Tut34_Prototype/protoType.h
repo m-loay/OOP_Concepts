@@ -1,10 +1,4 @@
 /*
- * OsFactory.h
- *
- *  Created on: Oct 23, 2016
- *      Author: modys
- */
-/*
  * protoType.h
  *
  *  Created on: Oct 23, 2016
