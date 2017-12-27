@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-	/*Create object of gacade*/
+	/*Create object of Facade*/
 	Facade shapeMaker;
 
 	/*Use this object to control the other object functionalties*/
