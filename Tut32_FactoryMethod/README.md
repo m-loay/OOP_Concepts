@@ -8,8 +8,6 @@ The purpose of the tutorial to implement a Factory design pattern
    or cmake ..  (Linuex OS)
 4. make
 
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 
@@ -26,5 +24,5 @@ The purpose of the tutorial to implement a Factory design pattern
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-
+3. Compile: cmake .. && make --> (Linuex OS) or
+            cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
