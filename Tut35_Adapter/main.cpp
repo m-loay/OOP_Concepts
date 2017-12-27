@@ -10,10 +10,13 @@ int main()
 {
 	AudioPlayer device;
 	cout<<endl;
+
 	device.play("mp4"," Hello");
 	cout<<endl;
+
 	device.play("mp3"," Hello");
 	cout<<endl;
+	
 	device.play("vlc"," Hello");
 	cout<<endl;
 }
