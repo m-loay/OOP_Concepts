@@ -27,5 +27,5 @@ This tutorial shows constant objects and the constant member data and how to dea
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-
+3. Compile: cmake .. && make --> (Linuex OS) or
+            cmake .. -G "MinGW Makefiles" & make --> (Windows OS)

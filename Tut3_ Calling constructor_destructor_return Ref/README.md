@@ -1,4 +1,4 @@
-# Tut3_ Calling constructor_destructor_return Ref
+# Tut3_Calling constructor_destructor_return Ref
 Object Oriented Programming 
 
 This tutorial shows the calling of constructors and destructors orders ,according to object creation as (global,local static) .
@@ -29,5 +29,6 @@ Also it shows how to calculate object size
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
+3. Compile: cmake .. && make --> (Linuex OS) or
+            cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
 

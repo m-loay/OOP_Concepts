@@ -2,18 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "mkdir Debug",
+            "label": "make",
             "type": "shell",
-            "command": "mkdir Debug",
+            "command": "cd Debug & make clean & make",
+ 
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
         },
         {
-            "label": "make",
+            "label": "cmake",
             "type": "shell",
-            "command": "cd Debug & make clean & make",
+            "command": "mkdir Debug & cd Debug & cmake .. -G \"MinGW Makefiles\" & make  " ,
  
             "group": {
                 "kind": "build",

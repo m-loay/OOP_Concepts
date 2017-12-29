@@ -49,7 +49,7 @@ int main ()
 	delete selection;
 	delete insert;
 
-	return 0;
+	return (0);
 }
 
 

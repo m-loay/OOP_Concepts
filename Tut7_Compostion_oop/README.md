@@ -4,6 +4,7 @@ Object Oriented Programming
 The purpose of the tutorial to understand
     1)using member initializer to initialze the member objects,
       eliminates the over-head of �doubly initializing� member objects.
+      
     2)constructing large objects from samll ones.
 
 1. mkdir Debug
@@ -30,5 +31,5 @@ The purpose of the tutorial to understand
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-
+3. Compile: cmake .. && make --> (Linuex OS) or
+            cmake .. -G "MinGW Makefiles" & make --> (Windows OS)

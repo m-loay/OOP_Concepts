@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(Tut35_Adapter)
+project(Tut37_Bridge)
  
 #set build type to debug
 set(CMAKE_BUILD_TYPE Debug)

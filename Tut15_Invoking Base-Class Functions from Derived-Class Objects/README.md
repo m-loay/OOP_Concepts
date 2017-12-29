@@ -1,7 +1,7 @@
 #Tut15_Invoking Base-Class Functions from Derived-Class Objects
 Object Oriented Programming 
 
-The purpose of the tutorial to use base pointer to use base functionality of base clasee 
+The purpose of the tutorial to use base pointer to use base functionality of base classes 
 in derived class.
 
 1. mkdir Debug
@@ -28,5 +28,5 @@ in derived class.
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-
+3. Compile: cmake .. && make --> (Linuex OS) or
+            cmake .. -G "MinGW Makefiles" & make --> (Windows OS)

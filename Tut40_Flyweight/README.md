@@ -26,4 +26,3 @@ The purpose of the tutorial to implement a Flyweight design pattern
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: cmake .. && make --> (Linuex OS) or
             cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
-
