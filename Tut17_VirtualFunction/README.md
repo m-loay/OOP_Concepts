@@ -32,6 +32,6 @@ associated with the object being pointed not the type of the pointer.
 ## Basic Build Instructions
 
 1. Clone this repo.
-2. Make a build directory: `mkdir build && cd build`
+2. Make a build directory: `mkdir Debug && cd Debug`
 3. Compile: cmake .. && make --> (Linuex OS) or
             cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
