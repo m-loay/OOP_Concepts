@@ -1,5 +1,6 @@
 #Tut14_Inheritance_Version2_Using private data
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to use inhiertance to create more specifc classes.
 Also understand the difference between public, private and protected member data.

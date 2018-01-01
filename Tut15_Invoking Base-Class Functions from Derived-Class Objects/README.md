@@ -1,5 +1,6 @@
 #Tut15_Invoking Base-Class Functions from Derived-Class Objects
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to use base pointer to use base functionality of base classes 
 in derived class.

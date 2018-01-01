@@ -1,5 +1,6 @@
 #Tut17_VirtualFunction
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial
 when using base pointer to derived object , it called the base functionality

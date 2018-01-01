@@ -1,5 +1,6 @@
 #Tut9_static member
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to understand static member data and static member function , and how can be used to count number of objects crerated from a certain calss.
 

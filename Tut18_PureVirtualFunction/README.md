@@ -1,5 +1,6 @@
 #Tut18_PureVirtualFunction
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to understand the difference between abstract and concerete class.
 Also to use the polymorphic behaviour in OOP programming.

@@ -1,5 +1,6 @@
 #Tut21_Stack
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to implement a sstack template.
 

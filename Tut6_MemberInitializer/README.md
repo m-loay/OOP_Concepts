@@ -1,5 +1,6 @@
 #Tut6_MemberInitializer
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 This tutorial shows how to use the member initializer to initialize the constant data
 member.

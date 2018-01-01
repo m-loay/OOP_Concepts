@@ -1,5 +1,6 @@
 #Tut24_istramIterator
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to use templates of istream and ostream
 1. mkdir Debug

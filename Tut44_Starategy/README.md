@@ -1,5 +1,6 @@
 #Tut44_Starategy
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to implement a startegy design pattern
 1. mkdir Debug

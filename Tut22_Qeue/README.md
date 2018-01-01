@@ -1,5 +1,6 @@
 #Tut22_Qeue
-Object Oriented Programming 
+
+ Object Oriented Programming 
 
 The purpose of the tutorial to implement a queue template.
 
