@@ -1,6 +1,5 @@
 #Tut42_Command
 
-
 Object Oriented Programming 
 
 The purpose of the tutorial to implement a command design pattern
