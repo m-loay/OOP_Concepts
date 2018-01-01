@@ -1,4 +1,4 @@
-##Tut14_Inheritance_Version2_Using private data
+## Tut14_Inheritance_Version2_Using private data
 
  Object Oriented Programming 
 
