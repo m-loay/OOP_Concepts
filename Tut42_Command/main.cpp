@@ -12,8 +12,8 @@ int main()
 	Light *light = new Light;
 
 	// concrete Command objects
-	LightOnCommand *lightOn = new LightOnCommand(light);
-	LightOffCommand *lightOff = new LightOffCommand(light);
+	command *lightOn = new LightOnCommand(light);
+	command *lightOff = new LightOffCommand(light);
 
 	// invoker objects
 	RemoteControl *control = new RemoteControl;
