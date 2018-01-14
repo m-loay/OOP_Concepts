@@ -5,14 +5,6 @@
 The purpose of the tutorial to understand the this pointer , and how to use it 
 to make cascaded member function call
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

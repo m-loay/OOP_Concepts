@@ -2,20 +2,10 @@
 
  Object Oriented Programming 
 
-This tutorial shows hthe difference in sending objects by value and by reference.
-Also , which passing mechanism requires calling the copy constructor.   
-1)To understand passing object to function mechanisms.
-2)Send object by value requires calling the default copy constructor.
-3)Send object by reference will not require calling the copy constructor  and it allows modifying the object.
-4)Send the object by constant reference , will disallow modifying the object.
-
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
+This tutorial shows the difference between sending objects by value and by reference. Also, which passing mechanism requires calling the copy constructor.                     1)To understand passing object to function mechanisms. 
+ 2)Send object by value requires calling the default copy constructor. 
+ 3)Send object by reference will not require calling the copy constructor and it allows modifying the object. 
+ 4)Send the object by constant reference , will disallow modifying the object. 
 
 ## Other Important Dependencies
 * cmake >= 3.5

@@ -10,14 +10,6 @@ So Using virtual functions and base pointer to derived object , the compiler
 construct a v-table(According to inheritance hierarchy) and call the member function
 associated with the object being pointed not the type of the pointer.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

@@ -2,15 +2,8 @@
 
  Object Oriented Programming 
 
-The purpose of the tutorial to implement doubly single linked list as a template
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
+The purpose of the tutorial to implement double linked list as a template.
+ 
 ## Other Important Dependencies
 * cmake >= 3.5
 

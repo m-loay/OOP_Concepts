@@ -5,14 +5,6 @@
 This tutorial shows how to use the member initializer to initialize the constant data
 member.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

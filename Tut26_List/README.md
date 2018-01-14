@@ -3,13 +3,6 @@
  Object Oriented Programming 
 
 The purpose of the tutorial to use list library provided by STL
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
 
 ## Other Important Dependencies
 * cmake >= 3.5

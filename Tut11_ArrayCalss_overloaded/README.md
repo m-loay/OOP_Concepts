@@ -3,14 +3,7 @@
  Object Oriented Programming 
 
 The purpose of the tutorial to create a class like vector to understand how it works.
-
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
+most of the functions are not implemented here, and you can check the cpp reference.
 
 ## Other Important Dependencies
 * cmake >= 3.5

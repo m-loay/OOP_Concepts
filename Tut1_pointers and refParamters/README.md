@@ -1,17 +1,8 @@
-# Tut1_pointers and refParamters
+# Tut1_pointers and ref Varaiables
 
  Object Oriented Programming 
 
-In this Tutorial to understand the difference between the pointer and the reference.Also it shows bad usage of reference.
-
-
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
+In this Tutorial you will understand the difference between pointer and  reference. Also it shows bad usage of reference. 
 
 ## Other Important Dependencies
 * cmake >= 3.5

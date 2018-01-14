@@ -11,14 +11,6 @@ a member function of base class
 3)A member function of base class can be called in derived class
 baseClassName::function name , as it appears in earning member function.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

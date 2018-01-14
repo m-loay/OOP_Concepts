@@ -4,13 +4,6 @@
 
 The purpose of the tutorial to use inhiertance to create more specifc classes.
 Also understand the difference between public, private and protected member data.
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
 
 ## Other Important Dependencies
 * cmake >= 3.5

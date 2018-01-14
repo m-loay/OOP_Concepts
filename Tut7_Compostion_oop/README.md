@@ -8,13 +8,6 @@ The purpose of the tutorial to understand
       
     2)constructing large objects from samll ones.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
 
 ## Other Important Dependencies
 * cmake >= 3.5

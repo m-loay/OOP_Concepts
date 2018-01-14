@@ -1,16 +1,9 @@
-## Tut31_SingleTone
+## Tut31_SingleTon
 
  Object Oriented Programming 
 
-The purpose of the tutorial to implement a singleTone design pattern
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
+The purpose of the tutorial to implement a singleTon design pattern.
+ 
 ## Other Important Dependencies
 * cmake >= 3.5
 

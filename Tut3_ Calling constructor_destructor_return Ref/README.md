@@ -5,15 +5,6 @@ Object Oriented Programming
 This tutorial shows the calling of constructors and destructors orders ,according to object creation as (global,local static) .
 Also it shows how to calculate object size
 
-
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

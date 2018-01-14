@@ -62,7 +62,6 @@ int main ()
 	cout<<"Integers 3 size"<<integers3.size()<<endl;
 	outputVector(integers3);
 
-
 }
 
 void outputVector (const vector <int>&array)

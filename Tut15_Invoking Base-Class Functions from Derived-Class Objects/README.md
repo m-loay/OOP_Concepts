@@ -5,14 +5,6 @@
 The purpose of the tutorial to use base pointer to use base functionality of base classes 
 in derived class.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

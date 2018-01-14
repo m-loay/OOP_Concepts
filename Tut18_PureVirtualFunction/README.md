@@ -5,14 +5,6 @@
 The purpose of the tutorial to understand the difference between abstract and concerete class.
 Also to use the polymorphic behaviour in OOP programming.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 

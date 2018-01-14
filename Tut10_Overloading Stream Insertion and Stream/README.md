@@ -4,14 +4,6 @@
 
 The purpose of the tutorial to understand static member data and static member function , and how can be used to count number of objects crerated from a certain calss.
 
-1. mkdir Debug
-2. cd Debug
-3. cmake .. -G "MinGW Makefiles" (Windows OS)
-   or cmake ..  (Linuex OS)
-4. make
-
-
-
 ## Other Important Dependencies
 * cmake >= 3.5
 
