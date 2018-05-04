@@ -24,3 +24,5 @@ This tutorial shows how to use the vector class to do some operation on arrays
 3. Compile: cmake .. && make --> (Linuex OS) or
             cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
 
+or simply use build.py
+python build.py -c=clean -b=build 			

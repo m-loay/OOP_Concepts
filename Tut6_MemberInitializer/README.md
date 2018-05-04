@@ -23,3 +23,6 @@ member.
 2. Make a build directory: `mkdir Debug && cd Debug`
 3. Compile: cmake .. && make --> (Linuex OS) or
             cmake .. -G "MinGW Makefiles" & make --> (Windows OS)
+			
+or simply use build.py
+python build.py -c=clean -b=build 
