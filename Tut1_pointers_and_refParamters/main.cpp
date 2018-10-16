@@ -6,6 +6,8 @@
 
 #include<iostream>
 #include "TimeBase.h"
+
+
 using namespace std;
 /*
  * call by value
@@ -21,7 +23,7 @@ int main()
 	Time_Base *t_ptr=&t;
 	Time_Base &t_ref=t;
 
-	/*printing time using the object and use sitters*/
+	/***printing time using the object and use sitters*/
 	cout<<"The init universal Time is";
 	t.printUniversal();
 
