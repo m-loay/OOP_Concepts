@@ -6,7 +6,7 @@
 
 #include<iostream>
 #include "TimeBase.h"
-using namespace std;
+//using namespace std;
 /*
  * call by value
  * call by pointer
