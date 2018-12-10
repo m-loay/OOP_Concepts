@@ -54,7 +54,7 @@ int main()
 
 	/*change time using the reference [not using sitters]*/
 	h_ref=35;
-	cout<<"h_ref=35"<<endl;
+	cout<<"h_ref= 35"<<endl;
 	cout<<"The init universal Time is";
 	t.printUniversal();
 

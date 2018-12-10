@@ -12,6 +12,7 @@ import shutil
 import platform
 import subprocess
 import argparse
+
 myfile= 'debug'
 
 parser = argparse.ArgumentParser()
@@ -19,8 +20,7 @@ parser.add_argument('-c', action="store", dest="clean",help ='Cleans the project
 parser.add_argument('-b', action="store", dest="build",help = 'builds the project according to platform type')
 parser.add_argument('-r', action="store", dest="run",help = 'runs the project')
 results = parser.parse_args()
-
-
+   
 if results.clean == "clean":
     print("---------Clean------------")
         ## Try to remove tree; if failed show an error using try...except on screen
