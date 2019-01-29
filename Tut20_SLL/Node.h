@@ -35,6 +35,4 @@ NODETYPE Node<NODETYPE>::getData()const
 	return data;
 }
 
-
-
 #endif /* NODE_H_ */

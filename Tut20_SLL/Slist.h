@@ -25,11 +25,12 @@ public:
 private :
 	Node <NODETYPE> *start;
 	Node <NODETYPE> *getNewNode(const NODETYPE &);
+	int counter;
 };
 
 template <typename NODETYPE>
 Slist<NODETYPE>::Slist()
-:start(0)
+:start(0),counter(0)
  {
 
  }
@@ -55,15 +56,19 @@ bool Slist<NODETYPE>::insert(const NODETYPE &val)
 {
 
 	Node <NODETYPE>*newNode = getNewNode(val);
-	Node <NODETYPE>*current = start;
-	Node <NODETYPE>*prev = 0;
+	bool result = false;
+
 
 	if(isEmpty())
 	{
 		start = newNode;
+		result = true;
+		++counter;
 	}
 	else
 	{
+		Node <NODETYPE>*current = start;
+		Node <NODETYPE>*prev = 0;
 		while(current!=0 && current->data <val)
 		{
 			prev = current;
@@ -71,25 +76,38 @@ bool Slist<NODETYPE>::insert(const NODETYPE &val)
 		}
 		newNode->nextPtr = current;
 
-		if(prev == 0) start = newNode;
-		else prev->nextPtr = newNode;
-		return true;
+		if(prev == 0)
+		{
+			start = newNode;
+		}
+		else
+		{
+			prev->nextPtr = newNode;
+		}
+
+		result= true;
+		++counter;
 	}
-	return false;
+	return result;
 }
 
 
 template <typename NODETYPE>
 bool Slist<NODETYPE>::remove(const NODETYPE &delValue)
 {
-	if(isEmpty()) return false;
+	bool result = false;
+	if(isEmpty())
+	{
+		result= false;
+	}
 
 	if(delValue == start->data)
 	{
 		Node <NODETYPE>*current = start;
 		start = start->nextPtr;
 		delete current;
-		return true;
+		result= true;
+		--counter;
 	}
 	else
 	{
@@ -106,24 +124,17 @@ bool Slist<NODETYPE>::remove(const NODETYPE &delValue)
 		{
 			prev->nextPtr = current->nextPtr;
 			delete current;
-			return true;
+			result = true;
+			--counter;
 		}
 	}
-	return false;
+	return result;
 }
 
 
 template <typename NODETYPE>
 int Slist<NODETYPE>::getCount()const
 {
-	if(isEmpty()) return 0;
-	int counter=0;
-	Node <NODETYPE>*current = start;
-	while (current != 0)
-	{
-		current = current->nextPtr;
-		++counter;
-	}
 	return counter;
 }
 
@@ -139,10 +150,10 @@ void Slist<NODETYPE>::print()const
 		Node <NODETYPE>*current = start;
 		while (current != 0)
 		{
-			cout<<current->getData()<<" ";
+			cout<<current->getData()<<" --> ";
 			current = current->nextPtr;
 		}
-		cout<<endl;
+		cout<<"NULL"<<endl;
 	}
 
 }

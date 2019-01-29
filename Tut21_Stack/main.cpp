@@ -12,6 +12,8 @@ using namespace std;
 int main ()
 {
 	Stack<int>numStack;
+	numStack.print();
+
 	numStack.push(5);
 	numStack.push(3);
 	numStack.push(6);
@@ -20,12 +22,15 @@ int main ()
 	numStack.push(1);
 
 	numStack.print();
+	cout<<"number of elements in Stack "<<numStack.getCount()<<endl;
 
 	numStack.pop();
 	numStack.print();
+	cout<<"number of elements in Stack "<<numStack.getCount()<<endl;
 
 	numStack.pop();
 	numStack.print();
+	cout<<"number of elements in Stack "<<numStack.getCount()<<endl;
 
 }
 

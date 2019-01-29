@@ -1,4 +1,4 @@
-/*
+  /*
  * Stack.h
  *
  *  Created on: Sep 25, 2016
@@ -28,11 +28,12 @@ public:
 private:
 	Node <NODETYPE> *start;
 	Node <NODETYPE> *getNewNode(const NODETYPE &);
+	int counter;
 };
 
 template <typename NODETYPE>
 Stack<NODETYPE>::Stack()
-:start(0)
+:start(0),counter(0)
 {
 
 }
@@ -59,41 +60,45 @@ template <typename NODETYPE>
 bool Stack<NODETYPE>::push(const NODETYPE &val)
 {
 	Node <NODETYPE> *newNode=getNewNode(val);
+	bool result =false;
 	if(isEmpty())
 	{
 		start = newNode;
-		return true;
+		result= true;
+		++counter;
 	}
 	else
 	{
 		newNode->nextPtr = start;
 		start = newNode;
-		return true;
+		result = true;
+		++counter;
 	}
-	return false;
+	return result;
 }
 
 template <typename NODETYPE>
 bool Stack<NODETYPE>::pop()
 {
-	if(isEmpty()) return false;
-	Node <NODETYPE> *current=start;
-	start = start->nextPtr;
-	delete current;
-	return true;
+	bool result;
+	if(isEmpty())
+	{
+		result = false;
+	}
+	else
+	{
+		Node <NODETYPE> *current=start;
+		start = start->nextPtr;
+		delete current;
+		result = true;
+		--counter;
+	}
+	return result;
 }
 
 template <typename NODETYPE>
 int Stack<NODETYPE>::getCount()const
 {
-	if(isEmpty())return 0;
-	Node <NODETYPE> *current=start;
-	int counter=0;
-	while(counter!=0)
-	{
-		++counter;
-		current = current->nextPtr;
-	}
 	return counter;
 }
 
@@ -101,15 +106,22 @@ int Stack<NODETYPE>::getCount()const
 template <typename NODETYPE>
 void Stack<NODETYPE>::print()const
 {
-	if(isEmpty())return;
-	Node <NODETYPE> *current=start;
-	while(current!=0)
+	if(isEmpty())
 	{
-		cout<<current->data<<" ";
-		current=current->nextPtr;
+		cout<<"Stack is Empty"<<endl;
 	}
-	cout<<endl;
+	else
+	{
+		Node <NODETYPE> *current=start;
+		while(current!=0)
+		{
+			cout<<current->data<<" --> ";
+			current=current->nextPtr;
+		}
+		cout<<"NULL"<<endl;
+	}
 }
+
 
 template <typename NODETYPE>
 bool Stack<NODETYPE>::isEmpty()const

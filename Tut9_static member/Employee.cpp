@@ -27,9 +27,8 @@ Employee::~Employee()
 {
 	// TODO Auto-generated destructor stub
 	--count;
-	cout << "Employee object destructor: "
-	 << lastName << ", "<< firstName << endl;
-
+	cout << "Employee object constructor: "
+	<< firstName << ' '<< lastName << endl;
 }
 
 string Employee::getFirstName()const
