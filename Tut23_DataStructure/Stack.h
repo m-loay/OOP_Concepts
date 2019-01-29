@@ -33,6 +33,11 @@ public:
 	{
 		this->print();
 	}
+
+	int getStackCount()const
+	{
+		return (this->getCount());
+	}
 };
 
 

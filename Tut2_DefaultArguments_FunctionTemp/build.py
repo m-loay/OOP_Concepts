@@ -17,6 +17,7 @@ myfile= 'debug'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-c', action="store", dest="clean",help ='Cleans the project')
+parser.add_argument('-g', action="store", dest="gen",help ='generate make file')
 parser.add_argument('-b', action="store", dest="build",help = 'builds the project according to platform type')
 parser.add_argument('-r', action="store", dest="run",help = 'runs the project')
 results = parser.parse_args()
@@ -28,7 +29,27 @@ if results.clean == "clean":
         shutil.rmtree(myfile)
     except OSError, e:
         print ("Error: %s - %s." % (e.filename,e.strerror))
- 
+
+if results.gen == "gen":
+    print("---------Genertae MakeFiles------------")
+    ## Create a new directory
+    if not os.path.exists(myfile):
+        os.makedirs(myfile)
+        
+    print("---------Generate------------")
+      
+    if(platform.system() == 'Windows'):
+        print("---------Generate Windows Makefile------------")
+        subprocess.call('cd '+myfile+' & cmake .. -G "MinGW Makefiles" ',shell=True)
+         
+    elif (platform.system()=='Linux'):
+        print("---------Build Linux--------------")
+        cmd = 'cd '+os.path.abspath(myfile)
+        subprocess.call(cmd+'&& cmake ..',shell=True)
+
+    else:
+        print("Platform Unknown")
+
 if results.build == "build":
     print("---------Create New Build Directory------------")
     ## Create a new directory
@@ -39,12 +60,12 @@ if results.build == "build":
       
     if(platform.system() == 'Windows'):
         print("---------Build Windows------------")
-        subprocess.call('cd Debug & cmake .. -G "MinGW Makefiles" & make',shell=True)
+        subprocess.call('cd '+myfile+'& mingw32-make',shell=True)
          
     elif (platform.system()=='Linux'):
         print("---------Build Linux--------------")
         cmd = 'cd '+os.path.abspath(myfile)
-        subprocess.call(cmd+'&& cmake .. && make',shell=True)
+        subprocess.call(cmd+'make',shell=True)
 
     else:
         print("Platform Unknown")
@@ -54,7 +75,7 @@ if results.run == "run":
   
     if(platform.system() == 'Windows'):
         print("-----------Run on Windows------------")
-        subprocess.call('cd Debug & test.exe',shell=True)
+        subprocess.call('cd '+myfile+'& test.exe',shell=True)
         
     elif (platform.system()=='Linux'):
         print("---------Run on Linux--------------")

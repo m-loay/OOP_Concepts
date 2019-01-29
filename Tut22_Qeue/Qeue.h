@@ -28,12 +28,13 @@ private:
 	Node <NODETYPE> *start;
 	Node <NODETYPE> *end;
 	Node <NODETYPE> *getNewNode(const NODETYPE &);
+	int counter;
 
 };
 
 template <typename NODETYPE>
 Qeue<NODETYPE>::Qeue()
-:start(0),end(0)
+:start(0),end(0),counter(0)
  {
 
  }
@@ -59,38 +60,54 @@ template <typename NODETYPE>
 bool Qeue<NODETYPE>::qeue(const NODETYPE &val)
 {
 	Node <NODETYPE> *newNode=getNewNode(val);
-	if(isEmpty()) start = end = newNode;
+	bool result = false;
+
+	if(isEmpty())
+	{
+		start = end = newNode;
+		result = true;
+		++counter;
+	}
 	else
 	{
 		end->nextPtr = newNode;
 		end = newNode;
+		result = true;
+		++counter;
 	}
-	return true;
+	return result;
 }
 
 
 template <typename NODETYPE>
 bool Qeue<NODETYPE>::deqeue()
 {
-	if(isEmpty()) return false;
-	Node <NODETYPE> *current=start;
-	if (start == end) start = end = 0;
-	else start = start->nextPtr;
-	delete current;
-	return true;
+	bool result = false;
+	if(isEmpty())
+	{
+		result = false;
+	}
+	else
+	{
+		Node <NODETYPE> *current=start;
+		if (start == end)
+		{
+			start = end = 0;
+		}
+		else
+		{
+			start = start->nextPtr;
+		}
+		delete current;
+		result = true;
+		--counter;
+	}
+	return result;
 }
 
 template <typename NODETYPE>
 int Qeue<NODETYPE>::getCount()const
 {
-	if(isEmpty())return 0;
-	Node <NODETYPE> *current=start;
-	int counter=0;
-	while(counter!=0)
-	{
-		++counter;
-		current = current->nextPtr;
-	}
 	return counter;
 }
 
@@ -98,14 +115,20 @@ int Qeue<NODETYPE>::getCount()const
 template <typename NODETYPE>
 void Qeue<NODETYPE>::print()const
 {
-	if(isEmpty())return;
-	Node <NODETYPE> *current=start;
-	while(current!=0)
+	if(isEmpty())
 	{
-		cout<<current->data<<" ";
-		current=current->nextPtr;
+		cout<<"Qeue is Empty"<<endl;
 	}
-	cout<<endl;
+	else
+	{
+		Node <NODETYPE> *current=start;
+		while(current!=0)
+		{
+			cout<<current->data<<" --> ";
+			current=current->nextPtr;
+		}
+		cout<<"NULL"<<endl;
+	}
 }
 
 template <typename NODETYPE>

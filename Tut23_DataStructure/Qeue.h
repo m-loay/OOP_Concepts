@@ -31,6 +31,11 @@ public:
 	{
 		this->print();
 	}
+
+	int getQeueCount()const
+	{
+		return (this->getCount());
+	}
 };
 
 #endif /* QEUE_H_ */

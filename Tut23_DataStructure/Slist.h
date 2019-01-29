@@ -28,11 +28,12 @@ private :
 	Node <NODETYPE> *start;
 	Node <NODETYPE> *end;
 	Node <NODETYPE> *getNewNode(const NODETYPE &);
+	int counter;
 };
 
 template <typename NODETYPE>
 Slist<NODETYPE>::Slist()
-:start(0),end(0)
+:start(0),end(0),counter(0)
  {
 
  }
@@ -59,19 +60,22 @@ bool Slist<NODETYPE>::insertFront(const NODETYPE &val)
 {
 
 	Node <NODETYPE>*newNode = getNewNode(val);
+	bool result;
 
 	if(isEmpty())
 	{
 		start = end = newNode;
-		return true;
+		result = true;
+		++counter;
 	}
 	else
 	{
 		newNode ->nextPtr = start;
 		start = newNode;
-		return true;
+		result = true;
+		++counter;
 	}
-	return false;
+	return result;
 }
 
 template <typename NODETYPE>
@@ -79,65 +83,99 @@ bool Slist<NODETYPE>::insertBack(const NODETYPE &val)
 {
 
 	Node <NODETYPE>*newNode = getNewNode(val);
+	bool result;
 
 	if(isEmpty())
 	{
 		start = end = newNode;
-		return true;
+		result = true;
+		++counter;
 	}
 	else
 	{
 		end ->nextPtr = newNode;
 		end = newNode;
-		return true;
+		result = true;
+		++counter;
 	}
-	return false;
+	return result;
 }
 
 template <typename NODETYPE>
 bool Slist<NODETYPE>::removeFront()
 {
-	if(isEmpty()) return false;
-	Node <NODETYPE>*current = start;
+	bool result;
+	if(isEmpty())
+	{
+		result = false;
+	}
 
-	if(start == end) start = end =0;
-	else start = start->nextPtr;
-	delete current;
-	return true;
+	else
+	{
+		Node <NODETYPE>*current = start;
+
+		if(start == end)
+		{
+			start = end =0;
+			result = true;
+			--counter;
+		}
+		else
+		{
+			start = start->nextPtr;
+			delete current;
+			result = true;
+			--counter;
+		}
+	}
+	return result;
+
 }
 
 template <typename NODETYPE>
 bool Slist<NODETYPE>::removeBack()
 {
-	if(isEmpty()) return false;
-	Node <NODETYPE>*current = start;
+	bool result =false;
 
-	if(start == end) start = end =0;
+	if(isEmpty())
+	{
+		result = false;
+	}
+
 	else
 	{
-		while(current->nextPtr !=end)
+		Node <NODETYPE>*current = start;
+
+		if(start == end)
 		{
-			current = current->nextPtr;
+			start = end =0;
+			--counter;
 		}
-		end = current;
-		current = current ->nextPtr;
-		end->nextPtr =0;
+		else
+		{
+			while(current->nextPtr !=end)
+			{
+				current = current->nextPtr;
+			}
+
+			if(current!=0)
+			{
+				end = current;
+				current = current ->nextPtr;
+				end->nextPtr =0;
+				delete current;
+				result = true;
+				--counter;
+			}
+		}
+
 	}
-	delete current;
-	return true;
+	return result;
 }
 
 template <typename NODETYPE>
 int Slist<NODETYPE>::getCount()const
 {
-	if(isEmpty()) return 0;
-	int counter=0;
-	Node <NODETYPE>*current = start;
-	while (current != 0)
-	{
-		current = current->nextPtr;
-		++counter;
-	}
 	return counter;
 }
 
@@ -153,10 +191,10 @@ void Slist<NODETYPE>::print()const
 		Node <NODETYPE>*current = start;
 		while (current != 0)
 		{
-			cout<<current->getData()<<" ";
+			cout<<current->getData()<<" --> ";
 			current = current->nextPtr;
 		}
-		cout<<endl;
+		cout<<"NULL"<<endl;
 	}
 }
 

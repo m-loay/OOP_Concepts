@@ -26,9 +26,9 @@ Employee::~Employee()
 
 void Employee::print()const
 {
-	cout<<"Employee "<<firstName<<" "<<lastName<<"called"<<endl;
-	hireDate.print();
-	cout <<"and hired in ";
+	cout<<"Employee "<<firstName<<" "<<lastName<<" was born in"<<endl;
 	birthDate.print();
+	cout <<"and hired in ";
+	hireDate.print();
 }
 

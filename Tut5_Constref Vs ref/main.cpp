@@ -22,16 +22,17 @@ int main()
 
   /*Send object by value requires calling the default copy constructor.*/
   passObjectByValue(d1);
-  cout<<"Printing the object after modification  "<<endl;
+  cout<<"Printing the object after modification pass by value  "<<endl;
   d1.print();
 
   /*Send object by reference will not require calling the copy constructor  and it allows modifying the object.*/
   passObjectByRef(d1);
-  cout<<"Printing the object after modification  "<<endl;
+  cout<<"Printing the object after modification pass by reference  "<<endl;
   d1.print();
 
   /*Send the object by constant reference , will disallow modifying the object.*/
   passObjectByConstRef(d1);
+  cout<<"Printing the object after modification pass by constant reference  "<<endl;
   d1.print();
 
 }
