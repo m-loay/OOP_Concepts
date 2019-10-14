@@ -10,6 +10,7 @@
 #include <iostream>
 
 using namespace std;
+int Time_Base::count=0;
 
 Time_Base::Time_Base(int h , int m, int s)
 {
@@ -17,16 +18,18 @@ Time_Base::Time_Base(int h , int m, int s)
 	hour=h;
 	minute=m;
 	second=s;
-	cout<<"Constructor Called"<< second<<endl;
+	count++;
+	cout<<"Constructor Called"<< count<<endl;
 }
 
 Time_Base::~Time_Base()
 {
 	// TODO Auto-generated destructor stub
-	cout<<"Destructor Called"<< second <<endl;
+	count--;
+	cout<<"Destructor Called"<< count <<endl;
 }
 
-void Time_Base:: setTime (int h, int m, int s)
+void Time_Base::setTime (int h, int m, int s)
 
 {
 	hour=(h>=0 && h<24)? h:0;
@@ -38,24 +41,25 @@ const Time_Base &Time_Base::operator ++()
 {
 	hour++;
 	minute++;
-	//second++;
+	second++;
 	return *this;
 }
 
-const Time_Base &Time_Base::operator ++(int d)
+const Time_Base Time_Base::operator ++(int d)
 {
 
+	Time_Base temp = *this;
 	hour++;
 	minute++;
-	//second++;
-	return *this;
+	second++;
+	return temp;
 }
 
 const Time_Base &Time_Base::operator +(int d)
 {
 	hour+=d;
 	minute+=d;
-//second+=d;
+    second+=d;
 	return *this;
 }
 
@@ -63,7 +67,7 @@ const Time_Base &Time_Base::operator +(const Time_Base &a)
 {
 	this->hour+=a.hour;
 	this->minute+=a.minute;
-	//this->second+=a.second;
+	this->second+=a.second;
 
 	return *this;
 }
@@ -83,6 +87,7 @@ void Time_Base:: printUniversal()
 			setw(2)<<minute<<":"<<
 			setw(2)<<second<<endl;
 }
+
 void Time_Base:: printStandard ()
 {
 	cout << ((hour == 0|| hour== 12) ? 12: hour % 12) <<":"<<setfill('0')<<setw(2)<<minute<<":"<<

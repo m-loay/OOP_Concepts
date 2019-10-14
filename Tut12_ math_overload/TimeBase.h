@@ -20,7 +20,7 @@ public:
 	~Time_Base();
 	void setTime (int h, int m, int s);
 	const Time_Base &operator++();
-	const Time_Base &operator++(int d);
+	const Time_Base operator++(int d);
 	const Time_Base &operator+(int d);
 	const Time_Base &operator+(const Time_Base & );
 	void printUniversal();
@@ -30,6 +30,7 @@ private:
 	int hour;
 	int minute;
 	int second;
+	static int count;
 };
 
 #endif /* TIMEBASE_H_ */

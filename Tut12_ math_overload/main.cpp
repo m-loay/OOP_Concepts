@@ -21,9 +21,9 @@ int main()
 
 
 	/*Testing the prefix increment operator*/
-	cout << "\n\nTesting the prefix increment operator:\n"
-		 << " t is "<< t << endl;
-	cout << "++t is "<< ++t << endl;
+	cout << "\n\nTesting the prefix increment operator:\n"<<endl;
+	cout	 << " t is "<< t << endl;
+	cout << " ++t is "<< ++t << endl;
 	cout << " t is "<< t<<endl;
 
 	/*Testing the postfix increment operator*/
@@ -32,13 +32,10 @@ int main()
 	cout << "t++ is "<< t++ << endl;
 	cout << " t is "<< t<<endl;
 
-
 	/*Testing Adding value*/
 	cout << "\n\nTesting Adding value:\n"
 		 << " t is "<< t << endl;
 	cout << "t+3 is "<< t+3 << endl;
 	cout << " t is "<< t<<endl;
-
-
 
 }

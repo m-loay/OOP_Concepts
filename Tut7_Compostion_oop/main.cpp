@@ -18,6 +18,5 @@ int main()
 
 	Employee swe ("Desouky","Abdelqawy",birth,hire);
 	swe.print();
-
 }
 
