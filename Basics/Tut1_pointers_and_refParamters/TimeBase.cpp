@@ -9,16 +9,17 @@
 #include <iomanip>
 #include <iostream>
 
-using namespace std;
 
 Time_Base::Time_Base()
 {
+	std::cout<<"Time Base Constructor"<<std::endl;
 	// TODO Auto-generated constructor stub
 	hour=minute=second=0;
 }
 
 Time_Base::~Time_Base()
 {
+	std::cout<<"Time Base Destructor"<<std::endl;
 	// TODO Auto-generated destructor stub
 }
 
@@ -38,12 +39,12 @@ void Time_Base:: setTime (int h, int m, int s)
 
 void Time_Base:: printUniversal()
 {
-	cout<<setfill('0')<<setw(2)<<hour<<":"<<
+	std::cout<<setfill('0')<<setw(2)<<hour<<":"<<
 			setw(2)<<minute<<":"<<
-			setw(2)<<second<<endl;
+			setw(2)<<second<<std::endl;
 }
 void Time_Base:: printStandard ()
 {
-	cout << ((hour == 0|| hour== 12) ? 12: hour % 12) <<":"<<setfill('0')<<setw(2)<<minute<<":"<<
-			setw(2)<<second<<(hour < 12? " AM": " PM")<<endl;
+	std::cout << ((hour == 0|| hour== 12) ? 12: hour % 12) <<":"<<setfill('0')<<setw(2)<<minute<<":"<<
+			setw(2)<<second<<(hour < 12? " AM": " PM")<<std::endl;
 }
