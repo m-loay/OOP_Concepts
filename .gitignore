@@ -1,8 +1,12 @@
-# Compiled source #
+# IDE Files #
 ###################
-Debug/
+
+.pydevproject
 .cproject
 .project
+.vscode
+
+
 # Compiled source #
 ###################
 *.com
@@ -12,6 +16,9 @@ Debug/
 *.o
 *.so
 *.bin
+*.pyc
+*.xml
+
 
 # Packages #
 ############
@@ -31,6 +38,19 @@ Debug/
 *.log
 *.sql
 *.sqlite
+
+# Generated files#
+######################
+Debug/
+debug/
+build/
+*_LLD/
+Gen*/
+local_*
+_*
+_generated
+*.bak
+*.
 
 # OS generated files #
 ######################
