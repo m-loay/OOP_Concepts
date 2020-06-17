@@ -23,10 +23,10 @@ public:
 	void printStandard ();
 
 private:
-	int hour;
-	int minute;
-	int second;
-	int timer;
+	int hour{0};
+	int minute{0};
+	int second{0};
+	int timer{0};
 };
 
 #endif /* TIMEBASE_H_ */

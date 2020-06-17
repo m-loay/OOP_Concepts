@@ -10,7 +10,8 @@
 #include "iostream"
 using namespace std;
 
-class Increment {
+class Increment 
+{
 public:
 	Increment(int c = 0, int i = 1);
 	~Increment();
