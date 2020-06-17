@@ -1,11 +1,9 @@
-## Tut5_Constref Vs ref
+# Tut3_DefaultArguments_FunctionTemp
 
  Object Oriented Programming 
 
-This tutorial shows the difference between sending objects by value and by reference. Also, which passing mechanism requires calling the copy constructor.                     1)To understand passing object to function mechanisms. 
- 2)Send object by value requires calling the default copy constructor. 
- 3)Send object by reference will not require calling the copy constructor and it allows modifying the object. 
- 4)Send the object by constant reference , will disallow modifying the object. 
+This tutorial shows how to use the default arguements , also how to create function template.
+
 
 ## Other Important Dependencies
 * cmake >= 3.5
