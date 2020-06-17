@@ -8,7 +8,8 @@
 #ifndef DATE_H_
 #define DATE_H_
 
-class Date {
+class Date 
+{
 public:
 	static const int monthPerYear = 12;
 	Date(int =1, int = 1, int = 1900 ,int =1);

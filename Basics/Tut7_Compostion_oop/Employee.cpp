@@ -12,7 +12,7 @@ Employee::Employee(const string &first , const string &last , const Date &db , c
 :firstName(first),
  lastName(last),
  birthDate(db),
-hireDate(hb)
+ hireDate(hb)
 {
 	// TODO Auto-generated constructor stub
 	cout<<"Employee OBJ constructor "<<firstName<<" "<<lastName<<"called"<<endl;
