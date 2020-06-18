@@ -18,7 +18,8 @@ Array::Array(int arraySize)
 	ptr=new int [size];
 	counter=0;
 
-	ptr[size]={0};
+	for( int i = 0; i < size; i++ )
+		ptr[ i ] = 0; // copy array into object
 	cout<<"Constructor is Called"<<endl;
 }
 
@@ -76,7 +77,7 @@ const  Array &Array:: operator =(const Array &right)
 		// left-side array, then allocate new left-side array
 		if( size != right.size )
 		{
-			delete[] ptr; // release space
+			delete [] ptr; // release space
 			size = right.size; // resize this object
 			ptr = new int[ size ]; // create space for array copy
 		}

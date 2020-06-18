@@ -80,7 +80,7 @@ int main ()
 	integers3 = integers1 + integers2;
 	cout<<"counter intgers 1 = "<<integers1.getCounter()<<endl;
 	cout<<"counter intgers 2 = "<<integers2.getCounter()<<endl;
-	cout<<"counter intgers 2 = "<<integers3.getCounter()<<endl;
+	cout<<"counter intgers 3 = "<<integers3.getCounter()<<endl;
 	cout << "integers1:\n"	<< integers1;
 	cout << "integers2:\n"	<< integers2;
 	cout << "integers3:\n"	<< integers3;
