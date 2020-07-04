@@ -19,16 +19,14 @@ public:
 	CommissionEmployee(const string &, const string &, const string &, double=0,double=0);
 	~CommissionEmployee();
 
-
-
 	void setGrossSales (double);
 	double getGrossSales() const;
 
 	void setComissionRate (double);
 	double getComissionRate() const;
 
-	virtual double earnings()const;
-	virtual void print() const;
+	virtual double earnings()const override;
+	virtual void print() const override;
 
 private:
 

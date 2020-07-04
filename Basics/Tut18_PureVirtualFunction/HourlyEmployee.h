@@ -24,8 +24,8 @@ public:
 		void setHours (double);
 		double getHours() const;
 
-		virtual double earnings()const;
-		virtual void print() const;
+		virtual double earnings()const override;
+		virtual void print() const override;
 
 private:
 		double wages;

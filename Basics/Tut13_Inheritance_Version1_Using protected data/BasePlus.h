@@ -18,7 +18,7 @@ public:
 	void setBaseSalaray(double);
 	double getBaseSalary()const;
 
-	double earnings()const;
+	double earnings() const;
 	void print()const;
 
 private:

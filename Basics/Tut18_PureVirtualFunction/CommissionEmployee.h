@@ -27,8 +27,8 @@ public:
 	void setComissionRate (double);
 	double getComissionRate() const;
 
-	virtual double earnings()const;
-	virtual void print() const;
+	virtual double earnings()const override;
+	virtual void print() const override;
 
 private:
 

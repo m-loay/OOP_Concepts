@@ -21,8 +21,8 @@ public:
 	void setWeeklySalary (double);
 	double getWeeklySalary()const;
 
-	virtual double earnings()const;
-	virtual void print() const;
+	virtual double earnings()const override;
+	virtual void print() const override;
 
 private:
 	double weeklySalary;

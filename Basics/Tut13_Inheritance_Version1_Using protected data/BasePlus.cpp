@@ -46,7 +46,6 @@ void BasePlus:: print()const
 		<<"\nGross Sales: "<<grossSales
 		<<"\nBase Salary: "<<baseSalary
 		<<"\nComsssion Rate: "<<commsssionRate<<endl;
-
 }
 
 
