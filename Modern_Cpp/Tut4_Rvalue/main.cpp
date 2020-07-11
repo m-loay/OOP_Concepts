@@ -20,7 +20,8 @@ void Print(const int &x) {
 void Print(int &&x) {
 	std::cout << "Print(int &&)" << std::endl;
 }
-int main() {
+int main() 
+{
 	//x is lvalue
 	int x = 10;
 	
@@ -37,6 +38,10 @@ int main() {
 	
 	//Add returns a temporary (r-value)
 	int &&rv2 = Add(3,5) ;
+
+	//Assign variable x to r-value fives compilation error
+	// int &&r3 = x;
+
 	//Binds to function that accepts a temporary, i.e. r-value reference
 	Print(3);
 	return 0;
