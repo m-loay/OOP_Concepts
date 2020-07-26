@@ -1,10 +1,8 @@
-## Tut24_Template_Adv_1
+## Tut24_Template_Adv_3
 
  Object Oriented Programming 
 
-The purpose of the tutorial to learn about the following:
-1.  Implicit/Explicit Instantiation
-2.  Explicit Specialization
+The purpose of the tutorial to learn about the Variadic Templates.
 
 # Other Important Dependencies
 * cmake >= 3.5
