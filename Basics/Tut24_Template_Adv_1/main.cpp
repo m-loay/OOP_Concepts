@@ -44,6 +44,7 @@ T Sum(T*arr, int size)
 	}
 	return sum;
 }
+
 //Size is implicitly calculated in non-type template argument
 template<typename T,int size>
 T Sum(T (&arr)[size]) 
