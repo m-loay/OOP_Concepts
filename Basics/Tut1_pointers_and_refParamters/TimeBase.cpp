@@ -10,7 +10,7 @@
 #include <iostream>
 
 
-Time_Base::Time_Base()
+Time_Base::Time_Base(const int &ref = 0):counter(const_cast<int &>(ref))
 {
 	std::cout<<"Time Base Constructor"<<std::endl;
 	// TODO Auto-generated constructor stub
@@ -29,6 +29,17 @@ void Time_Base:: setTime (int h, int m, int s)
 	hour=(h>=0 && h<24)? h:0;
 	minute= (m>=0 && m<60)? m:0;
 	second= (s>=0 && s<60) ? s:0;
+}
+
+void Time_Base:: setCounter (const int &ref)
+
+{
+	counter = const_cast<int &>(ref);
+}
+
+int &Time_Base::getCounter()
+{
+	return counter;
 }
 
  int  &Time_Base:: badSetHour(int hh)
