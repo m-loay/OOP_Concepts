@@ -14,7 +14,6 @@ Time_Base::Time_Base(const int &ref = 0):counter(const_cast<int &>(ref))
 {
 	std::cout<<"Time Base Constructor"<<std::endl;
 	// TODO Auto-generated constructor stub
-	hour=minute=second=0;
 }
 
 Time_Base::~Time_Base()
@@ -32,7 +31,6 @@ void Time_Base:: setTime (int h, int m, int s)
 }
 
 void Time_Base:: setCounter (const int &ref)
-
 {
 	counter = const_cast<int &>(ref);
 }

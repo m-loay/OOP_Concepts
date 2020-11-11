@@ -25,9 +25,9 @@ public:
 	void printStandard ();
 
 private:
-	int hour;
-	int minute;
-	int second;
+	int hour{0};
+	int minute{0};
+	int second{0};
 	int & counter;
 };
 

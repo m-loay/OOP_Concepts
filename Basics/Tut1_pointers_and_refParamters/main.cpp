@@ -21,6 +21,7 @@ void printVector(const std::string & name , const std::vector<int>& arr);
  * dangof returning a reference*/
 int main()
 {
+	int x = 0;
 	/*Creating object from time base*/
 	Time_Base t(0);
 

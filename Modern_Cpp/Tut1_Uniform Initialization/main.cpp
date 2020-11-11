@@ -5,7 +5,7 @@
 */
 
 #include<iostream>
-
+#include <string.h>
 int main()
 {
 	/*Initialization of scalar*/
@@ -29,6 +29,8 @@ int main()
 	int *p1 = new int {};//Value initialization
 	int *p2 = new int(5);//Direct initialization
 	char *p3 = new char [8]{};//Value initialization
-	char *p4 = new char [8]{"Hello"};//Direct initialization
+	//char *p4 = new char [8]{"Hello"};//Direct initialization
+	char *p4 = new char [8];
+	strcpy (p4,"copy successful");
 	std::cout<<"*p1 = "<<*p1<<" *p2= "<<*p2<<" *p3= "<<*p3<<" *p4= "<<*p4<<std::endl;
 }
