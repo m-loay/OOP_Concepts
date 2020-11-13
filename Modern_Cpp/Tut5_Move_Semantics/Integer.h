@@ -2,7 +2,6 @@
 #include <iostream>
 class Integer 
 {
-	int *m_pInt;
 public:
 	//Default constructor
 	Integer();
@@ -16,27 +15,37 @@ public:
 	//Move constructor
 	Integer(Integer &&obj);
 
+	//overload = assignemet
+	Integer &operator=(const Integer &);
+
+	//overload = assignemet Move Constructor
+	Integer &operator=(Integer &&);
+
 	//overload + assignemet
 	Integer operator+(const Integer &)const;
 
-	//overload ++ assignemet
+	//overload pre-increment ++ assignemet
 	Integer &operator++();
 
-	//overload ++ assignemet
+	//overload post-increment ++ assignemet
 	Integer operator++(int);
 
 	//overload == assignemet
 	bool operator==(const Integer &)const;
-
-	//overload = assignemet
-	Integer &operator=(const Integer &);
 
 	//int operator overload
 	operator int ();
 
 	//setter & getter
 	int GetValue()const;
+	std::string GetName()const;
 	void SetValue(int value);
 	~Integer();
+
+private:
+	int *m_pInt;
+	static int counter;
+	std::string name;
+	void assignName();
 
 };

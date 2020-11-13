@@ -1,7 +1,7 @@
 #include<iostream>
 #include <string>
 #include "Integer.h"
-
+#define OPERATION(x) std::cout << "######### operation: '" << #x << "' ######### " << std::endl; x
 Integer Add(const Integer &a, const Integer &b)
 {
 	Integer temp;
@@ -15,34 +15,45 @@ Integer AddElison(int a, int b)
 	return temp;
 }
 
-void print(std::string name, Integer obj)
+void print(const Integer &obj)
 {
-	std::cout<<"object -->"<<name<<" value = "<<obj.GetValue()<<std::endl;
+	std::cout<<"object -->"<<obj.GetName()<<" value = "<<obj.GetValue()<<std::endl;
 }
 
 int main() 
 {
 	//create object a ,b from class Integer
-	Integer a(1), b(3);
+	OPERATION( Integer a(1));
+	print(a);
+
+	OPERATION( Integer b(3));
+	print(b);
 
 	//use temp object return from add to set object a
-	a.SetValue(Add(a,b).GetValue());
-	print("a",a);
+	OPERATION(a.SetValue(Add(a,b).GetValue()));
+	print(a);
 
 	//Print a once again as temp value(R-value) by using std::move
-	print("a",std::move(a));
+	OPERATION(print(std::move(a)));
 
 	//check object a using debugger
 	//reset object a with 5
-	a = AddElison(2,3);
-	print("a",a);
+	OPERATION(a = AddElison(2,3));
+	print(a);
 
 	//Add two objects
-	Integer sum (std::move(a+b));
-	print("sum",sum);
+	OPERATION(Integer c (a+b));
+	print(c);
 
 	//Integer sum ;
-	sum =std::move(a+b);
+	OPERATION(Integer d(std::move(a+b)));
+	print(d);
+
+	OPERATION(c = a+b);
+	print(c);
+
+	OPERATION(d = b);
+	print(d);
 
 	return 0;
 }

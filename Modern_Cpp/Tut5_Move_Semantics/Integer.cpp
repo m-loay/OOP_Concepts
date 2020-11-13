@@ -1,39 +1,72 @@
 #include "Integer.h"
 #include <iostream>
 
+//Initialize the provate static member
+int Integer::counter = 0;
+
 //Default constructor
 Integer::Integer() 
 {
-	std::cout << "Integer()" << std::endl;
+	assignName();
 	m_pInt = new int(0);
+	std::cout << name << " --> Integer()" << std::endl;
 }
 
 //Parameterized constructor
 Integer::Integer(int value) 
 {
-	std::cout << "Integer(int)" << std::endl;
+	assignName();
+	std::cout << name << " --> Integer(int)" << std::endl;
 	m_pInt = new int(value);
 }
 
 //Copy constructor
 Integer::Integer(const Integer & obj) 
 {
-	std::cout << "Integer(const Integer&)" << std::endl;
+	assignName();
+	std::cout << "Integer(const int&) " << name << " --> from obj " << obj.name <<std::endl;
 	m_pInt = new int(*obj.m_pInt);
 }
 
 //Move constructor
 Integer::Integer(Integer && obj) 
 {
-	std::cout << "Integer(int&&)" << std::endl;
+	std::cout << "Integer(int&&) " << name << " --> from obj " << obj.name <<std::endl;
 	m_pInt = obj.m_pInt;
 	obj.m_pInt = nullptr;
+}
+
+//overload = assignemet
+Integer& Integer::operator=(const Integer &rhs)
+{
+	std::cout << "operator=(const Integer &) " << name << " --> from obj " << rhs.name <<std::endl;
+	if(&rhs != this)
+	{
+		delete m_pInt;
+		m_pInt = new int (*rhs.m_pInt);
+	}
+
+	return *this;
+}
+
+//overload = assignemet Move Constructor
+Integer& Integer::operator=(Integer &&rhs)
+{
+	std::cout << "operator=(const Integer &&)" << name << " --> from obj " << rhs.name <<std::endl;
+	if(&rhs != this)
+	{
+		delete m_pInt;
+		m_pInt = new int (*rhs.m_pInt);
+	}
+	rhs.m_pInt = nullptr;
+
+	return *this;
 }
 
 //overload + assignemet
 Integer Integer::operator+(const Integer &rhs)const
 {
-	std::cout <<"operator+" << std::endl;
+	std::cout <<"operator+(const Integer &)" << std::endl;
 	Integer temp;
 	*temp.m_pInt = *m_pInt + *rhs.m_pInt;
 	return temp;
@@ -63,28 +96,21 @@ bool Integer:: operator==(const Integer &rhs)const
 	return *m_pInt == *rhs.m_pInt;
 }
 
-//overload = assignemet
-Integer& Integer::operator=(const Integer &rhs)
-{
-	std::cout <<"operator=" << std::endl;
-	if(&rhs != this)
-	{
-		delete m_pInt;
-		m_pInt = new int (*rhs.m_pInt);
-	}
-
-	return *this;
-}
-
 //int operator overload
 Integer::operator int ()
 {
 	return *m_pInt;
 }
 
+//setter & getter
 int Integer::GetValue() const 
 {
 	return *m_pInt;
+}
+
+std::string Integer::GetName() const 
+{
+	return name;
 }
 
 void Integer::SetValue(int value) 
@@ -92,8 +118,23 @@ void Integer::SetValue(int value)
 	*m_pInt = value;
 }
 
+void Integer:: assignName()
+{
+    char c = 'a' + counter;
+    name = std::string(1, c);
+    counter ++;
+}
+
 Integer::~Integer() 
 {
-	std::cout << "~Integer()" << std::endl;
-	delete m_pInt;
+	std::cout << "~Integer()" << name<< std::endl;
+	counter --;
+    if(m_pInt != nullptr)
+    {
+        delete m_pInt;
+    }
+    else
+    {
+        std::cout << name << "'s value is moved" << std::endl;
+    }
 }
