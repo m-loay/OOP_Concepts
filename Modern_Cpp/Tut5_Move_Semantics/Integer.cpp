@@ -1,27 +1,28 @@
 #include "Integer.h"
+#include <iostream>
 
-//default constructor
+//Default constructor
 Integer::Integer() 
 {
 	std::cout << "Integer()" << std::endl;
 	m_pInt = new int(0);
 }
 
-//Paramertrized constructor
+//Parameterized constructor
 Integer::Integer(int value) 
 {
 	std::cout << "Integer(int)" << std::endl;
 	m_pInt = new int(value);
 }
 
-//Copy Semanitics constructor
+//Copy constructor
 Integer::Integer(const Integer & obj) 
 {
 	std::cout << "Integer(const Integer&)" << std::endl;
 	m_pInt = new int(*obj.m_pInt);
 }
 
-//Move Semanitics constructor
+//Move constructor
 Integer::Integer(Integer && obj) 
 {
 	std::cout << "Integer(int&&)" << std::endl;
@@ -29,61 +30,68 @@ Integer::Integer(Integer && obj)
 	obj.m_pInt = nullptr;
 }
 
-// //overload + assignemet
-// Integer Integer:: operator+ (const Integer & right) 
-// {
-// 	std::cout << "operator+" << std::endl;
-// 	Integer temp;
-// 	temp.SetValue(this->GetValue() + right.GetValue());
+//overload + assignemet
+Integer Integer::operator+(const Integer &rhs)const
+{
+	std::cout <<"operator+" << std::endl;
+	Integer temp;
+	*temp.m_pInt = *m_pInt + *rhs.m_pInt;
+	return temp;
+}
 
-// 	return temp; // enables x = y = z, for example
-// }
+//overload pre-increment ++ assignemet
+Integer& Integer::operator++()
+{
+	std::cout <<"++operator" << std::endl;
+	++(*m_pInt);
+	return *this;
+}
 
-// //overload pre-increment ++ assignemet
-// Integer& Integer::operator++() 
-// {
-// 	++(*m_pInt);
-// 	return *this;
-// }
+//overload post-increment ++ assignemet
+Integer Integer::operator++(int)
+{
+	std::cout <<"operator++" << std::endl;
+	Integer temp(*this);
+	++(*m_pInt);
+	return temp;
+}
 
-// //overload post-increment ++ assignemet
-// Integer  Integer operator++(int)
-// {
-// 	Integer temp(*this);
-// 	++(*m_pInt);
-// 	return temp;
-// }
+//overload == assignemet
+bool Integer:: operator==(const Integer &rhs)const
+{
+	std::cout <<"operator==" << std::endl;
+	return *m_pInt == *rhs.m_pInt;
+}
 
-// //overload = assignemet
-// Integer& Integer:: operator= (const Integer & right) 
-// {
-// 	std::cout << "operator=" << std::endl;
-// 	if( &right != this)
-// 	{
-// 		delete m_pInt; // release space
-// 		m_pInt = new int(*right.m_pInt); // create space for array copy
-// 	} // end outer if
+//overload = assignemet
+Integer& Integer::operator=(const Integer &rhs)
+{
+	std::cout <<"operator=" << std::endl;
+	if(&rhs != this)
+	{
+		delete m_pInt;
+		m_pInt = new int (*rhs.m_pInt);
+	}
 
-// 	return *this; // enables x = y = z, for example
-// }
+	return *this;
+}
 
-//getter
+//int operator overload
+Integer::operator int ()
+{
+	return *m_pInt;
+}
+
 int Integer::GetValue() const 
 {
 	return *m_pInt;
 }
 
-//Setter
 void Integer::SetValue(int value) 
 {
-	if(m_pInt == nullptr)
-	{
-		m_pInt = new int(0);
-	}
 	*m_pInt = value;
 }
 
-//Destructor
 Integer::~Integer() 
 {
 	std::cout << "~Integer()" << std::endl;

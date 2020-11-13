@@ -1,6 +1,4 @@
-#ifndef INTEGER_H_
-#define INTEGER_H_
-
+#pragma once
 #include <iostream>
 class Integer 
 {
@@ -18,17 +16,23 @@ public:
 	//Move constructor
 	Integer(Integer &&obj);
 
-	//Assignment operator
-	Integer &operator=(const Integer&);
-
 	//overload + assignemet
-	Integer operator+(const Integer&);
+	Integer operator+(const Integer &)const;
 
-	//overload pre-increment ++ assignemet
+	//overload ++ assignemet
 	Integer &operator++();
 
-	//overload post-increment ++ assignemet
+	//overload ++ assignemet
 	Integer operator++(int);
+
+	//overload == assignemet
+	bool operator==(const Integer &)const;
+
+	//overload = assignemet
+	Integer &operator=(const Integer &);
+
+	//int operator overload
+	operator int ();
 
 	//setter & getter
 	int GetValue()const;
@@ -36,5 +40,3 @@ public:
 	~Integer();
 
 };
-
-#endif /* EMPLOYEE_H_ */
