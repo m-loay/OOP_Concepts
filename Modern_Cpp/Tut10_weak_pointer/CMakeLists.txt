@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(Tut10_weak_pointer)
+project(Tut10_weak_ptr)
  
 # #set build type to debug and C++ standard to 11
 set(CMAKE_BUILD_TYPE Debug)

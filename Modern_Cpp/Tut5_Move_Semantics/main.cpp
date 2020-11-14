@@ -36,23 +36,24 @@ int main()
 	//Print a once again as temp value(R-value) by using std::move
 	OPERATION(print(std::move(a)));
 
-	//check object a using debugger
-	//reset object a with 5
+	//reset object a with 5 using copy elision
 	OPERATION(a = AddElison(2,3));
 	print(a);
 
-	//Add two objects
+	//Add two objects in object's constructor
 	OPERATION(Integer c (a+b));
 	print(c);
 
-	//Integer sum ;
-	OPERATION(Integer d(std::move(a+b)));
+	//Add two objects in object's constructor using move
+	OPERATION(Integer d(c+a));
 	print(d);
 
+	//Add two objects then assignment semantics
 	OPERATION(c = a+b);
 	print(c);
 
-	OPERATION(d = b);
+	//Assignment semantics
+	OPERATION(d = std::move(a+b));
 	print(d);
 
 	return 0;

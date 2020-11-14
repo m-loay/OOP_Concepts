@@ -6,4 +6,4 @@ set(CMAKE_BUILD_TYPE Debug)
 set (CMAKE_CXX_STANDARD 11) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(test main.cpp Integer.cpp)
+add_executable(test main.cpp)

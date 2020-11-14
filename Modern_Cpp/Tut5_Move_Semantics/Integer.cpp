@@ -99,6 +99,7 @@ bool Integer:: operator==(const Integer &rhs)const
 //int operator overload
 Integer::operator int ()
 {
+	std::cout << "operator int" << name<< std::endl;
 	return *m_pInt;
 }
 
@@ -132,6 +133,7 @@ Integer::~Integer()
     if(m_pInt != nullptr)
     {
         delete m_pInt;
+		
     }
     else
     {
