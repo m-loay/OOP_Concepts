@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.12)
 project(Tut4_Perferct_Forward)
  
 #set build type to debug
-set(CMAKE_BUILD_TYPE Debug)
 
-add_executable(test main.cpp Integer.cpp) 
+
+add_executable(${PROJECT_NAME} main.cpp Integer.cpp) 
