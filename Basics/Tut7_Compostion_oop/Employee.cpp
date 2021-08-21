@@ -8,7 +8,31 @@
 #include "Employee.h"
 #include <iostream>
 using namespace std;
-Employee::Employee(const string &first , const string &last , const Date &db , const Date &hb)
+EmployeeNoMemberInitializer::EmployeeNoMemberInitializer(const string &first , const string &last , const Date &db , const Date &hb)
+:firstName(first),
+ lastName(last)
+{
+	// TODO Auto-generated constructor stub
+	birthDate = db;
+	hireDate = hb;
+	cout<<"Employee OBJ constructor "<<firstName<<" "<<lastName<<"called"<<endl;
+}
+
+EmployeeNoMemberInitializer::~EmployeeNoMemberInitializer()
+{
+	// TODO Auto-generated destructor stub
+	cout<<"Employee OBJ destructor "<<firstName<<" "<<lastName<<"called"<<endl;
+}
+
+void EmployeeNoMemberInitializer::print()const
+{
+	cout<<"Employee "<<firstName<<" "<<lastName<<" was born in"<<endl;
+	birthDate.print();
+	cout <<"and hired in ";
+	hireDate.print();
+}
+
+EmployeeWithMemberInitializer::EmployeeWithMemberInitializer(const string &first , const string &last , const Date &db , const Date &hb)
 :firstName(first),
  lastName(last),
  birthDate(db),
@@ -18,13 +42,37 @@ Employee::Employee(const string &first , const string &last , const Date &db , c
 	cout<<"Employee OBJ constructor "<<firstName<<" "<<lastName<<"called"<<endl;
 }
 
-Employee::~Employee()
+EmployeeWithMemberInitializer::~EmployeeWithMemberInitializer()
 {
 	// TODO Auto-generated destructor stub
 	cout<<"Employee OBJ destructor "<<firstName<<" "<<lastName<<"called"<<endl;
 }
 
-void Employee::print()const
+void EmployeeWithMemberInitializer::print()const
+{
+	cout<<"Employee "<<firstName<<" "<<lastName<<" was born in"<<endl;
+	birthDate.print();
+	cout <<"and hired in ";
+	hireDate.print();
+}
+
+EmployeeWithMemberInitializerREF::EmployeeWithMemberInitializerREF(const string &first , const string &last , const Date &db , const Date &hb)
+:firstName(first),
+ lastName(last),
+ birthDate(db),
+ hireDate (hb)
+{
+	// TODO Auto-generated constructor stub
+	cout<<"Employee OBJ constructor "<<firstName<<" "<<lastName<<"called"<<endl;
+}
+
+EmployeeWithMemberInitializerREF::~EmployeeWithMemberInitializerREF()
+{
+	// TODO Auto-generated destructor stub
+	cout<<"Employee OBJ destructor "<<firstName<<" "<<lastName<<"called"<<endl;
+}
+
+void EmployeeWithMemberInitializerREF::print()const
 {
 	cout<<"Employee "<<firstName<<" "<<lastName<<" was born in"<<endl;
 	birthDate.print();

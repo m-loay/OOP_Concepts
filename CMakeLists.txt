@@ -11,3 +11,5 @@ add_subdirectory(Basics/Tut3_DefaultArguments_FunctionTemp)
 add_subdirectory(Basics/Tut4_CallingConstructorDestructor)
 add_subdirectory(Basics/Tut5_ConstObj_ConstMembers)
 add_subdirectory(Basics/Tut6_MemberInitializer)
+add_subdirectory(Basics/Tut7_Compostion_oop)
+
