@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Tut4_ConstObj_ConstMembers)
+project(Tut5_ConstObj_ConstMembers)
  
 #set build type to debug
 

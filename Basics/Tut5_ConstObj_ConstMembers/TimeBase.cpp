@@ -23,7 +23,6 @@ Time_Base::~Time_Base()
 }
 
 void Time_Base:: setTime (int h, int m, int s)
-
 {
 	setHour(h);
 	setMin(m);
@@ -31,19 +30,16 @@ void Time_Base:: setTime (int h, int m, int s)
 }
 
 void Time_Base:: setHour (int h)
-
 {
 	hour=(h>=0 && h<24)? h:0;
 }
 
 void Time_Base:: setMin (int m)
-
 {
 	minute= (m>=0 && m<60)? m:0;
 }
 
 void Time_Base:: setSec (int s)
-
 {
 	second= (s>=0 && s<60) ? s:0;
 }
