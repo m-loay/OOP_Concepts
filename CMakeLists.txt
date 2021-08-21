@@ -12,4 +12,5 @@ add_subdirectory(Basics/Tut4_CallingConstructorDestructor)
 add_subdirectory(Basics/Tut5_ConstObj_ConstMembers)
 add_subdirectory(Basics/Tut6_MemberInitializer)
 add_subdirectory(Basics/Tut7_Compostion_oop)
+add_subdirectory(Basics/Tut8_Cascaded_member_function_Call_thisPointer)
 
