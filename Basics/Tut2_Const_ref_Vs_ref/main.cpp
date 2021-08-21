@@ -32,7 +32,7 @@ int main()
 
   /*Send the object by constant reference , will disallow modifying the object.*/
   passObjectByConstRef(d1);
-  cout<<"Printing the object after modification pass by constant reference  "<<endl;
+  cout<<"Printing the object after call pass by constant reference  "<<endl;
   d1.print();
 
 }

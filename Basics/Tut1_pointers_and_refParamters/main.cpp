@@ -11,9 +11,10 @@
 void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd, int **even,int *numEven);
 void SeparateOddAndEvenRef(const int arr[],int size, int *&odd,int &numOdd, int *&even,int &numEven);
 void SeparateOddAndEvenVect(const std::vector<int>& arr,std::vector<int>&odd,std::vector<int>&even);
+
 void printArray(const std::string & name , const int arr[], int size);
 void printVector(const std::string & name , const std::vector<int>& arr);
-//using namespace std;
+
 /*
  * call by value
  * call by pointer
