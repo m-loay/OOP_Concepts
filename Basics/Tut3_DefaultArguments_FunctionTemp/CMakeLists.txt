@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Tut2_DefaultArguments_FunctionTemp)
+project(Tut3_DefaultArguments_FunctionTemp)
  
 #set build type to debug
 

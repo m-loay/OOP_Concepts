@@ -7,3 +7,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(Basics/Tut1_pointers_and_refParamters)
 add_subdirectory(Basics/Tut2_Const_ref_Vs_ref)
+add_subdirectory(Basics/Tut3_DefaultArguments_FunctionTemp)
+add_subdirectory(Basics/Tut4_CallingConstructorDestructor)
