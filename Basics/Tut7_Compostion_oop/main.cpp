@@ -10,20 +10,20 @@
 #include "Employee.h"
 using namespace std;
 
-void callMLoay(void);
-void callKDahawy(void);
-void callMIbrahim(void);
+void EmployeeNoMemberInitializerClass(void);
+void EmployeeWithMemberInitializerClass(void);
+void EmployeeWithMemberInitializerREFClass(void);
 
 int main()
 {
-	callMLoay();
-	callKDahawy();
-	callMIbrahim();
+	EmployeeNoMemberInitializerClass();
+	EmployeeWithMemberInitializerClass();
+	EmployeeWithMemberInitializerREFClass();
 }
 
-void callMLoay(void)
+void EmployeeNoMemberInitializerClass(void)
 {
-	std::cout<<"============================================================="<<std::endl;
+	std::cout<<"===========EmployeeNoMemberInitializerClass================"<<std::endl;
 	std::cout<<"Date Object Construction"<<std::endl;
 	Date birth(7,1,1990,1);
 	Date hire (10,1,2016,2);
@@ -36,9 +36,10 @@ void callMLoay(void)
 	}
 
 }
-void callKDahawy(void)
+
+void EmployeeWithMemberInitializerClass(void)
 {
-	std::cout<<"============================================================="<<std::endl;
+	std::cout<<"==============EmployeeWithMemberInitializerClass====================="<<std::endl;
 	std::cout<<"Date Object Construction"<<std::endl;
 	Date birth(7,1,1990,1);
 	Date hire (10,1,2016,2);
@@ -50,9 +51,10 @@ void callKDahawy(void)
 	}
 
 }
-void callMIbrahim(void)
+
+void EmployeeWithMemberInitializerREFClass(void)
 {
-	std::cout<<"============================================================="<<std::endl;
+	std::cout<<"=======EmployeeWithMemberInitializerREFClass======"<<std::endl;
 	std::cout<<"Date Object Construction"<<std::endl;
 	Date birth(7,1,1990,1);
 	Date hire (10,1,2016,2);
@@ -62,5 +64,4 @@ void callMIbrahim(void)
 		EmployeeWithMemberInitializerREF se ("Moataz","Ibrahim",birth,hire);
 		se.print();
 	}
-
 }

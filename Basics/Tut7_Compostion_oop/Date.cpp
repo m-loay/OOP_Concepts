@@ -20,6 +20,15 @@ Date::Date(int mn ,int dy, int yr,int id)
 	cout <<"constructor Date of id "<<ID<<"has been called"<<endl;
 }
 
+Date::Date(const Date& d)
+{
+	month = d.month;
+	year = d.year;
+	day = d.day;
+	ID = d.ID;
+	cout <<"Copy constructor Date of id "<<ID<<"has been called"<<endl;
+}
+
 Date::~Date()
 {
 	// TODO Auto-generated destructor stub
