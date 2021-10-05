@@ -22,25 +22,17 @@ void Box_vol:: setDim(int length, int width, int height)
 	len=length;
 	wid=width;
 	high=height;
-	boxVolume();
 }
 
 int Box_vol:: getVolume(void)
 {
-	return volume;
+	return len * wid * high;
 }
 
 void Box_vol:: print_volume (void)
 {
 	cout<<"volume= "<<getVolume()<<endl;
 }
-
-
-// function boxVolume calculates the volume of a box
-void Box_vol:: boxVolume( void )
-{
-	volume= len * wid * high;
-}// end function boxVolume
 
 void Box_vol:: max_valueInt(int op1, int op2, int op3)
 {

@@ -27,9 +27,8 @@ public:
 	void max_valueDouble(double op1=0, double op2=0, double op3=0);
 
 private:
-	int volume,len,wid,high,biggest_int ;
+	int len,wid,high,biggest_int ;
 	double biggest_double;
-	void boxVolume( void );
 };
 
 #endif /* BOXVOL_H_ */

@@ -9,7 +9,7 @@
 #include "maximum.h"
 #include "Boxvol.h"
 using namespace std;
-
+int var(3);
 
 int main ()
 {
@@ -44,6 +44,14 @@ int main ()
 	/*given to function floats arguments*/
 	volume_box.max_valueDouble(10.5,5.3,2.1);
 	cout << "dBiggest double: "<<volume_box.getBiggestDouble() <<endl;// prompt user for data
+
+	/*compare between local and global scope*/
+	{
+		int var(6);
+		std::cout<<"Printing var in local scope, var = "<<var<<std::endl;
+
+		std::cout<<"Printing var in global scope ::var= "<<::var<<std::endl;
+	}
 
 }
 
