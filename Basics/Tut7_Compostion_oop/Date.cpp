@@ -16,6 +16,7 @@ Date::Date(int mn ,int dy, int yr,int id)
 	year = (yr >1990 && yr<=2016)?yr:1990;
 	day = (dy> 0 && dy<=30)?dy:1;
 	ID =id;
+	constructorType = "Paramerterized Constructor ";
 
 	cout <<"constructor Date of id "<<ID<<"has been called"<<endl;
 }
@@ -26,13 +27,15 @@ Date::Date(const Date& d)
 	year = d.year;
 	day = d.day;
 	ID = d.ID;
+	constructorType = "Copy Constructor ";
+
 	cout <<"Copy constructor Date of id "<<ID<<"has been called"<<endl;
 }
 
 Date::~Date()
 {
 	// TODO Auto-generated destructor stub
-	cout <<"destructor Date of id "<<ID<<"has been called"<<endl;
+	cout <<"destructor of "<<constructorType<<" Date of id "<<ID<<"has been called"<<endl;
 }
 
 void Date::print() const

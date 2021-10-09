@@ -22,6 +22,7 @@ private:
 	int year;
 	int day;
 	int ID;
+	std::string constructorType;
 };
 
 #endif /* DATE_H_ */
