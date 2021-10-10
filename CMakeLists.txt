@@ -16,6 +16,7 @@ add_subdirectory(Basics/Tut8_Cascaded_member_function_Call_thisPointer)
 add_subdirectory(Basics/Tut9_static_member)
 add_subdirectory(Basics/Tut20_namespace)
 add_subdirectory(Basics/Tut10_Overloading_Stream_Insertion_and_Stream)
+add_subdirectory(Basics/Tut11_math_overload)
 
 
 

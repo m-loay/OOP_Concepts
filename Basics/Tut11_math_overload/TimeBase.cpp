@@ -18,15 +18,26 @@ Time_Base::Time_Base(int h , int m, int s)
 	hour=h;
 	minute=m;
 	second=s;
+	id = count;
 	count++;
-	cout<<"Constructor Called"<< count<<endl;
+	cout<<"Constructor Called for iD "<< id<<endl;	
+}
+
+Time_Base::Time_Base(const Time_Base& t) 
+{
+	// TODO Auto-generated constructor stub
+	hour=t.hour;
+	minute=t.minute;
+	second=t.second;
+	id = count;
+	count++;
+	cout<<"Copy Constructor Called for iD "<< id<<endl;	
 }
 
 Time_Base::~Time_Base()
 {
 	// TODO Auto-generated destructor stub
-	count--;
-	cout<<"Destructor Called"<< count <<endl;
+	cout<<"Destructor Called for ID "<< id <<endl;
 }
 
 void Time_Base::setTime (int h, int m, int s)

@@ -17,6 +17,7 @@ class Time_Base
 	friend istream &operator>>( istream &, Time_Base & );
 public:
 	Time_Base(int=0 , int=0 , int=0);
+	Time_Base(const Time_Base&);
 	~Time_Base();
 	void setTime (int h, int m, int s);
 	const Time_Base &operator++();
@@ -31,6 +32,7 @@ private:
 	int minute;
 	int second;
 	static int count;
+	int id;
 };
 
 #endif /* TIMEBASE_H_ */
