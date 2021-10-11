@@ -15,13 +15,13 @@ CommissionEmployee::CommissionEmployee(const string &first, const string &last, 
 	SocialNumber=ssn;
 	commsssionRate=cr;
 	grossSales=gs;
-	cout<<"constructor Called"<<endl;
+	cout<<"CommissionEmployee constructor Called"<<endl;
 }
 
 CommissionEmployee::~CommissionEmployee()
 {
 	// TODO Auto-generated destructor stub
-	cout<<"Destructor Called"<<endl;
+	cout<<"CommissionEmployee Destructor Called"<<endl;
 }
 
 void CommissionEmployee::setFirstName(const string &first)
