@@ -13,13 +13,13 @@ CommissionEmployee::CommissionEmployee(const string &first, const string &last, 
 	// TODO Auto-generated constructor stub
 	commsssionRate=cr;
 	grossSales=gs;
-	cout<<"Constructor base  Call"<<endl;
+	cout<<"CommissionEmployee Constructor base  Call"<<endl;
 }
 
 CommissionEmployee::~CommissionEmployee()
 {
 	// TODO Auto-generated destructor stub
-	cout<<"Destructor base Call"<<endl;
+	cout<<"CommissionEmployee Destructor base Call"<<endl;
 }
 
 void CommissionEmployee::setFirstName(const string &first)
@@ -83,7 +83,7 @@ double CommissionEmployee::earnings()const
 
 void CommissionEmployee::print()const
 {
-	cout<<"Commision Employee: "<<getFirstName()<<' '<<getLastName()
+	cout<<"Employee: "<<getFirstName()<<' '<<getLastName()
 		<<"\nSocial Security Number:"<<getSocialNumber()
 		<<"\nGross Sales: "<<getGrossSales()
 		<<"\nEarning: "<<earnings()<<endl;
