@@ -51,6 +51,8 @@ int main()
 	int &&rv2 = Add(3,5) ;
 
 	//Binds to function that accepts a temporary, i.e. r-value reference
+	// comment function Print(int &&), the input argument 3(R-value) will bind to L-value
+	//only when the refernce is constant in that case function Print(const int&) will be called.
 	Print(3);
 
 	//Assign variable x to r-value gives compilation error
