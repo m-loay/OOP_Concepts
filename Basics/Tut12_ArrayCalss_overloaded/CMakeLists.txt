@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Tut11_ArrayCalss_overloaded)
+project(Tut12_ArrayCalss_overloaded)
  
 # #set build type to debug and C++ standard to 11
 
