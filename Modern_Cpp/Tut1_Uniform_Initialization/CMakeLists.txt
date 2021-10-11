@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(UniformInit)
+project(Tut1_Uniform_Initialization)
  
 # #set build type to debug and C++ standard to 11
 

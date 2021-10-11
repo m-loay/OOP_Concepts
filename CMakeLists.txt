@@ -5,6 +5,7 @@ project(cppCourse)
 set (CMAKE_CXX_STANDARD 11) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#basics
 add_subdirectory(Basics/Tut1_pointers_and_refParamters)
 add_subdirectory(Basics/Tut2_Const_ref_Vs_ref)
 add_subdirectory(Basics/Tut3_DefaultArguments_FunctionTemp)
@@ -23,6 +24,12 @@ add_subdirectory(Basics/Tut14_Inheritance_UsingPrivateData)
 add_subdirectory(Basics/Tut15_Invoking_BaseClassFunctions_fromDerivedClass)
 add_subdirectory(Basics/Tut16_Derived_ClassMemberFunction_CallsViaBaseClassPointersClass)
 add_subdirectory(Basics/Tut17_VirtualFunction)
+add_subdirectory(Basics/Tut18_PureVirtualFunction)
+
+#Modern_Cpp
+add_subdirectory(Modern_Cpp/Tut1_Uniform_Initialization)
+
+
 
 
 
