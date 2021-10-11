@@ -28,6 +28,8 @@ add_subdirectory(Basics/Tut18_PureVirtualFunction)
 
 #Modern_Cpp
 add_subdirectory(Modern_Cpp/Tut1_Uniform_Initialization)
+add_subdirectory(Modern_Cpp/Tut2_Range_based_for_loop)
+add_subdirectory(Modern_Cpp/Tut3_Delegated_Constructor)
 
 
 

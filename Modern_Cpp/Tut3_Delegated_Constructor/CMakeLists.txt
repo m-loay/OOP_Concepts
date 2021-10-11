@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Delegated_Constructor)
+project(Tut3_Delegated_Constructor)
  
 # #set build type to debug and C++ standard to 11
 
