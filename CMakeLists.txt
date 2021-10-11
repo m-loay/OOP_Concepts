@@ -20,6 +20,7 @@ add_subdirectory(Basics/Tut11_math_overload)
 add_subdirectory(Basics/Tut12_ArrayCalss_overloaded)
 add_subdirectory(Basics/Tut13_Inheritance_Version1_Using_protected_data)
 add_subdirectory(Basics/Tut14_Inheritance_UsingPrivateData)
+add_subdirectory(Basics/Tut15_Invoking_BaseClassFunctions_fromDerivedClass)
 
 
 

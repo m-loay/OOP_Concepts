@@ -20,30 +20,30 @@ int main ()
 	BasePlus *baseEmp_ptr=0;
 
 	/*Print the data in all objects*/
-	cout<<"Commission Employee"<<endl;
+	cout<<"\n ----Commission Employee----\n"<<endl;
 	comEmp.print();
 
-	cout<<"Base Plus"<<endl;
+	cout<<"\n----Base Plus----\n"<<endl;
 	baseEmp.print();
 
 	/*Assign each pointer to its equavlent object*/
-	cout<<"Assign pointers"<<endl;
+	cout<<"\n----Assign pointers----\n"<<endl;
 	comEmp_ptr=&comEmp;
 	baseEmp_ptr=&baseEmp;
 
 	/*A base class pointer to a base class object invoke base class functionality */
-	cout<<"Commission Employee pointer"<<endl;
+	cout<<"\n----Commission Employee pointer----\n"<<endl;
 	comEmp_ptr->print();
 
 	/*A derive class pointer to a Derived class object invoke derived class functionality */
-	cout<<"Base Plus pointer"<<endl;
+	cout<<"\n----Base Plus pointer----\n"<<endl;
 	baseEmp_ptr->print();
 
 	/*A base class pointer to a Derived class object invoke base class functionality in derived object */
-	cout<<"Assign pointer base to derived"<<endl;
+	cout<<"\n----Assign pointer base to derived----\n"<<endl;
 	comEmp_ptr=&baseEmp;
 
-	cout<<"Calling print() of base throught a pointer to derived object"<<endl;
+	cout<<"\n ----Calling print() of base throught a pointer to derived object----\n"<<endl;
 	comEmp_ptr->print();
 
 }

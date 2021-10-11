@@ -12,13 +12,13 @@ BasePlus::BasePlus(const string &first, const string &last, const string &ssn, d
 {
 	// TODO Auto-generated constructor stub
 	setBaseSalaray(salary);
-	cout<<"Constructor derived  Call"<<endl;
+	cout<<"BasePlus Constructor derived  Call"<<endl;
 }
 
 BasePlus::~BasePlus()
 {
 	// TODO Auto-generated destructor stub
-	cout<<"Destructor derived Call"<<endl;
+	cout<<"BasePlus Destructor derived Call"<<endl;
 }
 
 void BasePlus::setBaseSalaray(double salary )
@@ -42,5 +42,5 @@ void BasePlus:: print()const
 {
 
 	CommissionEmployee::print();
-	cout<<"\nBase Salary: "<<getBaseSalary()<<endl;
+	cout<<"Base Salary: "<<getBaseSalary()<<endl;
 }
