@@ -21,7 +21,8 @@ add_subdirectory(Basics/Tut12_ArrayCalss_overloaded)
 add_subdirectory(Basics/Tut13_Inheritance_Version1_Using_protected_data)
 add_subdirectory(Basics/Tut14_Inheritance_UsingPrivateData)
 add_subdirectory(Basics/Tut15_Invoking_BaseClassFunctions_fromDerivedClass)
-
+add_subdirectory(Basics/Tut16_Derived_ClassMemberFunction_CallsViaBaseClassPointersClass)
+add_subdirectory(Basics/Tut17_VirtualFunction)
 
 
 

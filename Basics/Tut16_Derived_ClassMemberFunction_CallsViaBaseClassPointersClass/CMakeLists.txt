@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(Tut16_Derived_ClassMemberFunctionCallsViaBaseClassPointers-Class)
+project(Tut16_Derived_ClassMemberFunction_CallsViaBaseClassPointersClass)
 
 #set build type to debug
 

@@ -25,7 +25,7 @@ int main ()
 	BasePlus *ptr_bemp=&bemp;
 
 	/*Use static binding to print data for both objects*/
-	cout<<"Static binding"<<endl;
+	cout<<"\n ----Static binding----\n"<<endl;
 	cemp.print();
 	bemp.print();
 
@@ -33,7 +33,7 @@ int main ()
 	 * base pointer to base object
 	 * derived pointer to derived object*/
 
-	cout<<"Pointer printing"<<endl;
+	cout<<"\n ----Pointer printing---- \n"<<endl;
 	ptr_cemp ->print();
 	ptr_bemp ->print();
 
@@ -41,7 +41,7 @@ int main ()
    * when a base pointer to derived object is used ,the compiler automatically
    * selects the member function of object type (not the pointer type object) and call it.
    * */
-  cout<<"Using a base pointer to derived object"<<endl;
+  cout<<"\n ----Using a base pointer to derived object----\n"<<endl;
   ptr_cemp = &bemp;
   ptr_cemp ->print();
 }
