@@ -37,7 +37,7 @@ Integer::Integer(Integer && obj)
 }
 
 //overload = assignemet
-Integer& Integer::operator=(const Integer &rhs)
+const Integer& Integer::operator=(const Integer &rhs)
 {
 	std::cout << "operator=(const Integer &) " << name << " --> from obj " << rhs.name <<std::endl;
 	if(&rhs != this)
@@ -50,7 +50,7 @@ Integer& Integer::operator=(const Integer &rhs)
 }
 
 //overload = assignemet Move Constructor
-Integer& Integer::operator=(Integer &&rhs)
+const Integer& Integer::operator=(Integer &&rhs)
 {
 	std::cout << "operator=(const Integer &&)" << name << " --> from obj " << rhs.name <<std::endl;
 	if(&rhs != this)
@@ -66,14 +66,14 @@ Integer& Integer::operator=(Integer &&rhs)
 //overload + assignemet
 Integer Integer::operator+(const Integer &rhs)const
 {
-	std::cout <<"operator+(const Integer &)" << std::endl;
+	std::cout <<"operator+(const Integer &)" << name << " --> from obj " << rhs.name <<std::endl;
 	Integer temp;
 	*temp.m_pInt = *m_pInt + *rhs.m_pInt;
 	return temp;
 }
 
 //overload pre-increment ++ assignemet
-Integer& Integer::operator++()
+const Integer& Integer::operator++()
 {
 	std::cout <<"++operator" << std::endl;
 	++(*m_pInt);

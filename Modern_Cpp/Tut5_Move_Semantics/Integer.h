@@ -16,16 +16,16 @@ public:
 	Integer(Integer &&obj);
 
 	//overload = assignemet
-	Integer &operator=(const Integer &);
+	const Integer &operator=(const Integer &);
 
 	//overload = assignemet Move Constructor
-	Integer &operator=(Integer &&);
+	const Integer &operator=(Integer &&);
 
 	//overload + assignemet
 	Integer operator+(const Integer &)const;
 
 	//overload pre-increment ++ assignemet
-	Integer &operator++();
+	const Integer &operator++();
 
 	//overload post-increment ++ assignemet
 	Integer operator++(int);
