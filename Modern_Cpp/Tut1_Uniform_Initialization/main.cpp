@@ -28,8 +28,9 @@ int main()
     std::cout<<"===========Array types(Heap)=============="<<std::endl;
     int *p1 (new int {});//Value initialization
     int *p2 (new int(5));//Direct initialization
-    char *p3 (new char [8]{});//Value initialization
+    char *p3 (new char [8]{'a','b'});//Value initialization
     char *p4 (new char [8]{});
+    int *p5 (new int[3] {3,2,5});//Value initialization
     strcpy (p4,"copy");
-    std::cout<<"*p1 = "<<*p1<<" *p2= "<<*p2<<" *p3= "<<*p3<<" *p4= "<<*p4<<std::endl;
+    std::cout<<"*p1 = "<<*p1<<" *p2= "<<*p2<<" *p3= "<<*p3<<" *p4= "<<*p4<<" *p5= "<<*p5<<std::endl;
 }

@@ -4,7 +4,7 @@
 #define OPERATION(x) std::cout << "######### operation: '" << #x << "' ######### " << std::endl; x
 
 void Display(Integer *p);
-void Display(std::unique_ptr<Integer> &p);
+void Display(std::unique_ptr<Integer> p);
 Integer * GetPointer(int value);
 void operateNormalPointer(int value);
 void operateSmartPointer(int value);
@@ -29,7 +29,7 @@ void Display(Integer *p)
 }
 
 //Dispaly function . input:unique pointer to object type Integer
-void Display(std::unique_ptr<Integer> &p)
+void Display(std::unique_ptr<Integer> p)
 {
 	std::cout<< "Display(std::unique_ptr<Integer> &p)" << std::endl;
 	if(!p)
@@ -107,6 +107,6 @@ void operateSmartPointer(int value)
 
 
 	//Display the value of unique pointer (seny by refernce it wont destroyed)
-	Display(p);
+	Display(std::move(p));
 }
 

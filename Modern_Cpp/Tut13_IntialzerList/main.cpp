@@ -3,8 +3,10 @@
 #include <cassert>
 class Bag 
 {
+private:
 	int arr[10];
 	int m_Size{};
+	
 public:
 	//Provides uniform initialization support for braced list of elements as arguments
 	Bag(std::initializer_list<int> values) 

@@ -4,8 +4,16 @@
 class IntPtr
 {
 	public:
-	IntPtr(Integer *p):m_p(p){}
-	~IntPtr(){delete m_p;}
+	IntPtr(Integer *p):m_p(p)
+	{
+		std::cout << "IntPtr()"<<std::endl;
+	}
+	~IntPtr()
+	{
+		std::cout << "~IntPtr()" <<" "<< m_p->GetValue() <<std::endl;
+		delete m_p;
+	}
+
 	Integer *operator -> ()
 	{
 		return m_p;

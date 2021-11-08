@@ -17,14 +17,21 @@ int main()
 	/*implicit conversion between basic type --> user defined type*/
 	Integer i = 7;
 
-	/*explicit conversion between basic defined type --> basic type*/
-	int ix = i;
+	/*explicit conversion between basic defined type --> basic type
+	 * when int operator is defined as follows  explicit operator int ();
+	 * static_cast<int>(i) for object i become mandatory.
+	*/
+	int ix = static_cast<int>(i);
 
 	std::cout<<"[Wrong Casting c-style]f = 5/2 --> "<<f1<<std::endl;
+
 	std::cout<<"[Correct Casting c-style]f = 5/2 --> "<<f2<<std::endl;
+
 	std::cout<<"[Correct Casting static cast c++]f = 5/2 --> "<<f3<<std::endl;
+
 	std::cout<<"[implicit conversion between basic type --> user defined type] --> "
 	         <<i.GetValue()<<std::endl;
+			 
 	std::cout<<"[explicit conversion between basic defined type --> basic type] --> "
 	         <<ix<<std::endl;
 	return 0;

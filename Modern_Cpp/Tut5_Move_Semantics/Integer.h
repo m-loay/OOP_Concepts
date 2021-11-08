@@ -3,49 +3,52 @@
 class Integer 
 {
 public:
-	//Default constructor
-	Integer();
+    //Default constructor
+    Integer();
 
-	//Parameterized constructor
-	Integer(int value);
+    //Default destructor
+    ~Integer();
 
-	//Copy constructor
-	Integer(const Integer &obj);
+    //Parameterized constructor
+    Integer(int value);
 
-	//Move constructor
-	Integer(Integer &&obj);
+    //Copy constructor
+    Integer(const Integer &obj);
 
-	//overload = assignemet
-	const Integer &operator=(const Integer &);
+    //Move constructor
+    Integer(Integer &&obj);
 
-	//overload = assignemet Move Constructor
-	const Integer &operator=(Integer &&);
+    //overload = assignemet
+    const Integer &operator=(const Integer &);
 
-	//overload + assignemet
-	Integer operator+(const Integer &)const;
+    //overload = assignemet Move Constructor
+    const Integer &operator=(Integer &&);
 
-	//overload pre-increment ++ assignemet
-	const Integer &operator++();
+    //overload + assignemet
+    Integer operator+(const Integer &)const;
 
-	//overload post-increment ++ assignemet
-	Integer operator++(int);
+    //overload pre-increment x++ assignemet
+    const Integer &operator++();
 
-	//overload == assignemet
-	bool operator==(const Integer &)const;
+    //overload post-increment ++x assignemet
+    Integer operator++(int);
 
-	//int operator overload
-	operator int ();
+    //overload == assignemet
+    bool operator==(const Integer &)const;
 
-	//setter & getter
-	int GetValue()const;
-	std::string GetName()const;
-	void SetValue(int value);
-	~Integer();
+    //int operator overload
+    operator int ();
+
+    //setter & getter
+    int GetValue()const;
+    std::string GetName()const;
+    void SetValue(int value);
+
 
 private:
-	int *m_pInt;
-	static int counter;
-	std::string name;
-	void assignName();
+    int *m_pInt{new int(0)};
+    static int counter;
+    std::string name;
+    void assignName();
 
 };

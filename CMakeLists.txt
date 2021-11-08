@@ -32,6 +32,18 @@ add_subdirectory(Modern_Cpp/Tut2_Range_based_for_loop)
 add_subdirectory(Modern_Cpp/Tut3_Delegated_Constructor)
 add_subdirectory(Modern_Cpp/Tut4_Rvalue)
 add_subdirectory(Modern_Cpp/Tut5_Move_Semantics)
+add_subdirectory(Modern_Cpp/Tut6_smartpointers)
+add_subdirectory(Modern_Cpp/Tut7_typeConversion)
+add_subdirectory(Modern_Cpp/Tut8_Unique_pointer)
+add_subdirectory(Modern_Cpp/Tut9_shared_pointer)
+add_subdirectory(Modern_Cpp/Tut10_weak_pointer)
+add_subdirectory(Modern_Cpp/Tut11_Enums)
+add_subdirectory(Modern_Cpp/Tut12_constexpr)
+add_subdirectory(Modern_Cpp/Tut13_IntialzerList)
+add_subdirectory(Modern_Cpp/Tut14_FunctionObjects)
+
+
+
 
 
 

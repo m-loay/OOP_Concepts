@@ -17,19 +17,24 @@ int & Transform(int &x)
 void Print(int &x) 
 {
 	std::cout << "Print(int&)" << std::endl; 
+	std::cout << "x = " << x<<std::endl; 
 }
 
-//Accepts l-value (constant refernce to variable)
+//Accepts l-value (constant refernce to variable) 
+// and R-values if Print(int &&x) not exist
 void Print(const int &x) 
 {
 	std::cout << "Print(const int&)" << std::endl;
+	std::cout << "x = " << x<<std::endl; 
 }
 
 //Accepts R-value (constant refernce to variable)
 void Print(int &&x) 
 {
 	std::cout << "Print(int &&)" << std::endl;
+    std::cout << "x = " << x<<std::endl; 
 }
+
 
 int main() 
 {
@@ -41,18 +46,21 @@ int main()
 
 	//Transform returns an l-value
 	int &ref2 = Transform(x) ;
+	
 	//Binds to function that accepts l-value reference
+	std::cout << "input l-value x" << std::endl;
 	Print(x);
 	
-	//rv is r-value reference
-	int &&rv = 8 ;
-	
 	//Add returns a temporary (r-value)
-	int &&rv2 = Add(3,5) ;
+	std::cout << "int &&rv = Add(3,5) ;" << std::endl;
+	int &&rv = Add(3,5) ;
+	std::cout << "rv = " << rv<<std::endl; 
+	
 
 	//Binds to function that accepts a temporary, i.e. r-value reference
 	// comment function Print(int &&), the input argument 3(R-value) will bind to L-value
 	//only when the refernce is constant in that case function Print(const int&) will be called.
+	std::cout << "Print(3)" << std::endl;
 	Print(3);
 
 	//Assign variable x to r-value gives compilation error

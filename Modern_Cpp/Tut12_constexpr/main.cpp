@@ -1,12 +1,15 @@
 #include <iostream>
 
-constexpr int GetNumber() {
+constexpr int GetNumber() 
+{
 	return 42;
 }
-constexpr int Add(int x, int y) {
+constexpr int Add(int x, int y) 
+{
 	return x + y;
 }
-constexpr int Max(int x, int y) {
+constexpr int Max(int x, int y) 
+{
 	//Needs C++14 compiler
 	//if (x > y)
 	//	return x;
