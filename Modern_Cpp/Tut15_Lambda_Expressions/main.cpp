@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 /*******************************************************************************
  *  Template Sort                                                              *
  *******************************************************************************/
@@ -40,19 +41,15 @@ private:
 	std::string name;
 	float price;
 public:
-	Product(const std::string &nm , const float &p):name(nm),price(p)
-	{
+	Product(const std::string &nm , const float &p):name(nm),price(p){}
 
-	}
-
-	void AssignFinalPrice()
+    template <typename T, std::size_t SIZE>
+    void AssignFinalPrice(T(&taxes)[SIZE])
 	{
-		float taxes[]{12,5,5};
 		float basePrice{price};
 		ForEach(taxes,[&basePrice,this](float tax)
 		{
-			float taxedPrice = basePrice * tax /100.0f;
-			this->price += taxedPrice;
+            this->price += basePrice * tax /100.0f;
 		});
 	}
 
@@ -60,10 +57,8 @@ public:
 	{
 		return price;
 	}
-	~Product()
-	{
 
-	}
+	~Product(){}
 };
 
 
@@ -112,7 +107,8 @@ int main()
 	//using lambda expression tp calculate tax products
 	std::cout<<"using lambda expression tp calculate tax products"<<std::endl;
 	Product p{"watch", 500};
-	p.AssignFinalPrice();
+    float taxes[]{12,5,5};
+	p.AssignFinalPrice(taxes);
 	std::cout<<"Final Price = "<<p.getPrice()<<std::endl;
 
 	return 0;
