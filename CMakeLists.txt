@@ -41,6 +41,8 @@ add_subdirectory(Modern_Cpp/Tut11_Enums)
 add_subdirectory(Modern_Cpp/Tut12_constexpr)
 add_subdirectory(Modern_Cpp/Tut13_IntialzerList)
 add_subdirectory(Modern_Cpp/Tut14_FunctionObjects)
+add_subdirectory(Modern_Cpp/Tut15_Lambda_Expressions)
+
 
 
 

@@ -68,7 +68,7 @@ int main()
     for (const auto &x : arr2){std::cout << x << " ";}
     std::cout<<std::endl;
 
-    //using function objects Assending
+    //using function objects Ascending
     Comp comp;
     std::cout<<"Sort Array using Function pointer function objects"<<std::endl;
     int arr3[]{ 1,6,8,4,0 };

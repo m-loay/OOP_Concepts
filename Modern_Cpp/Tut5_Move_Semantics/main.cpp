@@ -9,7 +9,7 @@ Integer Add(const Integer &a, const Integer &b)
 	return temp ;
 }
 
-Integer AddElison(int a, int b)
+Integer addElison(int a, int b)
 {
 	Integer temp(a+b);
 	return temp;
@@ -17,7 +17,14 @@ Integer AddElison(int a, int b)
 
 void print(const Integer &obj)
 {
+    std::cout<<"const Integer &obj"<<std::endl;
 	std::cout<<"object -->"<<obj.GetName()<<" value = "<<obj.GetValue()<<std::endl;
+}
+
+void printObject(const Integer obj)
+{
+    std::cout<<"const Integer &&obj"<<std::endl;
+    std::cout<<"object -->"<<obj.GetName()<<" value = "<<obj.GetValue()<<std::endl;
 }
 
 int main() 
@@ -38,11 +45,11 @@ int main()
 
 	//Print a once again as temp value(R-value) by using std::move
 	// --> R-value binds to const ref (L-value)
-	OPERATION(print(std::move(a)));
+	OPERATION(printObject(std::move(a)));
 
 	//reset object a with 5 using copy elision
 	// -->Temp Integer(5) -->operator=(const Integer &&)a --> from obj Temp --> Temp ~Integer()
-	OPERATION(a = AddElison(2,3));
+	OPERATION(a = addElison(2, 3));
 	print(a);
 
 	//Add two objects in object's constructor

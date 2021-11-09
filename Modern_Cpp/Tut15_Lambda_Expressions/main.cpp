@@ -3,7 +3,7 @@
  *  Template Sort                                                              *
  *******************************************************************************/
 template <typename T, int size, typename comp>
-void sort(T(&array)[size], comp cp)
+void bubbleSort(T(&array)[size], comp cp)
 {
 	for (size_t i = 0; i < size-1; i++)
 	{
@@ -40,7 +40,7 @@ private:
 	std::string name;
 	float price;
 public:
-	Product(const std::string &nm , const float & p):name(nm),price(p)
+	Product(const std::string &nm , const float &p):name(nm),price(p)
 	{
 
 	}
@@ -49,10 +49,10 @@ public:
 	{
 		float taxes[]{12,5,5};
 		float basePrice{price};
-		ForEach(taxes,[basePrice,this](float tax)
+		ForEach(taxes,[&basePrice,this](float tax)
 		{
 			float taxedPrice = basePrice * tax /100.0f;
-			price += taxedPrice;
+			this->price += taxedPrice;
 		});
 	}
 
@@ -72,47 +72,40 @@ public:
  *******************************************************************************/
 int main() 
 {
-	//using lambda expression(Assending)
-	std::cout<<"Sort Array using lambda expression Assending"<<std::endl;
+	//using lambda expression(Ascending)
+	std::cout<<"Sort Array using lambda expression Ascending"<<std::endl;
 	int arr1[]{ 1,6,8,4,0 };
-
-	ForEach(arr1,[] (auto x){std::cout<<x<<" ";});
+    for(auto const &x:arr1){[&x]{std::cout<<x<<" ";};};
+	//ForEach(arr1,[] (auto x){std::cout<<x<<" ";});
 	std::cout << std::endl;
 
 	auto compAs = [] (auto x, auto y){return x>y;};
-	sort(arr1, compAs);
-
+    bubbleSort(arr1, compAs);
 	ForEach(arr1,[] (auto x){std::cout<<x<<" ";});
 	std::cout<<std::endl;
 
-	//using lambda expression(Desinding)
+	//using lambda expression(Designing)
 	std::cout<<"Sort Array using lambda expression Desinding"<<std::endl;
 	int arr2[]{ 1,6,8,4,0 };
-
 	ForEach(arr2,[] (auto x){std::cout<<x<<" ";});
 	std::cout << std::endl;
 
 	auto compDs = [] (auto x, auto y){return x<y;};
-	sort(arr2, compDs);
-
+    bubbleSort(arr2, compDs);
 	ForEach(arr2,[] (auto x){std::cout<<x<<" ";});
 	std::cout << std::endl;
 
 	//using lambda expression(Add offset to Array)
-	std::cout<<"Sort Array using lambda expression Assending + Add offset "<<std::endl;
+	std::cout<<"Sort Array using lambda expression Ascending + Add offset "<<std::endl;
 	int arr3[]{ 1,6,8,4,0 };
 	int offset =5;
-
 	ForEach(arr3,[] (auto x){std::cout<<x<<" ";});
 	std::cout << std::endl;
 
-	sort(arr3, compAs);
-
+    bubbleSort(arr3, compAs);
 	ForEach(arr3,[] (auto x){std::cout<<x<<" ";});
 	std::cout << std::endl;
-
 	ForEach(arr3,[offset] (auto &x){x+=offset;});
-
 	ForEach(arr3,[] (auto x){std::cout<<x<<" ";});
 	std::cout<<std::endl;
 
