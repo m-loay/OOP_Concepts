@@ -56,6 +56,8 @@ add_subdirectory(STL/Tut1_Vector)
 add_subdirectory(STL/Tut2_ForwardList)
 add_subdirectory(STL/Tut3_Set)
 add_subdirectory(STL/Tut4_Maps)
+add_subdirectory(STL/Tut5_Algorithms)
+
 
 
 
