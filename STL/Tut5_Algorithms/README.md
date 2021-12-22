@@ -1,9 +1,9 @@
-## Tut2_VectorIterator
+## Tut6_Maps
 
  Object Oriented Programming 
 
-The purpose of the tutorial to use iterator with vectors and understand how overload works with template
-
+The purpose of the tutorial to use Map library provided by STL
+ 
 ## Other Important Dependencies
 * cmake >= 3.5
 
@@ -21,4 +21,4 @@ The purpose of the tutorial to use iterator with vectors and understand how over
 1. Clone this repo.
 2. Make a build directory: `mkdir Debug && cd Debug`
 3. Compile: cmake .. && make --> (Linuex OS) or
-            cmake .. -G "MinGW Makefiles" & mingw32-make --> (Windows OS)			
+            cmake .. -G "MinGW Makefiles" & mingw32-make --> (Windows OS) 			
