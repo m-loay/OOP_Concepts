@@ -1,81 +1,85 @@
 #include <iostream>
 #include <memory>
-#include "printer.h"
-#include "printerShared.h"
-#include "printerWeak.h"
+#include"employeeShared.h"
+#include"ProjectShared.h"
+#include "employeeWeak.h"
+#include "ProjectWeak.h"
 #define OPERATION(x) std::cout << "######### operation: '" << #x << "' ######### " << std::endl; x
 
-void OperatePrinter();
-void OperatePrinterShared();
-void OperatePrinterWeak();
+
+std::pair<std::shared_ptr<ProjectShared>, std::shared_ptr<EmployeeShared>> OperateShared();
+std::pair<std::weak_ptr<ProjectWeak>, std::weak_ptr<EmployeeWeak>> OperateWeak();
 
 int	main()
 {
-	OPERATION(OperatePrinter());
-	OPERATION(OperatePrinterShared());
-	OPERATION(OperatePrinterWeak());
+	//A circular created dependency, the destructor of both projectShared, EmployeeShared
+    // will not be called since shared pointer were not destroyed.
+    OPERATION(auto p = OperateShared());
+	std::cout<<"number of projectShared pointer created: "<<p.first.use_count() <<std::endl;
+	std::cout<<"number of EmployeeShared pointer created: "<<p.second.use_count() <<std::endl;
+
+    //A circular created dependency, the destructor of both projectWeak, ProjectWeak
+    // will not be called since shared pointer were not destroyed.
+	OPERATION(auto w = OperateWeak());
+    if(w.first.expired())
+    {
+        std::cout<<"number of projectWeak pointer created is none"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"number of projectWeak pointer created: "<<w.first.use_count() <<std::endl;
+    }
+    if(w.second.expired())
+    {
+        std::cout<<"number of EmployeeShared pointer created is none"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"number of EmployeeShared pointer created: "<<w.second.use_count() <<std::endl;
+    }
+
 }
 
-//OperatePrinter. It creates a pointer to int and set an object with pointer value
-//Constructor and destructor are called so no memory leak.
-//In order to destructor to be called print object get out of scope(not known)
-void OperatePrinter()
+std::pair<std::shared_ptr<ProjectShared>, std::shared_ptr<EmployeeShared>> OperateShared()
 {
-	Printer print;
-	int num{};
-	std::cout<<"Enter any number"<<std::endl;
-	std::cin>>num;
-	int *p = new int(num);
-	print.setValue(p);
+    std::cout<<"====Start OperateShared===="<<std::endl;
+	std::shared_ptr<ProjectShared> p {new ProjectShared{}};
+	std::cout<<"number of projectShared pointer created: "<<p.use_count() <<std::endl;
+	std::shared_ptr<EmployeeShared> e {new EmployeeShared{}};
+	std::cout<<"number of EmployeeShared pointer created: "<<e.use_count() <<std::endl;
 
-	if(*p>10)
-	{
-		delete p;
-		p=nullptr;
-	}
+    std::cout<<"set employee to project: "<<p.use_count() <<std::endl;
+	p->setEmployee(e);
+    std::cout<<"number of EmployeeShared pointer created after setting: "<<e.use_count() <<std::endl;
 
-	print.print();
-	delete p;
-	p = nullptr;
+    std::cout<<"set project to employee: "<<p.use_count() <<std::endl;
+    e->setProject(p);
+    std::cout<<"number of projectShared pointer created after setting: "<<p.use_count() <<std::endl;
+    std::cout<<"====end OperateShared===="<<std::endl;
+	return std::make_pair(p,e);
 }
 
-//OperatePrinterShared. It creates a pointer to int and set an object with pointer value
-//Constructor and destructor are called but shared counter is 1 not zero
-//which means that the resource is not released
-//In order to destructor to shared counter shall equal to zero
-void OperatePrinterShared()
+std::pair<std::weak_ptr<ProjectWeak>, std::weak_ptr<EmployeeWeak>> OperateWeak()
 {
-	PrinterShared print;
-	int num{};
-	std::cout<<"Enter any number"<<std::endl;
-	std::cin>>num;
-	std::shared_ptr<int> p{new int(num)};
-	print.setValue(p);
+    std::cout<<"====Start OperateShared===="<<std::endl;
+    std::shared_ptr<ProjectWeak> p {new ProjectWeak{}};
+    std::weak_ptr<ProjectWeak>pw(p);
+    std::cout<<"number of ProjectWeak Shared pointer created: "<<p.use_count() <<std::endl;
+    std::cout<<"number of ProjectWeak Weak pointer created: "<<pw.use_count() <<std::endl;
 
-	if(*p>10)
-	{
-		p=nullptr;
-	}
+    std::shared_ptr<EmployeeWeak> e {new EmployeeWeak{}};
+    std::weak_ptr<EmployeeWeak>ew(e);
+    std::cout<<"number of EmployeeWeak shared pointer created: "<<e.use_count() <<std::endl;
+    std::cout<<"number of EmployeeWeak Weak pointer created: "<<pw.use_count() <<std::endl;
 
-	print.print();
-}
+    std::cout<<"set employee to project: "<<p.use_count() <<std::endl;
+    p->setEmployee(ew);
+    std::cout<<"number of EmployeeWeak shared pointer created after setting: "<<e.use_count() <<std::endl;
+    std::cout<<"number of EmployeeWeak Weak pointer created after setting: "<<ew.use_count() <<std::endl;
 
-//OperatePrinterWeak. It creates a pointer to int and set an object with pointer value
-//Constructor and destructor are called but shared counter is zero
-//Constructor and destructor are called so no memory leak.
-void OperatePrinterWeak()
-{
-	PrinterWeak print;
-	int num{};
-	std::cout<<"Enter any number"<<std::endl;
-	std::cin>>num;
-	std::shared_ptr<int> p{new int(num)};
-	print.setValue(p);
-
-	if(*p>10)
-	{
-		p=nullptr;
-	}
-
-	print.print();
+    std::cout<<"set project to employee: "<<p.use_count() <<std::endl;
+    e->setProject(pw);
+    std::cout<<"number of ProjectWeak shared pointer created after setting: "<<p.use_count() <<std::endl;
+    std::cout<<"number of ProjectWeak Weak pointer created after setting: "<<pw.use_count() <<std::endl;
+    return std::make_pair(pw,ew);
 }
