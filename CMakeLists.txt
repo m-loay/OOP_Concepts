@@ -44,7 +44,11 @@ add_subdirectory(Modern_Cpp/Tut14_FunctionObjects)
 add_subdirectory(Modern_Cpp/Tut15_Lambda_Expressions)
 
 #Data Structure
-add_subdirectory(Data_Structures)
+add_subdirectory(Data_Structures/Tut1_linked_list)
+add_subdirectory(Data_Structures/Tut2_linked_list_circular)
+add_subdirectory(Data_Structures/Tut3_stack)
+add_subdirectory(Data_Structures/Tut4_qeue)
+add_subdirectory(Data_Structures/Tut5_stack_array)
 
 # STL
 add_subdirectory(STL/Tut1_Vector)
