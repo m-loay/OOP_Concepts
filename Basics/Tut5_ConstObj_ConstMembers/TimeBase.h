@@ -14,25 +14,25 @@ using namespace std;
 class Time_Base
 {
 public:
-	Time_Base(int= 0, int= 0,int= 0);
-	~Time_Base();
+    Time_Base(int= 0, int= 0,int= 0);
+    ~Time_Base();
 
-	void setTime (int , int , int );
-	void setHour (int  );
-	void setMin (int );
-	void setSec (int );
+    void setTime (int , int , int );
+    void setHour (int  );
+    void setMin (int );
+    void setSec (int );
 
-	int getHour () const;
-	int getMin () const;
-	int getSec() const;
+    int getHour () const;
+    int getMin () const;
+    int getSec() const;
 
-	void printUniversal()const;
-	void printStandard ();
+    void printUniversal()const;
+    void printStandard ();
 
 private:
-	int hour;
-	int minute;
-	int second;
+    int hour;
+    int minute;
+    int second;
 };
 
 #endif /* TIMEBASE_H_ */
