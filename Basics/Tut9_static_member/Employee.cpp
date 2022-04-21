@@ -15,32 +15,32 @@ int Employee::count=0;
 Employee::Employee(const string &first, const string &last)
 
 {
-	// TODO Auto-generated constructor stub
-	firstName=first;
-	lastName=last;
-	++count;
-	cout << "Employee object constructor: "
-	<< firstName << ' '<< lastName << endl;
+    // TODO Auto-generated constructor stub
+    firstName=first;
+    lastName=last;
+    ++count;
+    cout << "Employee object constructor: "
+    << firstName << ' '<< lastName << endl;
 }
 
 Employee::~Employee() 
 {
-	// TODO Auto-generated destructor stub
-	--count;
-	cout << "Employee object constructor: "
-	<< firstName << ' '<< lastName << endl;
+    // TODO Auto-generated destructor stub
+    --count;
+    cout << "Employee object constructor: "
+    << firstName << ' '<< lastName << endl;
 }
 
 string Employee::getFirstName()const
 {
-	return firstName;
+    return firstName;
 }
 
 string Employee::getFLastName()const
 {
-	return lastName;
+    return lastName;
 }
 int Employee::getCount()
 {
-	return count;
+    return count;
 }
