@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(cppCourse)
 #set build type to debug
 
-set (CMAKE_CXX_STANDARD 11) 
+set (CMAKE_CXX_STANDARD 17) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #basics
@@ -44,12 +44,7 @@ add_subdirectory(Modern_Cpp/Tut14_FunctionObjects)
 add_subdirectory(Modern_Cpp/Tut15_Lambda_Expressions)
 
 #Data Structure
-# add_subdirectory(Data_Structures/Tut1_Sll)
-# add_subdirectory(Data_Structures/Tut2_Stack)
-# add_subdirectory(Data_Structures/Tut3_Qeue)
-# add_subdirectory(Data_Structures/Tut4_Tree)
-# add_subdirectory(Data_Structures/Tut5_DoublyLinkedList)
-# add_subdirectory(Data_Structures/Tut6_DataStructure)
+add_subdirectory(Data_Structures)
 
 # STL
 add_subdirectory(STL/Tut1_Vector)
