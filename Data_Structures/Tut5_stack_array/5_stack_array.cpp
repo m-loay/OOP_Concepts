@@ -25,16 +25,10 @@ class Stack
 
 template<typename NODETYPE>
 Stack<NODETYPE>::Stack(const int & size)
+:m_size((size>0 && size < m_capacity) ? size:  m_capacity - 1),
+ m_top(-1)
 {
-    if(size > m_capacity)
-    {
-        m_size = m_capacity - 1;
-    }
-    else
-    {
-        m_size = size;
-    }
-    m_top = -1;
+
 }
 
 template<typename NODETYPE>
@@ -51,8 +45,7 @@ void Stack<NODETYPE>::push(const NODETYPE &data)
 {
     if(!isFull())
     {
-        m_top++;
-        array[m_top] = data;
+        array[++m_top] = data;
     }
 }
 
@@ -63,8 +56,7 @@ std::pair <NODETYPE ,bool> Stack<NODETYPE>::pop (void)
     NODETYPE data;
     if(!isEmpty())
     {
-        data = array[m_top];
-        m_top--;
+        data = array[m_top--];
         flag = true;
     }
     return std::make_pair(data, flag);
