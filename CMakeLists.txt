@@ -49,6 +49,7 @@ add_subdirectory(Data_Structures/Tut2_linked_list_circular)
 add_subdirectory(Data_Structures/Tut3_stack)
 add_subdirectory(Data_Structures/Tut4_qeue)
 add_subdirectory(Data_Structures/Tut5_stack_array)
+add_subdirectory(Data_Structures/Tut6_tree)
 
 # STL
 add_subdirectory(STL/Tut1_Vector)
