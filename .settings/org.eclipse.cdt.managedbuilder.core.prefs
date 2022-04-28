@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/CPATH/delimiter=;
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/CPATH/operation=remove
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/CPLUS_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/append=true
+environment/buildEnvironmentInclude/cmake4eclipse.mbs.toolchain.cmake.1995880991/appendContributed=true
+environment/buildEnvironmentLibrary/cmake4eclipse.mbs.toolchain.cmake.1995880991/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/cmake4eclipse.mbs.toolchain.cmake.1995880991/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/cmake4eclipse.mbs.toolchain.cmake.1995880991/append=true
+environment/buildEnvironmentLibrary/cmake4eclipse.mbs.toolchain.cmake.1995880991/appendContributed=true
