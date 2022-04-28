@@ -64,7 +64,6 @@ const Integer& Integer::operator=(const Integer &rhs)
         delete m_pInt;
         m_pInt = new int (*rhs.m_pInt);
     }
-
     return *this;
 }
 
