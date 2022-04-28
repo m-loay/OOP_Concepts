@@ -5,6 +5,8 @@
 The purpose of the tutorial to create a class like vector to understand how it works.
 most of the functions are not implemented here, and you can check the cpp reference.
 
+Also check the new re-implementation of this class using modern CPP [Tut23_ArrayClassModern](https://github.com/m-loay/OOP_Concepts/tree/master/Basics/Tut23_ArrayClassModern)
+
 ## Other Important Dependencies
 * cmake >= 3.5
 
