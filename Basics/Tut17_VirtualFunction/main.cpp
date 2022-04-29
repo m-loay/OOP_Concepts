@@ -37,11 +37,11 @@ int main ()
 	ptr_cemp ->print();
 	ptr_bemp ->print();
 
-  /*Using virtual function creates a v-table ,
-   * when a base pointer to derived object is used ,the compiler automatically
-   * selects the member function of object type (not the pointer type object) and call it.
-   * */
-  cout<<"\n ----Using a base pointer to derived object----\n"<<endl;
-  ptr_cemp = &bemp;
-  ptr_cemp ->print();
+	/*Using virtual function creates a v-table ,
+	 * when a base pointer to derived object is used ,the compiler automatically
+	 * selects the member function of object type (not the pointer type object) and call it.
+	 * */
+	cout<<"\n ----Using a base pointer to derived object----\n"<<endl;
+	ptr_cemp = &bemp;
+	ptr_cemp ->print();
 }
