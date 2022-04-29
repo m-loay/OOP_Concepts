@@ -7,14 +7,12 @@
 
 #include "CommissionEmployee.h"
 
-CommissionEmployee::CommissionEmployee(const string &first, const string &last, const string &ssn, double gs,double cr)
+CommissionEmployee::CommissionEmployee(const string &first, const string &last,
+		                               const string &ssn, double gs,double cr)
+:firstName(first), lastName(last), SocialNumber(ssn), commsssionRate(cr),
+ grossSales(gs)
 {
 	// TODO Auto-generated constructor stub
-	firstName=first;
-	lastName=last;
-	SocialNumber=ssn;
-	commsssionRate=cr;
-	grossSales=gs;
 	cout<<"CommissionEmployee constructor Called"<<endl;
 }
 

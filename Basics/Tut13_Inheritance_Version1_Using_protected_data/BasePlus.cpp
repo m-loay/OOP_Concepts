@@ -7,7 +7,8 @@
 
 #include "BasePlus.h"
 
-BasePlus::BasePlus(const string &first, const string &last, const string &ssn, double salary ,double cr , double gs)
+BasePlus::BasePlus(const string &first, const string &last, const string &ssn,
+		           double salary ,double cr , double gs)
 :CommissionEmployee(first, last, ssn, gs, cr)
 {
 	// TODO Auto-generated constructor stub
@@ -35,17 +36,20 @@ double BasePlus::getBaseSalary()const
 double BasePlus::earnings()const
 {
 
-	return baseSalary + ( commsssionRate * grossSales );
+	return baseSalary + ( CommissionEmployee::commsssionRate * grossSales );
 }
 
 void BasePlus:: print()const
 {
+	//Note: protected data members of base class CommissionEmployee can be
+	// used directly or through class name and scope operator
+	// e.g: firstName or  CommissionEmployee::firstName
 
-	cout<<"BasePlus Employee: "<<firstName<<' '<<lastName
-		<<"\nSocial Security Number:"<<SocialNumber
+	cout<<"BasePlus Employee: "<<CommissionEmployee::firstName<<' '<<CommissionEmployee::lastName
+		<<"\nSocial Security Number:"<<CommissionEmployee::SocialNumber
 		<<"\nGross Sales: "<<grossSales
 		<<"\nBase Salary: "<<baseSalary
-		<<"\nComsssion Rate: "<<commsssionRate<<endl;
+		<<"\nComsssion Rate: "<<CommissionEmployee::commsssionRate<<endl;
 }
 
 

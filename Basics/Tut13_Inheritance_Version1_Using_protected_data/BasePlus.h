@@ -13,7 +13,8 @@
 class BasePlus : public CommissionEmployee
 {
 public:
-	BasePlus(const string &, const string &, const string &, double=0,double=0, double=0);
+	BasePlus(const string &, const string &, const string &,
+			double=0,double=0, double=0);
 	~BasePlus();
 	void setBaseSalaray(double);
 	double getBaseSalary()const;
