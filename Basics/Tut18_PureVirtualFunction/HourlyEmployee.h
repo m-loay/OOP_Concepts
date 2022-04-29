@@ -15,21 +15,23 @@ class HourlyEmployee  :public employee
 {
 public:
 	static const int hoursPerWeek= 168;
-	HourlyEmployee(const string &, const string &, const string &, double=0, double=0);
-	 ~HourlyEmployee();
+	HourlyEmployee(const string &, const string &, const string &,
+			       double=0, double=0);
 
-		void setWages (double);
-		double getWages() const;
+	~HourlyEmployee();
 
-		void setHours (double);
-		double getHours() const;
+	void setWages (double);
+	double getWages() const;
 
-		virtual double earnings()const override;
-		virtual void print() const override;
+	void setHours (double);
+	double getHours() const;
+
+	virtual double earnings()const override;
+	virtual void print() const override;
 
 private:
-		double wages;
-		double hours;
+	double wages;
+	double hours;
 };
 
 #endif /* HOURLYEMPLOYEE_H_ */

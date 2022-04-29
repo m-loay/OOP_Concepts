@@ -16,7 +16,9 @@ using namespace std;
 class CommissionEmployee : public employee
 {
 public:
-	CommissionEmployee(const string &, const string &, const string &, double=0,double=0);
+	CommissionEmployee(const string &, const string &, const string &,
+			           double=0,double=0);
+
 	~CommissionEmployee();
 
 
