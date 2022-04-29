@@ -8,9 +8,14 @@
 #include "TimeBase.h"
 #include<vector>
 #include<string>
-void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd, int **even,int *numEven);
-void SeparateOddAndEvenRef(const int arr[],int size, int *&odd,int &numOdd, int *&even,int &numEven);
-void SeparateOddAndEvenVect(const std::vector<int>& arr,std::vector<int>&odd,std::vector<int>&even);
+void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd,
+		                       int **even,int *numEven);
+
+void SeparateOddAndEvenRef(const int arr[],int size, int *&odd,int &numOdd,
+		                   int *&even,int &numEven);
+
+void SeparateOddAndEvenVect(const std::vector<int>& arr,std::vector<int>&odd,
+		                    std::vector<int>&even);
 
 void printArray(const std::string & name , const int arr[], int size);
 void printVector(const std::string & name , const std::vector<int>& arr);
@@ -20,6 +25,7 @@ void printVector(const std::string & name , const std::vector<int>& arr);
  * call by pointer
  * call by ref
  * dangof returning a reference*/
+
 int main()
 {
 	int x = 0;
@@ -80,7 +86,7 @@ int main()
 	std::cout<<"The init standard time is";
 	t.printStandard();
 
-	//get refernce value of counter
+	//get reference value of counter
 	std::cout<<"get &counter value = "<<t.getCounter()<<std::endl;
 
 	//set refernce counter value to 6 and print it
@@ -100,7 +106,7 @@ int main()
 	printArray("odd Array Pointers", odd, odd_num);
 	printArray("even Array Pointers", even, even_num);
 
-	//split using refernces
+	//split using references
 	delete odd;
 	delete even;
 	odd = nullptr;
@@ -119,7 +125,8 @@ int main()
 	printVector("evens Vector", evens);
 }
 
-void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd, int **even,int *numEven)
+void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd,
+		                       int **even,int *numEven)
 {
 	//initialize odd and even counter
 	*numOdd = *numEven=0;
@@ -157,7 +164,8 @@ void SeparateOddAndEvenPointer(const int arr[],int size, int **odd,int*numOdd, i
 	}
 }
 
-void SeparateOddAndEvenRef(const int arr[],int size, int *&odd,int &numOdd, int *&even,int &numEven)
+void SeparateOddAndEvenRef(const int arr[],int size, int *&odd,int &numOdd,
+		                   int *&even,int &numEven)
 {
 	//initialize odd and even counter
 	numOdd = numEven = 0;
@@ -219,6 +227,7 @@ void printArray(const std::string & name , const int arr[] , int size)
 	}
 	std::cout<<std::endl;
 }
+
 void printVector(const std::string & name , const std::vector<int>& arr)
 {
 	std::cout<<name<<" Vector"<<std::endl;
