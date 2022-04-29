@@ -7,7 +7,8 @@
 
 #include "BasePlus.h"
 
-BasePlus::BasePlus(const string &first, const string &last, const string &ssn, double salary ,double cr , double gs)
+BasePlus::BasePlus(const string &first, const string &last, const string &ssn,
+		           double salary ,double cr , double gs)
 :CommissionEmployee(first, last, ssn, gs, cr)
 {
 	// TODO Auto-generated constructor stub
