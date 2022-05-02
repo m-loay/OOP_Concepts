@@ -4,6 +4,11 @@
 
 This tutorial shows how to use the default arguements , also how to create function template.
 
+The following topics were discusses:
+* Simple function templates.
+* eplicit function templates.
+* function templates using refernces.
+* Specialized function templates.
 
 ## Other Important Dependencies
 * cmake >= 3.5

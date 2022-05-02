@@ -6,10 +6,28 @@
  */
 
 #include <iostream>
+#include <cstring>
 #include "maximum.h"
 #include "Boxvol.h"
 using namespace std;
 int var(3);
+
+template <typename T> T maxmum(T a, T b)
+{
+	return (a > b)? a:b;
+}
+
+//template <typename T> const T& maxmum(const T& a, const T& b)
+//{
+//	return (a > b)? a:b;
+//}
+
+template<>
+const char* maxmum<const char*>(const char*  a, const char * b)
+{
+	return (std::strcmp(a,b)>0)?a:b;
+
+}
 
 int main ()
 {
@@ -51,6 +69,51 @@ int main ()
 
         std::cout<<"Printing var in global scope ::var= "<<::var<<std::endl;
     }
+
+    //Function Templates(more details)
+
+    /*Test template usage with same types*/
+    std::cout<<"========Test template usage with same types======="<<std::endl;
+    int intNum1(10);
+    int intNum2(20);
+
+    std::string s1{"learn"};
+    std::string s2{"C++"};
+
+    double doubleNum1(22.2);
+    double doubleNum2(44.4);
+
+    auto res_int = maxmum(intNum1, intNum2);
+    std::cout<<"results : "<<res_int<<std::endl;
+    auto res_s = maxmum(s1, s2);
+    std::cout<<"results : "<<res_s<<std::endl;
+    auto res_d = maxmum(doubleNum1, doubleNum2);
+    std::cout<<"results : "<<res_d<<std::endl;
+
+    /*Test template usage with different types*/
+    std::cout<<"========Test template usage with different types======="<<std::endl;
+    //auto res_mix = maxmum(intNum1, doubleNum2); --> compiler error
+    auto res_mixD = maxmum<double>(intNum1, doubleNum2);
+    auto res_mixI = maxmum<int>(intNum1, doubleNum2);
+    std::cout<<"results for explicit double : "<<res_mixD<<std::endl;
+    std::cout<<"results for explicit int : "<<res_mixI<<std::endl;
+
+    /*template usage for references*/
+    std::cout<<"========template usage for references======="<<std::endl;
+    //overload template function T maxmum(T,T)
+    //with const T& maxmum(const T&T,const T&T)
+    // will confuse compiler and generates compiler error
+    auto res_int_ref = maxmum(intNum1, intNum2);
+    std::cout<<"results using references : "<<res_int_ref<<std::endl;
+
+    /*template Specialization*/
+    std::cout<<"========template usage for Specialization======="<<std::endl;
+    // when add implementation const char* maxmum<const char*>(const char*,const char*)
+    // The correct out be shown like previous case
+    const char * c1{"learn"};
+    const char * c2{"C++"};
+    auto res_c = maxmum(c1, c2);
+    std::cout<<"results using const char * : "<<res_c<<std::endl;
 
 }
 
