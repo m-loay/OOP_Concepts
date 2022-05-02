@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <concepts>
 #include "maximum.h"
 #include "Boxvol.h"
 using namespace std;
@@ -27,6 +28,27 @@ const char* maxmum<const char*>(const char*  a, const char * b)
 {
 	return (std::strcmp(a,b)>0)?a:b;
 
+}
+
+// syntax 1
+//template <typename N>
+//requires std::integral<N>
+//N addIntegeral(N a, N b)
+//{
+//	return a+b;
+//}
+
+// syntax 2
+//template <std::integral N>
+//N addIntegeral(N a, N b)
+//{
+//	return a+b;
+//}
+
+// syntax 3
+auto addIntegeral(std::integral auto a, std::integral auto b)
+{
+	return a+b;
 }
 
 int main ()
@@ -114,6 +136,14 @@ int main ()
     const char * c2{"C++"};
     auto res_c = maxmum(c1, c2);
     std::cout<<"results using const char * : "<<res_c<<std::endl;
+
+
+    /*Constrain template parameters using concepts*/
+    std::cout<<"========Constrain template parameters using concepts======="<<std::endl;
+    auto simI = addIntegeral(intNum1, intNum2);
+    std::cout<<"resultsaddIntegeral : "<<simI<<std::endl;
+
+    //auto simD = addIntegeral(doubleNum1, doubleNum2); --> this will generate compiler error.
 
 }
 

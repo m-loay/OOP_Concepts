@@ -9,6 +9,7 @@ The following topics were discusses:
 * eplicit function templates.
 * function templates using refernces.
 * Specialized function templates.
+* Constrain template parameters using concepts(c++20).
 
 ## Other Important Dependencies
 * cmake >= 3.5
