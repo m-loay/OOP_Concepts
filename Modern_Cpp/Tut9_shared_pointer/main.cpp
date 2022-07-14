@@ -44,7 +44,9 @@ std::shared_ptr<EmployeeShared> AssignProjectSmartPointers()
 	std::shared_ptr<Project> p {new Project{}};
 	std::cout<<"AssignProjectSmartPointers: "<<p.use_count() <<std::endl;
 	std::shared_ptr<EmployeeShared> e1 {new EmployeeShared{}};
+	std::shared_ptr<EmployeeShared> e2 {new EmployeeShared{}};
 	e1->setProject(p);
+	e2->setProject(p);
 	std::cout<<"AssignProjectSmartPointers --> serProject(): "<<p.use_count() <<std::endl;
 
 	return e1;

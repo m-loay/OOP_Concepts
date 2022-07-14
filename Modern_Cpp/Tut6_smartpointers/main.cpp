@@ -30,6 +30,7 @@ void process(std::unique_ptr<Integer> p_uni)
 
 void process(std::shared_ptr<Integer> p_shared)
 {
+	std::cout<<"Inside Process p_shared.use_count = "<<p_shared.use_count()<<std::endl;
 	std::cout<<"process shared_ptr smart Pointer = "<<p_shared->GetValue()<<std::endl;
 }
 
@@ -48,15 +49,19 @@ void creatIntger()
 
 	//created shared smart pointer
 	std::shared_ptr<Integer> p_shared(new Integer);
-	p_shared->SetValue(2);
+	p_shared->SetValue(10);
 	std::cout<<"shared_ptr smart Pointer = "<<p_shared->GetValue()<<std::endl;
+	std::cout<<"before p_shared.use_count = "<<p_shared.use_count()<<std::endl;
 	process(p_shared);
+	std::cout<<"After p_shared.use_count = "<<p_shared.use_count()<<std::endl;
 	std::cout<<"After process shared_ptr smart Pointer = "<<p_shared->GetValue()<<std::endl;
 }
 
 int main() 
 {
-	creatIntger();
+	{
+	 creatIntger();
+	}
 	
 	return 0;
 }
