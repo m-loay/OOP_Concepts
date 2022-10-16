@@ -60,6 +60,12 @@ class Vehicle
 		std::cout<<"Vehicle(int speed)"<<std::endl;
 	}
 
+    Vehicle(int speed, int fuel):Vehicle(speed)
+    {
+        fuel_ = fuel;
+        std::cout<<"Vehicle(int speed, int fuel)"<<std::endl;
+    }
+
 	void dasbord()const
 	{
 		std::cout<<"Vehicle Dash Board"<<std::endl;
@@ -93,4 +99,7 @@ int main()
 	//view dash board
 	c2.dasbord();
 	v2.dasbord();
+
+    Vehicle c3(10,20);
+    c3.dasbord();
 }
